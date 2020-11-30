@@ -1,0 +1,24 @@
+{
+    "name": "common",
+    "source": null,
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+    },
+    "server_engine": {
+        "name": "Yatopia",
+        "version": "1.16.4",
+        "target": "server.jar"
+    },
+    "plugins": {
+        "BookExploitFix": "0.15",
+        "BungeeTabListPlusBridge": "3.5.*",
+        "FastAsyncWorldEdit": "1.16-*",
+        "LuckPerms": "5.2.*",
+        "RedCraftReboot": "0.0.*",
+        "RedstoneClockDetector": "1.2.1",
+        "SelectionVisualizer": "3.0.3.*",
+        "goBrush": "3.6.*",
+        "goPaint": "2.3.*",
+        "spark": "1.4.*"
+    }
+}
