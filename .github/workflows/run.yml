@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@masterDownload plugins
+        uses: actions/checkout@master
 
       - name: Setup Python
         uses: actions/setup-python@v2
