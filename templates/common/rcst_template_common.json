@@ -1,6 +1,7 @@
 {
     "name": "common",
     "source": null,
+    "target": null,
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
     },
