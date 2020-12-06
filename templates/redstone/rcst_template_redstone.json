@@ -1,0 +1,16 @@
+{
+    "name": "redstone",
+    "source": "common",
+    "target": "redstone.tar",
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+    },
+    "server_engine": {
+        "name": "Yatopia",
+        "version": "1.16.4",
+        "target": "server.jar"
+    },
+    "plugins": {
+        "PlotSquared": "5.13.*"
+    }
+}
