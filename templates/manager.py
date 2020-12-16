@@ -3,8 +3,8 @@ import json
 
 class TemplateManager():
 
-    def get_template_info(self, template_name, plugins_only=False):
-        template_contents = self.__read_template_file(template_name)
+    def get_template_info(self, name, plugins_only=False):
+        template_contents = self.__read_template_file(name)
 
         template_name = template_contents.get('name')
         template_source = template_contents.get('source')
@@ -22,7 +22,7 @@ class TemplateManager():
         if plugins_only:
             return {"plugins": template_plugins}
 
-        # TODO
+        return template_name, template_source, template_target, template_config_env_matches, template_server_engine
 
     def __read_template_file(self, template_name):
         with open(self.__get_template_path(template_name)) as json_file:
