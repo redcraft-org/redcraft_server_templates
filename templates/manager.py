@@ -3,6 +3,17 @@ import json
 
 class TemplateManager():
 
+    def __init__(self, template_dir=None):
+        self.template_dir = template_dir
+
+        if not self.template_dir:
+            self.template_dir = os.path.dirname(__file__)
+
+    def generate_template(self, name):
+        template_name, source, target, config_env_matches, server_engine = self.get_template_info(name)
+
+        pass
+
     def get_template_info(self, name, plugins_only=False):
         template_contents = self.__read_template_file(name)
 
@@ -29,4 +40,4 @@ class TemplateManager():
             return json.load(json_file)
 
     def __get_template_path(self, template_name):
-        return os.path.join(os.path.dirname(__file__), '{}/rcst_template_{}.json')
+        return os.path.join(self.template_dir, '{}/rcst_template_{}.json')
