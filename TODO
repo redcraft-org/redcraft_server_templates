@@ -1,17 +1,18 @@
 
 generate_templates.py:
   ✔ Define format for rcst_template.json
-  ☐ List plugins from S3 or folder
-  ☐ Find version matches
-  ☐ Put everything in a temporary folder
-  ☐ .tar it
-  ☐ Upload it to S3 or save it somewhere
+  ✔ List plugins from S3 or folder
+  ✔ Find version matches
+  ✔ Put everything in a temporary folder
+  ☐ Edit env variables
+  ✔ .tar it
+  ✔ Upload it to S3 or save it somewhere
   ✔ Add GitHub actions support
 
 check_updates.py:
-  ☐ List plugins from S3 or folder
-  ☐ Find version matches
-  ☐ Check if a more recent file matches
+  ✔ List plugins from S3 or folder
+  ✔ Find version matches
+  ✔ Check if a more recent file matches
     ☐ Notify Discord
     ☐ Open PR if exists to update
   ✔ Add GitHub actions support (https://jasonet.co/posts/scheduled-actions/)
