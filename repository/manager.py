@@ -33,5 +33,5 @@ class RepositoryManager():
     def copy(self, filename, destination, **kwargs):
         return self.source.copy(filename, destination, **kwargs)
 
-    def save(self, downloaded_binary, source, name, url, **kwargs):
-        return self.destination.save(downloaded_binary, source, name, url, **kwargs)
+    def save(self, local_path, filename, **kwargs):
+        return self.destination.save(local_path, filename, **kwargs)

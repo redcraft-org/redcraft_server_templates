@@ -1,6 +1,5 @@
 import os
 from shutil import copyfile
-from datetime import datetime
 
 class BasicSource():
 

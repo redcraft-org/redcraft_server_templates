@@ -21,5 +21,5 @@ class S3Destination(BasicDestination):
             aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY')
         )
 
-    def save(self, downloaded_binary, source, name, url, **kwargs):
-        self.s3_client.put_object(Bucket=self.s3_bucket, Key=name, Body=downloaded_binary)
+    def save(self, local_path, filename, **kwargs):
+        self.s3_client.upload_file(local_path, self.s3_bucket, filename)

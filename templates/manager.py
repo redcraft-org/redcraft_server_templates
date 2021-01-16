@@ -1,10 +1,11 @@
 import os
 import re
 import json
+import tarfile
 from repository.manager import RepositoryManager
 import tempfile
 from distutils.dir_util import copy_tree
-import time
+from tqdm import tqdm
 
 class TemplateManager():
 
@@ -31,7 +32,7 @@ class TemplateManager():
         return templates
 
     def generate_templates(self):
-        for template_name in self.list_templates():
+        for template_name in tqdm(self.list_templates(), desc='Generating templates'):
             self.generate_template(template_name)
 
     def generate_template(self, name, temporary_directory=None):
@@ -49,6 +50,18 @@ class TemplateManager():
 
         self.download_server_engine(template.get('server_engine'), temp_directory.name)
 
+        # TODO replace env
+
+        target = template.get('target')
+
+        if target:
+            tar_file_path = os.path.join(temp_directory.name, target)
+
+            with tarfile.open(tar_file_path, 'w') as tar:
+                tar.add(temp_directory.name, arcname='.')
+
+            self.repository_manager.save(tar_file_path, target)
+
     def download_server_engine(self, server_engine, output_directory):
         if server_engine:
             filename = '{name}-{version}.jar'.format(**server_engine)
@@ -56,8 +69,7 @@ class TemplateManager():
             self.repository_manager.copy(filename, output_path)
 
     def download_plugins(self, plugins, directory):
-        for plugin_name, plugin_version in plugins.items():
-            print(plugin_name, plugin_version)
+        for plugin_name, plugin_version in tqdm(plugins.items(), desc='Downloading plugins', leave=False):
             matched_version = self.get_latest_matching_plugin_version(plugin_name, version_match=plugin_version)
             input_file = self.__get_plugin_filename(plugin_name, matched_version)
             output_file = '{}.jar'.format(plugin_name)

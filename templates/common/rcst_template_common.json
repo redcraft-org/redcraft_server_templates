@@ -11,7 +11,7 @@
         "target": "server.jar"
     },
     "plugins": {
-        "BookExploitFix": "0.15",
+        "BookExploitFix": "1.1",
         "BungeeTabListPlusBridge": "3.5.*",
         "FastAsyncWorldEdit": "1.16-*",
         "LuckPerms": "5.2.*",
