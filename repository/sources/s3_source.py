@@ -11,7 +11,7 @@ class S3Source(BasicSource):
     s3_client = None
 
     def __init__(self):
-        self.s3_bucket = os.environ.get('OUTPUT_S3_BUCKET')
+        self.s3_bucket = os.environ.get('INPUT_S3_BUCKET')
 
         # Instantiate and S3 client
         self.s3_client = boto3.session.Session().client(
@@ -24,10 +24,13 @@ class S3Source(BasicSource):
         )
 
     def list(self, **kwargs):
-        return self.s3_client.list_objects_v2(Bucket=self.s3_bucket)
+        elements = {}
 
-    def read(self, filename, **kwargs):
-        return self.s3_client.get_object(Bucket=self.s3_bucket)['Body'].read()
+        for element in self.s3_client.list_objects_v2(Bucket=self.s3_bucket).get('Contents'):
+            element_name = element['Key']
+            elements[element_name] = element['LastModified']
 
-    def get_filter_regex(self, filter):
-        return re.compile(filter.replace('*', '.+'))
+        return elements
+
+    def copy(self, filename, destination, **kwargs):
+        self.s3_client.download_file(self.s3_bucket, filename, destination)

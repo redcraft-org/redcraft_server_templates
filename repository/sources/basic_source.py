@@ -1,5 +1,6 @@
 import os
-
+from shutil import copyfile
+from datetime import datetime
 
 class BasicSource():
 
@@ -9,11 +10,15 @@ class BasicSource():
         self.input_folder = os.environ.get('input_folder', 'plugins')
 
     def list(self, **kwargs):
-        return os.listdir(self.input_folder)
+        elements = {}
 
-    def read(self, filename, **kwargs):
+        for element in os.listdir(self.input_folder):
+            modified_at = os.path.getmtime(os.path.join(self.input_folder, element))
+            elements[element] = modified_at
+
+        return elements
+
+    def copy(self, filename, destination, **kwargs):
         file_path = os.path.join(self.input_folder, filename)
 
-        # Read file from disk
-        with open(file_path, 'rb') as file:
-            return file.read()
+        copyfile(file_path, destination)

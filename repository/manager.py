@@ -30,8 +30,8 @@ class RepositoryManager():
     def list(self, **kwargs):
         return self.source.list(**kwargs)
 
-    def read(self, filename, **kwargs):
-        return self.source.read(filename, **kwargs)
+    def copy(self, filename, destination, **kwargs):
+        return self.source.copy(filename, destination, **kwargs)
 
     def save(self, downloaded_binary, source, name, url, **kwargs):
         return self.destination.save(downloaded_binary, source, name, url, **kwargs)
