@@ -4,3 +4,4 @@ autopep8==1.5.4
 python-dotenv==0.15.0
 tqdm==4.54.1
 boto3==1.16.30
+massedit==0.69.1

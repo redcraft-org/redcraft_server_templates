@@ -2,10 +2,13 @@ import os
 import re
 import json
 import tarfile
-from repository.manager import RepositoryManager
 import tempfile
 from distutils.dir_util import copy_tree
+
 from tqdm import tqdm
+import massedit
+
+from repository.manager import RepositoryManager
 
 class TemplateManager():
 
@@ -50,11 +53,11 @@ class TemplateManager():
 
         self.download_server_engine(template.get('server_engine'), temp_directory.name)
 
-        # TODO replace env
-
         target = template.get('target')
 
         if target:
+            self.replace_config_env_matches(temp_directory.name, template.get('config_env_matches') or {})
+
             tar_file_path = os.path.join(temp_directory.name, target)
 
             with tarfile.open(tar_file_path, 'w') as tar:
@@ -103,6 +106,18 @@ class TemplateManager():
                 }
 
         return outdated
+
+    def replace_config_env_matches(self, directory, patterns):
+        compiled_patterns = []
+        for pattern, replacement_env in patterns.items():
+            replacement = os.environ.get(replacement_env).replace('"', '\"')
+            compiled_patterns.append('re.sub("{}", "{}", line)'.format(pattern, replacement))
+
+        whitelisted_extensions = ['yml', 'yaml', 'json', 'properties', 'ini', 'csv']
+
+        file_matches = ['*.{}'.format(extension) for extension in whitelisted_extensions]
+
+        massedit.edit_files(file_matches, expressions=compiled_patterns, start_dirs=directory, dry_run=False, max_depth=10)
 
     def get_latest_matching_plugin_version(self, plugin, version_match='*'):
         available_versions = self.available_plugins.get(plugin)
