@@ -2,6 +2,7 @@ name: Generate templates
 
 on:
   push:
+    - master
   schedule:
     - cron: "0 4 * * *"
 
