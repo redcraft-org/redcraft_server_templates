@@ -4,6 +4,7 @@ import json
 import tarfile
 import tempfile
 from distutils.dir_util import copy_tree
+from utils.updater import generate_new_wildcard_version
 
 from tqdm import tqdm
 import massedit
@@ -92,6 +93,22 @@ class TemplateManager():
 
         return outdated_plugins
 
+    def update_plugins(self, outdated_template_plugins=None, print_updates=False):
+        outdated_plugins = outdated_template_plugins or self.check_updates()
+
+        for template_name, plugins in outdated_plugins.items():
+            template = self.get_template_info(template_name)
+
+            for plugin, plugin_version in plugins.items():
+                old_version = template['plugins'][plugin]
+                new_version = plugin_version['latest_version']
+                new_wildcarded_version = generate_new_wildcard_version(old_version, new_version)
+                template['plugins'][plugin] = new_wildcarded_version
+                if print_updates:
+                    print('[{}] {} has been updated from {} to {}'.format(template_name, plugin, old_version, new_wildcarded_version))
+
+            self.save_template_info(template_name, template)
+
     def find_outdated_plugins(self, plugins):
         outdated = {}
         for plugin_name, plugin_version in plugins.items():
@@ -142,6 +159,10 @@ class TemplateManager():
     def get_template_info(self, template_name):
         with open(self.__get_template_path(template_name)) as json_file:
             return json.load(json_file)
+
+    def save_template_info(self, template_name, new_template_info):
+        with open(self.__get_template_path(template_name), 'w') as json_file:
+            return json.dump(new_template_info, json_file, indent=4)
 
     def copy_template_config(self, template_name, temporary_directory):
         template_config_directory = os.path.join(self.template_dir, template_name, 'config')

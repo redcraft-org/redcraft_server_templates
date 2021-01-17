@@ -8,6 +8,4 @@ if __name__ == '__main__':
 
     template_manager = TemplateManager()
 
-    outdated_plugins = template_manager.check_updates()
-
-    print(outdated_plugins)
+    template_manager.update_plugins(print_updates=True)
