@@ -13,6 +13,5 @@ check_updates.py:
   ✔ List plugins from S3 or folder
   ✔ Find version matches
   ✔ Check if a more recent file matches
-    ☐ Notify Discord
     ☐ Open PR if exists to update
   ✔ Add GitHub actions support (https://jasonet.co/posts/scheduled-actions/)
