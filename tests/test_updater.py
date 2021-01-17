@@ -30,6 +30,11 @@ class UpdaterTests(unittest.TestCase):
                 'old': '1.9.*',
                 'new': '2.1.1',
                 'expected': '2.1.*'
+            },
+            {
+                'old': '1.9.2.*',
+                'new': '2.0',
+                'expected': '2.*'
             }
         ]
 

@@ -14,7 +14,9 @@ def generate_new_wildcard_version(old_wildcarded_version, new_absolute_version):
                 new_wildcarded_version_parts.append('*')
             else:
                 new_wildcarded_version_parts.append(new_absolute_version_parts[idx])
-        except Exception:
+        except IndexError:
+            # The new version format is shorter than the old one, we discard the minor versions
+            new_wildcarded_version_parts[-1] = '*'
             break
 
     new_wildcarded_version = '.'.join(new_wildcarded_version_parts)
