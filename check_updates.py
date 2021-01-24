@@ -19,9 +19,6 @@ if __name__ == '__main__':
 
     outdated_plugins = template_manager.update_plugins(print_updates=True)
 
-    # TODO Remove or true
     if outdated_plugins and git_manager:
         GitManager().push_and_create_pull_request(outdated_plugins)
-        # TODO
-
-    git_manager.switch_to_original_branch()
+        git_manager.switch_to_original_branch()

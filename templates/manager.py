@@ -28,6 +28,8 @@ class TemplateManager():
         for directory in os.listdir(self.template_dir):
             try:
                 template_info = self.get_template_info(directory)
+
+                # Only add templates that have a target (an output)
                 if include_no_target or template_info.get('target'):
                     templates.append(directory)
             except Exception:
@@ -57,8 +59,10 @@ class TemplateManager():
         target = template.get('target')
 
         if target:
+            # Replace configuration with env variables
             self.replace_config_env_matches(temp_directory.name, template.get('config_env_matches') or {})
 
+            # We will create a .tar from a temporary location using this
             tar_file_path = os.path.join(temp_directory.name, target)
 
             with tarfile.open(tar_file_path, 'w') as tar:

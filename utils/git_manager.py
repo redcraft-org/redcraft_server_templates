@@ -33,14 +33,17 @@ class GitManager():
         changelog, updated_plugins = self.get_changelog(outdated_plugins)
         templates_location = os.path.join(self.repo_location, 'templates', '*', 'rcst_template_*.json')
 
+        # Add files
         self.repo.index.add([templates_location])
+
+        # Commit changes
         commit_name = 'Updated {}'.format(updated_plugins)
         self.repo.git.commit('-m', commit_name, author=os.environ.get('GIT_AUTHOR'))
 
-        origin = self.repo.remote()
+        # Push changes
+        self.repo.remote().push(refspec='origin/{}'.format(self.update_branch))
 
-        origin.push(refspec='origin/{}'.format(self.update_branch))
-
+        # We will open the pull request
         if read_env_variable_boolean('GITHUB_PULL_REQUEST_ENABLED'):
             github = Github(os.environ.get('GITHUB_TOKEN'))
             github_pr_prefix = '[Automated]'
@@ -48,13 +51,15 @@ class GitManager():
 
             for pr in github_repo.get_pulls(state='open', sort='created', base='master'):
                 if pr.title.startswith(github_pr_prefix):
-                    pr.update(title='{} {}'.format(github_pr_prefix, 'Update multiple plugins'))
+                    new_body = '{}\n\n--- New changes ---\n\n{}'.format(pr.body, changelog)
+                    pr.update(title='{} {}'.format(github_pr_prefix, 'Update multiple plugins'), body=new_body)
 
             pr_title = '{} {}'.format(github_pr_prefix, commit_name)
 
             github_repo.create_pull(title=pr_title, body=changelog, head=self.update_branch, base="master")
 
     def get_changelog(self, outdated_plugins):
+        # This generates a dumb markdown changelog and a list of updated plugins
         changelog = []
         updated_plugins = []
         for template, plugins in outdated_plugins.items():
