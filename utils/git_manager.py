@@ -14,8 +14,11 @@ class GitManager():
         self.switch_branch(self.original_branch)
 
     def switch_branch(self, branch):
+        print('if {} == {}'.format(branch, self.repo.active_branch))
         if branch == self.repo.active_branch:
             return
+
+        print('if {} not in {}'.format(branch, [branch.name for branch in self.repo.branches]))
 
         if branch not in [branch.name for branch in self.repo.branches]:
             self.repo.git.checkout('HEAD', b=branch)
