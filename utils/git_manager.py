@@ -1,5 +1,4 @@
 import os
-import time
 
 from git import Repo
 
@@ -11,22 +10,13 @@ class GitManager():
         self.repo = Repo(self.repo_location)
         self.original_branch = self.repo.active_branch
 
-    def __del__(self):
-        print('__del__ called')
+    def switch_to_original_branch(self):
         self.switch_branch(self.original_branch)
 
     def switch_branch(self, branch):
-        print(branch)
-        time.sleep(2)
-        print('if {} == {}'.format(branch, self.repo.active_branch))
-        time.sleep(2)
         if branch == self.repo.active_branch:
             return
 
-        time.sleep(2)
-        print('if {} not in {}'.format(branch, [branch.name for branch in self.repo.branches]))
-
-        time.sleep(2)
         if branch not in [branch.name for branch in self.repo.branches]:
             self.repo.git.checkout('HEAD', b=branch)
         else:

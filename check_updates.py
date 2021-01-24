@@ -29,3 +29,5 @@ if __name__ == '__main__':
     if outdated_plugins and git_manager:
         GitManager().push_and_create_pull_request()
         # TODO
+
+    git_manager.switch_to_original_branch()
