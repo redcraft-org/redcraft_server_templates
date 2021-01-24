@@ -19,7 +19,7 @@ if __name__ == '__main__':
     git_manager = GitManager() if args.push_to_git else None
 
     if git_manager:
-        git_manager.use_update_branch(args.git_branch)
+        git_manager.switch_branch(args.git_branch)
 
     template_manager = TemplateManager()
 
