@@ -23,8 +23,22 @@ class GitManager():
         except GitCommandError:
             self.repo.git.checkout(branch)
 
-    def push_and_create_pull_request(self):
-        templates_location = os.path.join(
-            self.repo_location, 'templates', '*', 'rcst_template_*.json')
-        self.repo.index.add([templates_location])
+    def push_and_create_pull_request(self, outdated_plugins):
+        print(outdated_plugins)
+        changelog = self.get_changelog(outdated_plugins)
+        print(changelog)
+        templates_location = os.path.join(self.repo_location, 'templates', '*', 'rcst_template_*.json')
+        # self.repo.index.add([templates_location])
         return True
+
+    def get_changelog(self, outdated_plugins):
+        changelog = []
+        for template, plugins in outdated_plugins.items():
+            if plugins:
+                changelog.append(
+                    'Changes to the template **{}**'.format(template))
+                for plugin, versions in plugins.items():
+                    changelog.append('Updated **{}** from `{}` to `{}`'.format(
+                        plugin, versions['query'], versions['latest_version']))
+
+        return '\n'.join(changelog)
