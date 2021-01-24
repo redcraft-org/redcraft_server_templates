@@ -36,7 +36,16 @@ class GitManager():
         self.repo.index.add([templates_location])
         commit_name = 'Updated {}'.format(updated_plugins)
         self.repo.git.commit('-m', commit_name, author=os.environ.get('GIT_AUTHOR'))
-        self.repo.remote(name='origin').push()
+
+        origin = self.repo.remote()
+
+        try:
+            self.repo.head.reference = self.repo.create_head(self.update_branch)
+            self.repo.head.reference.set_tracking_branch(origin.refs.master).checkout()
+        except GitCommandError:
+            pass
+
+        origin.push()
 
         if read_env_variable_boolean('GITHUB_PULL_REQUEST_ENABLED'):
             github = Github(os.environ.get('GITHUB_TOKEN'))
