@@ -1,13 +1,14 @@
 import os
 
-from git import Repo
+import git
+from git.exc import GitCommandError
 
 
 class GitManager():
 
     def __init__(self):
         self.repo_location = os.path.join(os.path.dirname(__file__), '..')
-        self.repo = Repo(self.repo_location)
+        self.repo = git.Repo(self.repo_location)
         self.original_branch = self.repo.active_branch
 
     def switch_to_original_branch(self):
@@ -17,9 +18,9 @@ class GitManager():
         if branch == self.repo.active_branch:
             return
 
-        if branch not in [branch.name for branch in self.repo.branches]:
+        try:
             self.repo.git.checkout('HEAD', b=branch)
-        else:
+        except GitCommandError:
             self.repo.git.checkout(branch)
 
     def push_and_create_pull_request(self):
