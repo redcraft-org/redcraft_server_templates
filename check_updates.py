@@ -1,4 +1,5 @@
-import argparse
+import os
+from utils.env_variables_helper import read_env_variable_boolean
 
 from dotenv import load_dotenv
 
@@ -9,17 +10,10 @@ from utils.git_manager import GitManager
 if __name__ == '__main__':
     load_dotenv()
 
-    parser = argparse.ArgumentParser('Check ')
+    git_manager = None
 
-    parser.add_argument("--push-to-git", action="store_true")
-    parser.add_argument('-git-branch', help='Git branch, default is "update"', default='update', type=str)
-
-    args = parser.parse_args()
-
-    git_manager = GitManager() if args.push_to_git else None
-
-    if git_manager:
-        git_manager.switch_branch(args.git_branch)
+    if read_env_variable_boolean('GIT_ENABLED'):
+        git_manager = GitManager()
 
     template_manager = TemplateManager()
 
