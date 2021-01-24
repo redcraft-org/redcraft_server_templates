@@ -109,6 +109,8 @@ class TemplateManager():
 
             self.save_template_info(template_name, template)
 
+        return outdated_plugins
+
     def find_outdated_plugins(self, plugins):
         outdated = {}
         for plugin_name, plugin_version in plugins.items():
