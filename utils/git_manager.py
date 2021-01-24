@@ -39,12 +39,7 @@ class GitManager():
 
         origin = self.repo.remote()
 
-        try:
-            self.repo.head.reference = self.repo.create_head(self.update_branch)
-        except GitCommandError:
-            pass
-
-        origin.push()
+        origin.push(refspec='origin/{}'.format(self.update_branch))
 
         if read_env_variable_boolean('GITHUB_PULL_REQUEST_ENABLED'):
             github = Github(os.environ.get('GITHUB_TOKEN'))
