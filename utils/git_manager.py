@@ -36,9 +36,9 @@ class GitManager():
         for template, plugins in outdated_plugins.items():
             if plugins:
                 changelog.append(
-                    'Changes to the template **{}**'.format(template))
+                    '\nChanges to the template **{}**:\n'.format(template))
                 for plugin, versions in plugins.items():
-                    changelog.append('Updated **{}** from `{}` to `{}`'.format(
+                    changelog.append('- Updated **{}** from `{}` to `{}`'.format(
                         plugin, versions['query'], versions['latest_version']))
 
         return '\n'.join(changelog)
