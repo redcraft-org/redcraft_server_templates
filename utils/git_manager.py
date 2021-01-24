@@ -12,6 +12,7 @@ class GitManager():
         self.original_branch = self.repo.active_branch
 
     def __del__(self):
+        print('__del__ called')
         self.switch_branch(self.original_branch)
 
     def switch_branch(self, branch):
