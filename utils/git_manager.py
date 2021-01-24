@@ -67,6 +67,9 @@ class GitManager():
                     changelog.append('- Updated **{}** from `{}` to `{}`'.format(plugin, current_version, lastest_version))
 
         changelog_string = '\n'.join(changelog)
-        updated_plugins_string = '{} and {}'.format(', '.join(updated_plugins[:-1]), updated_plugins[-1])
+
+        updated_plugins_string = updated_plugins[0]
+        if len(updated_plugins) > 1:
+            updated_plugins_string = '{} and {}'.format(', '.join(updated_plugins[:-1]), updated_plugins[-1])
 
         return changelog_string, updated_plugins_string
