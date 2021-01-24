@@ -41,7 +41,6 @@ class GitManager():
 
         try:
             self.repo.head.reference = self.repo.create_head(self.update_branch)
-            self.repo.head.reference.set_tracking_branch(origin.refs.master).checkout()
         except GitCommandError:
             pass
 
