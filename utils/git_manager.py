@@ -16,6 +16,7 @@ class GitManager():
 
     def switch_branch(self, branch):
         print(branch)
+        time.sleep(2)
         print('if {} == {}'.format(branch, self.repo.active_branch))
         time.sleep(2)
         if branch == self.repo.active_branch:
