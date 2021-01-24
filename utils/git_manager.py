@@ -68,8 +68,12 @@ class GitManager():
 
         changelog_string = '\n'.join(changelog)
 
-        updated_plugins_string = updated_plugins[0]
-        if len(updated_plugins) > 1:
-            updated_plugins_string = '{} and {}'.format(', '.join(updated_plugins[:-1]), updated_plugins[-1])
+        updated_plugins_string = self.generate_human_plugin_list(updated_plugins)
 
         return changelog_string, updated_plugins_string
+
+    def generate_human_plugin_list(self, updated_plugins):
+        if len(updated_plugins) > 1:
+            return '{} and {}'.format(', '.join(updated_plugins[:-1]), updated_plugins[-1])
+        else:
+            return ', '.join(updated_plugins)
