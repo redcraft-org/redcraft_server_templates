@@ -4,11 +4,13 @@ import boto3
 
 from repository.destinations.basic_destination import BasicDestination
 
+
 class S3Destination(BasicDestination):
 
     s3_client = None
 
     def __init__(self):
+        super().__init__()
         self.s3_bucket = os.environ.get('OUTPUT_S3_BUCKET')
 
         # Instantiate and S3 client
@@ -21,5 +23,5 @@ class S3Destination(BasicDestination):
             aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY')
         )
 
-    def save(self, local_path, filename, **kwargs):
+    def save(self, local_path, filename, **_):
         self.s3_client.upload_file(local_path, self.s3_bucket, filename)

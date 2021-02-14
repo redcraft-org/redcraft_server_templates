@@ -1,6 +1,7 @@
 import unittest
 from utils.updater import generate_new_wildcard_version
 
+
 class UpdaterTests(unittest.TestCase):
 
     @classmethod
@@ -40,5 +41,6 @@ class UpdaterTests(unittest.TestCase):
 
     def test_new_wildcard_generation(self):
         for test_case in self.test_cases:
-            test_case['output'] = generate_new_wildcard_version(test_case['old'], test_case['new'])
+            test_case['output'] = generate_new_wildcard_version(
+                test_case['old'], test_case['new'])
             self.assertEqual(test_case['expected'], test_case['output'])

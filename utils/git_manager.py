@@ -1,10 +1,11 @@
 import os
-from utils.env_variables_helper import read_env_variable_boolean
 
 import git
 from git.exc import GitCommandError
 
 from github import Github
+
+from utils.env_variables_helper import read_env_variable_boolean
 
 
 class GitManager():
@@ -30,15 +31,17 @@ class GitManager():
             self.repo.git.checkout(branch)
 
     def push_and_create_pull_request(self, outdated_plugins):
-        changelog, updated_plugins = self.get_changelog(outdated_plugins)
-        templates_location = os.path.join(self.repo_location, 'templates', '*', 'rcst_template_*.json')
+        changelog, updated_plugins = get_changelog(outdated_plugins)
+        templates_location = os.path.join(
+            self.repo_location, 'templates', '*', 'rcst_template_*.json')
 
         # Add files
         self.repo.index.add([templates_location])
 
         # Commit changes
         commit_name = 'Updated {}'.format(updated_plugins)
-        self.repo.git.commit('-m', commit_name, author=os.environ.get('GIT_AUTHOR'))
+        self.repo.git.commit(
+            '-m', commit_name, author=os.environ.get('GIT_AUTHOR'))
 
         # Push changes
         self.repo.remote().push(refspec='origin/{}'.format(self.update_branch))
@@ -51,37 +54,44 @@ class GitManager():
 
             for pr in github_repo.get_pulls(state='open', sort='created', base='master'):
                 if pr.title.startswith(github_pr_prefix):
-                    new_body = '{}\n\n--- New changes ---\n\n{}'.format(pr.body, changelog)
-                    pr.update(title='{} {}'.format(github_pr_prefix, 'Update multiple plugins'), body=new_body)
+                    new_body = '{}\n\n--- New changes ---\n\n{}'.format(
+                        pr.body, changelog)
+                    pr.update(title='{} {}'.format(github_pr_prefix,
+                                                   'Update multiple plugins'), body=new_body)
 
             pr_title = '{} {}'.format(github_pr_prefix, commit_name)
 
-            github_repo.create_pull(title=pr_title, body=changelog, head=self.update_branch, base="master")
+            github_repo.create_pull(
+                title=pr_title, body=changelog, head=self.update_branch, base="master")
 
-    def get_changelog(self, outdated_plugins):
-        # This generates a dumb markdown changelog and a list of updated plugins
-        changelog = []
-        updated_plugins = []
-        for template, plugins in outdated_plugins.items():
-            if plugins:
-                changelog.append('\nChanges to the template **{}**:\n'.format(template))
-                for plugin, versions in plugins.items():
-                    if plugin not in updated_plugins:
-                        updated_plugins.append(plugin)
 
-                    current_version = versions['query']
-                    lastest_version = versions['latest_version']
+def get_changelog(outdated_plugins):
+    # This generates a dumb markdown changelog and a list of updated plugins
+    changelog = []
+    updated_plugins = []
+    for template, plugins in outdated_plugins.items():
+        if plugins:
+            changelog.append(
+                '\nChanges to the template **{}**:\n'.format(template))
+            for plugin, versions in plugins.items():
+                if plugin not in updated_plugins:
+                    updated_plugins.append(plugin)
 
-                    changelog.append('- Updated **{}** from `{}` to `{}`'.format(plugin, current_version, lastest_version))
+                current_version = versions['query']
+                lastest_version = versions['latest_version']
 
-        changelog_string = '\n'.join(changelog)
+                changelog.append(
+                    '- Updated **{}** from `{}` to `{}`'.format(plugin, current_version, lastest_version))
 
-        updated_plugins_string = self.generate_human_plugin_list(updated_plugins)
+    changelog_string = '\n'.join(changelog)
 
-        return changelog_string, updated_plugins_string
+    updated_plugins_string = generate_human_plugin_list(updated_plugins)
 
-    def generate_human_plugin_list(self, updated_plugins):
-        if len(updated_plugins) > 1:
-            return '{} and {}'.format(', '.join(updated_plugins[:-1]), updated_plugins[-1])
-        else:
-            return ', '.join(updated_plugins)
+    return changelog_string, updated_plugins_string
+
+
+def generate_human_plugin_list(updated_plugins):
+    if len(updated_plugins) > 1:
+        return '{} and {}'.format(', '.join(updated_plugins[:-1]), updated_plugins[-1])
+
+    return ', '.join(updated_plugins)
