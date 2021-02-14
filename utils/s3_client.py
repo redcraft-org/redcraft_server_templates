@@ -2,6 +2,7 @@ import os
 
 import boto3
 
+
 def get_s3_client():
     return boto3.session.Session().client(
         service_name='s3',

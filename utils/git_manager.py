@@ -2,7 +2,6 @@ import os
 
 import git
 from git.exc import GitCommandError
-
 from github import Github
 
 from utils.env_variables_helper import read_env_variable_boolean
@@ -52,12 +51,13 @@ class GitManager():
             github_pr_prefix = '[Automated]'
             github_repo = github.get_repo(os.environ.get('GITHUB_PROJECT'))
 
-            for pr in github_repo.get_pulls(state='open', sort='created', base='master'):
-                if pr.title.startswith(github_pr_prefix):
+            for pull_request in github_repo.get_pulls(state='open', sort='created', base='master'):
+                if pull_request.title.startswith(github_pr_prefix):
                     new_body = '{}\n\n--- New changes ---\n\n{}'.format(
-                        pr.body, changelog)
-                    pr.update(title='{} {}'.format(github_pr_prefix,
-                                                   'Update multiple plugins'), body=new_body)
+                        pull_request.body, changelog)
+                    new_title = '{} {}'.format(
+                        github_pr_prefix, 'Update multiple plugins')
+                    pull_request.update(title=new_title, body=new_body)
 
             pr_title = '{} {}'.format(github_pr_prefix, commit_name)
 
@@ -80,8 +80,10 @@ def get_changelog(outdated_plugins):
                 current_version = versions['query']
                 lastest_version = versions['latest_version']
 
-                changelog.append(
-                    '- Updated **{}** from `{}` to `{}`'.format(plugin, current_version, lastest_version))
+                line = '- Updated **{}** from `{}` to `{}`'.format(
+                    plugin, current_version, lastest_version)
+
+                changelog.append(line)
 
     changelog_string = '\n'.join(changelog)
 
