@@ -200,6 +200,7 @@ class TemplateManager():
         filename = 'rcst_template_{}.json'.format(template_name)
         return os.path.join(self.template_dir, template_name, filename)
 
+
 def replace_config_env_matches(directory, patterns):
     compiled_patterns = []
     for pattern, replacement_env in patterns.items():
@@ -208,7 +209,7 @@ def replace_config_env_matches(directory, patterns):
             're.sub("{}", "{}", line)'.format(pattern, replacement))
 
     whitelisted_extensions = ['yml', 'yaml',
-                                 'json', 'properties', 'ini', 'csv']
+                              'json', 'properties', 'ini', 'csv']
 
     file_matches = ['*.{}'.format(extension)
                     for extension in whitelisted_extensions]
@@ -219,6 +220,7 @@ def replace_config_env_matches(directory, patterns):
 
 def get_plugin_filename(plugin, version):
     return '{}-{}.jar'.format(plugin, version)
+
 
 def get_filter_regex(filter_string):
     return re.compile(filter_string.replace('*', '.+'))
