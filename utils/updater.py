@@ -1,4 +1,3 @@
-
 def resolve_upgrade_path():
     pass
 

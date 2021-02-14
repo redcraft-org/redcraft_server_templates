@@ -4,12 +4,14 @@ import json
 import tarfile
 import tempfile
 from distutils.dir_util import copy_tree
-from utils.updater import generate_new_wildcard_version
 
 from tqdm import tqdm
 import massedit
 
+from utils.updater import generate_new_wildcard_version
+
 from repository.manager import RepositoryManager
+
 
 class TemplateManager():
 
@@ -52,15 +54,18 @@ class TemplateManager():
 
         self.copy_template_config(name, temp_directory.name)
 
-        self.download_plugins(template.get('plugins') or {}, temp_directory.name)
+        self.download_plugins(template.get('plugins')
+                              or {}, temp_directory.name)
 
-        self.download_server_engine(template.get('server_engine'), temp_directory.name)
+        self.download_server_engine(template.get(
+            'server_engine'), temp_directory.name)
 
         target = template.get('target')
 
         if target:
             # Replace configuration with env variables
-            self.replace_config_env_matches(temp_directory.name, template.get('config_env_matches') or {})
+            replace_config_env_matches(
+                temp_directory.name, template.get('config_env_matches') or {})
 
             # We will create a .tar from a temporary location using this
             tar_file_path = os.path.join(temp_directory.name, target)
@@ -73,27 +78,32 @@ class TemplateManager():
     def download_server_engine(self, server_engine, output_directory):
         if server_engine:
             filename = '{name}-{version}.jar'.format(**server_engine)
-            output_path = os.path.join(output_directory, server_engine.get('target') or filename)
+            output_path = os.path.join(
+                output_directory, server_engine.get('target') or filename)
             self.repository_manager.copy(filename, output_path)
 
     def download_plugins(self, plugins, directory):
-        for plugin_name, plugin_version in tqdm(plugins.items(), desc='Downloading plugins', leave=False):
-            matched_version = self.get_latest_matching_plugin_version(plugin_name, version_match=plugin_version)
-            input_file = self.__get_plugin_filename(plugin_name, matched_version)
+        for plugin_name, version in tqdm(plugins.items(), desc='Downloading plugins', leave=False):
+            matched_version = self.get_latest_matching_plugin_version(
+                plugin_name, version_match=version)
+            input_file = get_plugin_filename(
+                plugin_name, matched_version)
             output_file = '{}.jar'.format(plugin_name)
             plugin_directory = os.path.join(directory, 'plugins')
 
             if not os.path.exists(plugin_directory):
                 os.mkdir(plugin_directory)
 
-            self.repository_manager.copy(input_file, os.path.join(plugin_directory, output_file))
+            self.repository_manager.copy(
+                input_file, os.path.join(plugin_directory, output_file))
 
     def check_updates(self):
         outdated_plugins = {}
         for template_name in self.list_templates(include_no_target=True):
             template = self.get_template_info(template_name)
 
-            outdated_plugins[template_name] = self.find_outdated_plugins(template.get('plugins') or {})
+            outdated_plugins[template_name] = self.find_outdated_plugins(
+                template.get('plugins') or {})
 
         return outdated_plugins
 
@@ -106,10 +116,12 @@ class TemplateManager():
             for plugin, plugin_version in plugins.items():
                 old_version = template['plugins'][plugin]
                 new_version = plugin_version['latest_version']
-                new_wildcarded_version = generate_new_wildcard_version(old_version, new_version)
+                new_wildcarded_version = generate_new_wildcard_version(
+                    old_version, new_version)
                 template['plugins'][plugin] = new_wildcarded_version
                 if print_updates:
-                    print('[{}] {} has been updated from {} to {}'.format(template_name, plugin, old_version, new_wildcarded_version))
+                    print('[{}] {} has been updated from {} to {}'.format(
+                        template_name, plugin, old_version, new_wildcarded_version))
 
             self.save_template_info(template_name, template)
 
@@ -118,8 +130,10 @@ class TemplateManager():
     def find_outdated_plugins(self, plugins):
         outdated = {}
         for plugin_name, plugin_version in plugins.items():
-            matched_version = self.get_latest_matching_plugin_version(plugin_name, version_match=plugin_version)
-            latest_version = self.get_latest_matching_plugin_version(plugin_name)
+            matched_version = self.get_latest_matching_plugin_version(
+                plugin_name, version_match=plugin_version)
+            latest_version = self.get_latest_matching_plugin_version(
+                plugin_name)
 
             if matched_version != latest_version:
                 outdated[plugin_name] = {
@@ -129,18 +143,6 @@ class TemplateManager():
                 }
 
         return outdated
-
-    def replace_config_env_matches(self, directory, patterns):
-        compiled_patterns = []
-        for pattern, replacement_env in patterns.items():
-            replacement = os.environ.get(replacement_env).replace('"', '\"')
-            compiled_patterns.append('re.sub("{}", "{}", line)'.format(pattern, replacement))
-
-        whitelisted_extensions = ['yml', 'yaml', 'json', 'properties', 'ini', 'csv']
-
-        file_matches = ['*.{}'.format(extension) for extension in whitelisted_extensions]
-
-        massedit.edit_files(file_matches, expressions=compiled_patterns, start_dirs=directory, dry_run=False, max_depth=10)
 
     def get_latest_matching_plugin_version(self, plugin, version_match='*'):
         available_versions = self.available_plugins.get(plugin)
@@ -152,13 +154,14 @@ class TemplateManager():
         most_recent_version_date = None
 
         for version, version_date in available_versions.items():
-            if self.__get_filter_regex(version_match).match(version):
+            if get_filter_regex(version_match).match(version):
                 if not most_recent_version or most_recent_version_date < version_date:
                     most_recent_version = version
                     most_recent_version_date = version_date
 
         if not most_recent_version:
-            raise ValueError('No matching version for {} {}'.format(plugin, version_match))
+            raise ValueError(
+                'No matching version for {} {}'.format(plugin, version_match))
 
         return most_recent_version
 
@@ -171,12 +174,10 @@ class TemplateManager():
             return json.dump(new_template_info, json_file, indent=4)
 
     def copy_template_config(self, template_name, temporary_directory):
-        template_config_directory = os.path.join(self.template_dir, template_name, 'config')
+        template_config_directory = os.path.join(
+            self.template_dir, template_name, 'config')
         if os.path.exists(template_config_directory):
             copy_tree(template_config_directory, temporary_directory)
-
-    def __get_plugin_filename(self, plugin, version):
-        return '{}-{}.jar'.format(plugin, version)
 
     def __get_available_plugins(self):
         available_plugins = self.repository_manager.list()
@@ -196,7 +197,28 @@ class TemplateManager():
         return plugins
 
     def __get_template_path(self, template_name):
-        return os.path.join(self.template_dir, template_name, 'rcst_template_{}.json'.format(template_name))
+        filename = 'rcst_template_{}.json'.format(template_name)
+        return os.path.join(self.template_dir, template_name, filename)
 
-    def __get_filter_regex(self, filter):
-        return re.compile(filter.replace('*', '.+'))
+def replace_config_env_matches(directory, patterns):
+    compiled_patterns = []
+    for pattern, replacement_env in patterns.items():
+        replacement = os.environ.get(replacement_env).replace('"', '\"')
+        compiled_patterns.append(
+            're.sub("{}", "{}", line)'.format(pattern, replacement))
+
+    whitelisted_extensions = ['yml', 'yaml',
+                                 'json', 'properties', 'ini', 'csv']
+
+    file_matches = ['*.{}'.format(extension)
+                    for extension in whitelisted_extensions]
+
+    massedit.edit_files(file_matches, expressions=compiled_patterns,
+                        start_dirs=directory, dry_run=False, max_depth=10)
+
+
+def get_plugin_filename(plugin, version):
+    return '{}-{}.jar'.format(plugin, version)
+
+def get_filter_regex(filter_string):
+    return re.compile(filter_string.replace('*', '.+'))
