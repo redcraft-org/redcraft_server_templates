@@ -204,7 +204,7 @@ class TemplateManager():
 def replace_config_env_matches(directory, patterns):
     compiled_patterns = []
     for pattern, replacement_env in patterns.items():
-        replacement = os.environ.get(replacement_env).replace('"', '\"')
+        replacement = os.environ.get(replacement_env, '').replace('"', '\"')
         compiled_patterns.append(
             're.sub("{}", "{}", line)'.format(pattern, replacement))
 
