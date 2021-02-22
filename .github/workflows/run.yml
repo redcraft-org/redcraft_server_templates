@@ -1,0 +1,38 @@
+name: Generate templates
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Settings
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+
+      - name: Run
+        run: |
+          ./setup.sh
+          source env/bin/activate
+          python generate_templates.py
+          python check_updates.py
