@@ -19,10 +19,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: |
+      - name: Set git config
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git checkout -b updates
 
       - name: Setup Python
         uses: actions/setup-python@v2
