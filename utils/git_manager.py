@@ -43,7 +43,7 @@ class GitManager():
             '-m', commit_name, author=os.environ.get('GIT_AUTHOR'))
 
         # Push changes
-        self.repo.remote().push('--set-upstream', 'origin', self.update_branch)
+        self.repo.git.push('--set-upstream', 'origin', self.update_branch)
 
         # We will open the pull request
         if read_env_variable_boolean('GITHUB_PULL_REQUEST_ENABLED'):
