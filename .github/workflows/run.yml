@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - lululombard/issue2
   workflow_dispatch:
   schedule:
     - cron: "0 4 * * *"
