@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - lululombard/issue2
   workflow_dispatch:
   schedule:
     - cron: "0 4 * * *"
@@ -30,7 +31,7 @@ jobs:
         run: |
           echo "${{ secrets.ENV_FILE }}" > .env
 
-      - name: Run
+      - name: Configure credentials
         uses: oleksiyrudenko/gha-git-credentials@v2.1
         with:
           global: true
@@ -38,6 +39,8 @@ jobs:
           email: 'contact@redcraft.org'
           actor: 'RedCraft_org'
           token: '${{ secrets.GITHUB_TOKEN }}'
+
+      - name: Run
         run: |
           ./setup.sh
           source env/bin/activate
