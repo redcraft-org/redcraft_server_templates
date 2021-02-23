@@ -39,6 +39,8 @@ jobs:
           echo "${{ secrets.ENV_FILE }}" > .env
 
       - name: Run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./setup.sh
           source env/bin/activate
