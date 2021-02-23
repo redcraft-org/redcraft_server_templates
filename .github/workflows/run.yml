@@ -21,8 +21,8 @@ jobs:
 
       - name: Set git config
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name RedCraft.org
+          git config user.email contact@redcraft.org
 
       - name: Setup Python
         uses: actions/setup-python@v2
