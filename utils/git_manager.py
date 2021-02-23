@@ -25,7 +25,7 @@ class GitManager():
             return
 
         try:
-            self.repo.git.checkout('HEAD', '-b', b=branch)
+            self.repo.git.checkout('HEAD', b=branch)
         except GitCommandError:
             self.repo.git.checkout(branch)
 
