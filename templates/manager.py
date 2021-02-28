@@ -102,8 +102,11 @@ class TemplateManager():
         for template_name in self.list_templates(include_no_target=True):
             template = self.get_template_info(template_name)
 
-            outdated_plugins[template_name] = self.find_outdated_plugins(
+            outdated_template_plugins = self.find_outdated_plugins(
                 template.get('plugins') or {})
+
+            if outdated_template_plugins:
+                outdated_plugins[template_name] = outdated_template_plugins
 
         return outdated_plugins
 
