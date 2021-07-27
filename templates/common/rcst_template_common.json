@@ -6,14 +6,14 @@
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
     },
     "server_engine": {
-        "name": "Yatopia",
-        "version": "1.16.4",
+        "name": "Airplane",
+        "version": "1.17.1",
         "target": "server.jar"
     },
     "plugins": {
         "BookExploitFix": "1.2",
         "BungeeTabListPlusBridge": "3.5.*",
-        "FastAsyncWorldEdit": "1.17-97;e1d18dc",
+        "FastAsyncWorldEdit": "1.17-*",
         "LuckPerms": "5.3.*",
         "RedCraftReboot": "0.0.*",
         "RedstoneClockDetector": "1.2.1",
