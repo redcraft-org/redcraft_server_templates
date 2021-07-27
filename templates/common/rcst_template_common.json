@@ -11,15 +11,15 @@
         "target": "server.jar"
     },
     "plugins": {
-        "BookExploitFix": "1.1",
+        "BookExploitFix": "1.2",
         "BungeeTabListPlusBridge": "3.5.*",
-        "FastAsyncWorldEdit": "1.16-*",
+        "FastAsyncWorldEdit": "1.17-97;e1d18dc",
         "LuckPerms": "5.3.*",
         "RedCraftReboot": "0.0.*",
         "RedstoneClockDetector": "1.2.1",
-        "SelectionVisualizer": "3.0.3.*",
-        "goBrush": "3.6.*",
-        "goPaint": "2.3.*",
-        "spark": "1.5.*"
+        "SelectionVisualizer": "3.0.5.*",
+        "goBrush": "3.8.*",
+        "goPaint": "3.1.*",
+        "spark": "1.6.*"
     }
 }
