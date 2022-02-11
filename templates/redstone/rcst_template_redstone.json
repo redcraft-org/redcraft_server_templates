@@ -11,6 +11,6 @@
         "target": "server.jar"
     },
     "plugins": {
-        "PlotSquared": "6.4.*"
+        "PlotSquared": "6.5.*"
     }
 }
