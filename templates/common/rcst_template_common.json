@@ -20,6 +20,6 @@
         "SelectionVisualizer": "3.2.0.*",
         "goBrush": "3.8.*",
         "goPaint": "3.1.*",
-        "spark": "1.8.*"
+        "spark": "1.9.*"
     }
 }
