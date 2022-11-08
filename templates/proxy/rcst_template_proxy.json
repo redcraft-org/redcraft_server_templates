@@ -1,0 +1,21 @@
+{
+    "name": "proxy",
+    "source": null,
+    "target": "proxy.tar",
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+    },
+    "server_engine": {
+        "name": "Waterfall",
+        "version": "1.19",
+        "target": "server.jar"
+    },
+    "plugins": {
+        "BungeeTabListPlus": "3.6.*",
+        "LiteBans": "2.8.*",
+        "LuckPermsBungee": "5.4.*",
+        "Reconnect": "1.0.*",
+        "ViaVersion": "4.4.*",
+        "sparkbungeecord": "1.9.*"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "crea_build_plot",
+    "source": "common",
+    "target": "crea_build_plot.tar",
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+    },
+    "server_engine": {
+        "name": "Purpur",
+        "version": "1.19.2",
+        "target": "server.jar"
+    },
+    "plugins": {
+        "PlotSquared": "6.10.*",
+        "F3NPerm": "3.*"
+    }
+}
