@@ -32,17 +32,17 @@
 Default:
   Description:
   - |-
-    &c&lRed&7&lCraft&f.org - Alpha
+    &c&lRed&f&lCraft&7&l.org &r- Alpha
   Players:
     Hover:
     - |-
-      &aWelcome to &c&lRed&7&lCraft&f.org
+      &aWelcome to &c&lRed&f&lCraft&7&l.org &r
       &aCurrently &e&l%online%/%max% &aplayers are playing on our server!
 Personalized:
   Description:
   - |-
     &eHello, &l%player%!
-    &c&lRed&7&lCraft&f.org - Alpha
+    &c&lRed&f&lCraft&7&l.org &r- Alpha
   Players:
     Hover:
     - |-

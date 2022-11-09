@@ -1,0 +1,71 @@
+#  ___        _  ___           __ _
+# | _ \___ __| |/ __|_ _ __ _ / _| |_   ___ _ _ __ _
+# |   / -_) _` | (__| '_/ _` |  _|  _|_/ _ \ '_/ _` |
+# |_|_\___\__,_|\___|_| \__,_|_|  \__(_)___/_| \__, |
+#                                              |___/
+#
+# A BungeeCord plugin to handle chat on Minecraft and Discord
+
+# This is for your Discord bot
+discord-enabled: true
+discord-token: 'DISCORD_TOKEN'
+discord-channel-minecraft: 'minecraft'
+discord-activity-enabled: true
+discord-activity-type: 'default'
+discord-activity-value: 'RedCraft.org'
+
+# This is for the translation
+translation-enabled: true
+translation-discord-supported-languages: ['en', 'fr']
+translation-discord-category-format: '[%lang%] %topic%'
+chat-translation-provider: 'modernmt-free'
+upstream-translation-provider: 'modernmt-free' # This is to translate plugins from upstream servers
+
+# This is for supported locales
+supported-locales-provider: 'database'
+# Required only if player-provider is set to "api"
+supported-locales-api-url: 'https://redcraft.org/api/v1/language/list'
+default-locale: 'en-US'
+
+# These are the settings for Deepl live translation (if you use that provider)
+deepl-token: ''
+deepl-endpoint: 'https://api.deepl.com/v2/translate' # If you use a proxy or something
+deepl-formality: 'less' # can be "normal", "more" or "less". Default is "less" so messages seem more friendly
+deepl-preserve-formatting: false # whether the translation engine should respect the original formatting, even if it would usually correct some aspects
+
+# These are the settings for the ModernMT live translation (if you use that provider)
+# PS: If you use modernmt-free, these settings will be ignored
+modernmt-token: ''
+
+# Shorten URLs
+url-shortening-enabled: false
+url-shortening-provider: 'redcraft'
+url-shortening-endpoint: 'https://redcraft.org/api/v1/url'
+url-shortening-api-token: ''
+
+# Avatar related settings
+player-avatar-endpoint: 'https://redcraft.org/api/v1/skin/head/%player%?size=128'
+player-avatar-format: 'uuid' # Can be "uuid" or "name"
+
+# Storage related settings
+player-provider: 'database'
+# Required only if player-provider is set to "api"
+player-api-url: 'https://redcraft.org/api/v1/player'
+
+# Mail related settings
+mail-provider: 'database'
+
+# Scheduled announcements related settings
+scheduled-announcements-provider: 'database'
+scheduled-announcements-interval: 900 # interval between messages in seconds
+
+# Required (to store mails, supported locales and players if set to database)
+database-uri: 'jdbc:mysql://mariadb.production.svc.cluster.local:3306/redcraft_chat?useSSL=false&autoReconnect=true'
+database-username: 'minecraft'
+database-password: 'MYSQL_PASSWORD'
+
+# Used for caching
+cache-provider: 'redis' # redis or memory
+# If you use redis
+redis-uri: 'redis://redis.production.svc.cluster.local:6379/0'
+redis-key-prefix: 'RCC'

@@ -21,20 +21,20 @@ disabled_commands:
 - reload
 servers:
   lobby:
-    motd: "&c&lRed&7&lCraft&f.org - Lobby"
+    motd: "&c&lRed&f&lCraft&7&l.org &r- Lobby"
     address: localhost:25566
     restricted: false
   crea_build_plot:
-    motd: "&c&lRed&7&lCraft&f.org - Crea Build Plot"
+    motd: "&c&lRed&f&lCraft&7&l.org &r- Crea Build Plot"
     address: localhost:25567
     restricted: false
   crea_redstone_plot:
-    motd: "&c&lRed&7&lCraft&f.org - Crea Redstone Plot"
+    motd: "&c&lRed&f&lCraft&7&l.org &r- Crea Redstone Plot"
     address: localhost:25568
     restricted: false
 listeners:
 - query_port: 25565
-  motd: "&c&lRed&7&lCraft&f.org"
+  motd: "&c&lRed&f&lCraft&7&l.org &r"
   tab_list: GLOBAL_PING
   query_enabled: false
   proxy_protocol: false
