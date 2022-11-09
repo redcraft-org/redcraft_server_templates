@@ -1,0 +1,29 @@
+#  ___        _  ___           __ _
+# | _ \___ __| |/ __|_ _ __ _ / _| |_   ___ _ _ __ _
+# |   / -_) _` | (__| '_/ _` |  _|  _|_/ _ \ '_/ _` |
+# |_|_\___\__,_|\___|_| \__,_|_|  \__(_)___/_| \__, |
+#                                              |___/
+#
+# A basic BungeeCord plugin to get stats about servers
+
+# This is to spoof the reported version software
+# By default it's "BungeeCord" or "Waterfall"
+spoof-reported-software: true
+reported-software: "RedCraft.org"
+
+# This is the reported version when you ping the server
+# It's often used by ranking sites to check the server version
+spoof-reported-version: true
+# Can be "ViaVersion" to get the latest supported version by ViaVersion
+# or a specific version like "1.16.2"
+# If you don't have ViaVersion, it will fallback to Bungee's version
+reported-version: "ViaVersion"
+
+# This is your HTTP API port to query the JSON API
+# If you want to use a port bellow 1024, you'll need to use root access
+# and I strongly advise to not do it for obvious security reasons.
+# Please use nginx or any other reverse proxy to forward requests
+# if you want to use a port like 80
+http-api-enabled: true
+http-api-bind: "0.0.0.0"
+http-api-port: 8080
