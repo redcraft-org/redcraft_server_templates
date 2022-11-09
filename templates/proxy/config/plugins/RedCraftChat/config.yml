@@ -11,7 +11,7 @@ discord-enabled: true
 discord-token: 'DISCORD_TOKEN'
 discord-channel-minecraft: 'minecraft'
 discord-activity-enabled: true
-discord-activity-type: 'default'
+discord-activity-type: 'playing'
 discord-activity-value: 'RedCraft.org'
 
 # This is for the translation
