@@ -90,7 +90,6 @@ durations:
       permission: litebans.group.moderator
       tempban: 1 month
       tempmute: 1 week
-    helper:
     other:
       permission: none
       tempban: 7 days
