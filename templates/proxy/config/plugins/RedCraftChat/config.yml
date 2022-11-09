@@ -60,7 +60,7 @@ scheduled-announcements-provider: 'database'
 scheduled-announcements-interval: 900 # interval between messages in seconds
 
 # Required (to store mails, supported locales and players if set to database)
-database-uri: 'jdbc:mysql://mariadb.production.svc.cluster.local:3306/redcraft_chat?useSSL=false&autoReconnect=true'
+database-uri: 'jdbc:mysql://mariadb.production.svc.cluster.local:3306/minecraft?useSSL=false&autoReconnect=true'
 database-username: 'minecraft'
 database-password: 'MYSQL_PASSWORD'
 
