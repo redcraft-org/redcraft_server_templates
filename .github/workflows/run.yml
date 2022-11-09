@@ -40,6 +40,7 @@ jobs:
       - name: Run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMON_MYSQL_PASSWORD: ${{ secrets.COMMON_MYSQL_PASSWORD }}
         run: |
           ./setup.sh
           source env/bin/activate
