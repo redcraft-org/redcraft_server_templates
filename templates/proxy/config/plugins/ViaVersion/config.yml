@@ -47,6 +47,7 @@ bungee-ping-save: true
 # It will fallback to the default option if none found.
 bungee-servers:
   default: 47
+  hub: 760
 #
 # Caches light until chunks are unloaded to allow subsequent chunk update packets as opposed to instantly uncaching when the first chunk data is sent.
 # Only disable this if you know what you are doing.
