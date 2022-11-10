@@ -12,7 +12,7 @@
         "target": "server.jar"
     },
     "plugins": {
-        "BungeeTabListPlus": "3.6.*",
+        "BungeeTabListPlus": "3.5.*",
         "LiteBans": "2.10.*",
         "LuckPermsBungee": "5.4.*",
         "Reconnect": "1.0.*",
