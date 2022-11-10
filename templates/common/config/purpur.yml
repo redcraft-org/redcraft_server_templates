@@ -1,0 +1,192 @@
+# This is the main configuration file for Purpur.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use
+# with caution, and make sure you know what each option does before configuring.
+#
+# If you need help with the configuration or have any questions related to Purpur,
+# join us in our Discord guild.
+#
+# Website: https://purpurmc.org
+# Docs: https://purpurmc.org/docs
+
+verbose: false
+settings:
+  messages:
+    cannot-ride-mob: <red>You cannot mount that mob
+    afk-broadcast-away: <yellow><italic>%s is now AFK
+    afk-broadcast-back: <yellow><italic>%s is no longer AFK
+    afk-tab-list-prefix: '[AFK] '
+    afk-tab-list-suffix: ''
+    credits-command-output: <green>%s has been shown the end credits
+    demo-command-output: <green>%s has been shown the demo screen
+    ping-command-output: <green>%s's ping is %sms
+    ram-command-output: '<green>Ram Usage: <used>/<xmx> (<percent>)'
+    rambar-command-output: <green>Rambar toggled <onoff> for <target>
+    tpsbar-command-output: <green>Tpsbar toggled <onoff> for <target>
+    dont-run-with-scissors: <red><italic>Don't run with scissors!
+    uptime-command-output: <green>Server uptime is <uptime>
+    unverified-username: default
+    sleep-skipping-night: default
+    sleeping-players-percent: default
+    death-message:
+      run-with-scissors: <player> slipped and fell on their shears
+      stonecutter: <player> has sawed themself in half
+  tps-catchup: true
+  server-mod-name: RedCraft.org
+  fix-projectile-looting-transfer: false
+  disable-give-dropping: false
+  use-alternate-keepalive: false
+  broadcasts:
+    advancement:
+      only-broadcast-to-affected-player: false
+    death:
+      only-broadcast-to-affected-player: false
+  seed:
+    structure:
+      buried_treasure: -1
+      mineshaft: -1
+  lagging-threshold: 19.0
+  command:
+    rambar:
+      title: <gray>Ram<yellow>:</yellow> <used>/<xmx> (<percent>)
+      overlay: NOTCHED_20
+      progress-color:
+        good: GREEN
+        medium: YELLOW
+        low: RED
+      text-color:
+        good: <gradient:#55ff55:#00aa00><text></gradient>
+        medium: <gradient:#ffff55:#ffaa00><text></gradient>
+        low: <gradient:#ff5555:#aa0000><text></gradient>
+      tick-interval: 20
+    tpsbar:
+      title: <gray>TPS<yellow>:</yellow> <tps> MSPT<yellow>:</yellow> <mspt> Ping<yellow>:</yellow>
+        <ping>ms
+      overlay: NOTCHED_20
+      fill-mode: MSPT
+      progress-color:
+        good: GREEN
+        medium: YELLOW
+        low: RED
+      text-color:
+        good: <gradient:#55ff55:#00aa00><text></gradient>
+        medium: <gradient:#ffff55:#ffaa00><text></gradient>
+        low: <gradient:#ff5555:#aa0000><text></gradient>
+      tick-interval: 20
+    compass:
+      title: 'S  ·  ◈  ·  ◈  ·  ◈  ·  SW  ·  ◈  ·  ◈  ·  ◈  ·  W  ·  ◈  ·  ◈  ·  ◈  ·  NW  ·  ◈  ·  ◈  ·  ◈  ·  N  ·  ◈  ·  ◈  ·  ◈  ·  NE  ·  ◈  ·  ◈  ·  ◈  ·  E  ·  ◈  ·  ◈  ·  ◈  ·  SE  ·  ◈  ·  ◈  ·  ◈  ·  S  ·  ◈  ·  ◈  ·  ◈  ·  SW  ·  ◈  ·  ◈  ·  ◈  ·  W  ·  ◈  ·  ◈  ·  ◈  ·  NW  ·  ◈  ·  ◈  ·  ◈  ·  N  ·  ◈  ·  ◈  ·  ◈  ·  NE  ·  ◈  ·  ◈  ·  ◈  ·  E  ·  ◈  ·  ◈  ·  ◈  ·  SE  ·  ◈  ·  ◈  ·  ◈  ·  '
+      overlay: PROGRESS
+      progress-color: BLUE
+      percent: 1.0
+      tick-interval: 5
+    gamemode:
+      requires-specific-permission: false
+    fill:
+      max-area: 32768
+    hide-hidden-players-from-entity-selector: false
+    uptime:
+      format: <days><hours><minutes><seconds>
+      day: '%02d day, '
+      days: '%02d days, '
+      hour: '%02d hour, '
+      hours: '%02d hours, '
+      minute: '%02d minute, and '
+      minutes: '%02d minutes, and '
+      second: '%02d second'
+      seconds: '%02d seconds'
+  blocks:
+    barrel:
+      rows: 3
+    ender_chest:
+      six-rows: false
+      use-permissions-for-rows: false
+    crying_obsidian:
+      valid-for-portal-frame: false
+    beehive:
+      max-bees-inside: 3
+    anvil:
+      cumulative-cost: true
+    lightning_rod:
+      range: 128
+    grindstone:
+      ignored-enchants:
+      - minecraft:binding_curse
+      - minecraft:vanishing_curse
+      remove-attributes: false
+      remove-name-and-lore: false
+    cave_vines:
+      max-growth-age: 25
+    kelp:
+      max-growth-age: 25
+    twisting_vines:
+      max-growth-age: 25
+    weeping_vines:
+      max-growth-age: 25
+    disable-mushroom-updates: false
+    disable-note-block-updates: false
+    disable-chorus-plant-updates: false
+  enchantment:
+    allow-infinity-and-mending-together: false
+    allow-infinity-on-crossbow: false
+    allow-looting-on-shears: false
+    allow-transparent-blocks-in-enchantment-box: false
+    anvil:
+      allow-unsafe-enchants: false
+      allow-inapplicable-enchants: true
+      allow-incompatible-enchants: true
+      allow-higher-enchants-levels: true
+    allow-unsafe-enchant-command: false
+    clamp-levels: true
+  entity:
+    enderman:
+      short-height: false
+  allow-water-placement-in-the-end: true
+  logger:
+    suppress-init-legacy-material-errors: false
+    suppress-ignored-advancement-warnings: false
+    suppress-unrecognized-recipe-errors: false
+    suppress-setblock-in-far-chunk-errors: false
+    suppress-sent-expired-chat: false
+    suppress-library-loader: false
+  network:
+    upnp-port-forwarding: false
+    max-joins-per-second: false
+    kick-for-out-of-order-chat: true
+  username-valid-characters: ^[a-zA-Z0-9_.]*$
+  food-properties: {}
+  blast-resistance-overrides: {}
+  block-fall-multipliers:
+    minecraft:lime_bed:
+      distance: 0.5
+    minecraft:yellow_bed:
+      distance: 0.5
+    minecraft:black_bed:
+      distance: 0.5
+    minecraft:orange_bed:
+      distance: 0.5
+    minecraft:green_bed:
+      distance: 0.5
+    minecraft:blue_bed:
+      distance: 0.5
+    minecraft:cyan_bed:
+      distance: 0.5
+    minecraft:gray_bed:
+      distance: 0.5
+    minecraft:white_bed:
+      distance: 0.5
+    minecraft:hay_block:
+      damage: 0.2
+    minecraft:red_bed:
+      distance: 0.5
+    minecraft:pink_bed:
+      distance: 0.5
+    minecraft:light_blue_bed:
+      distance: 0.5
+    minecraft:purple_bed:
+      distance: 0.5
+    minecraft:magenta_bed:
+      distance: 0.5
+    minecraft:light_gray_bed:
+      distance: 0.5
+    minecraft:brown_bed:
+      distance: 0.5
+config-version: 30
