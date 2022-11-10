@@ -56,15 +56,15 @@ sql:
   pool:
     min_connections: 1
     max_connections: 10
-    keepalive: 0 seconds
-    timeout: 25 seconds
-    idle_timeout: 1 minute
-    max_lifetime: 30 minutes
+    keepalive: 5 seconds
+    timeout: 5 seconds
+    idle_timeout: 30 seconds
+    max_lifetime: 1 minutes
 
   # Database engine. Only applies to MySQL & MariaDB.
   engine: InnoDB
 
-  options: 'useSSL=false&serverTimezone=UTC'
+  options: 'useSSL=false&serverTimezone=UTC&autoReconnect=true'
 
   table_prefix: 'litebans_'
 
