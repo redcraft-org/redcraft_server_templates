@@ -3,7 +3,7 @@
 # If bungeecord is set to true, banned players will be kicked from BungeeCord itself.
 # (Players will not be kicked to the lobby when they are banned.)
 # This option has no effect if LiteBans is running directly under BungeeCord or Velocity.
-bungeecord: false
+bungeecord: true
 
 # If enabled, and the server is connected to a remote database (e.g. MySQL),
 # LiteBans will synchronize across all servers connected to that database with sync enabled.
@@ -24,7 +24,7 @@ sync_dupeip_notifications: false
 # If you need per-server bans, you have to change server_name on all instances
 # The "$serverScope" and "$serverOrigin" variables can be used in messages.
 # Maximum length is 32 characters.
-server_name: 'litebans'
+server_name: 'proxy'
 
 # This option decides which server(s) will be affected in commands by default.
 default_server_scope: '*'
