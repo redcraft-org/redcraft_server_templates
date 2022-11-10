@@ -7,17 +7,17 @@ bungeecord: true
 
 # If enabled, and the server is connected to a remote database (e.g. MySQL),
 # LiteBans will synchronize across all servers connected to that database with sync enabled.
-sync: false
+sync: true
 
 # If enabled, broadcasts will be synchronized.
-sync_broadcasts: false
+sync_broadcasts: true
 
 # If enabled, notifications will be synchronized.
-sync_notifications: false
+sync_notifications: true
 
 # If enabled, dupeip notifications will be synchronized.
 # This will appear multiple times if a player joins multiple servers, so you might want to leave this disabled.
-sync_dupeip_notifications: false
+sync_dupeip_notifications: true
 
 # The server name is an identifier used in cross-server synchronization.
 # It represents a single plugin instance (or group of instances) and can be updated at any time.
