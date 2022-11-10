@@ -49,7 +49,7 @@ listeners:
   - crea_redstone_plot
   bind_local_address: true
   host: 0.0.0.0:25565
-  max_players: 1
+  max_players: 100
   tab_size: 60
   force_default_server: false
 ip_forward: true

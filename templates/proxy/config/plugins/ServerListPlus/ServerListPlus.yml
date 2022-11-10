@@ -41,7 +41,7 @@ Default:
 Personalized:
   Description:
   - |-
-    &eHello, &l%player%!
+    &eHello, &l%player%&e!
     &c&lRed&f&lCraft&7&l.org &r- Alpha
   Players:
     Hover:
