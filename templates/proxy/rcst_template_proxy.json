@@ -12,7 +12,7 @@
         "target": "server.jar"
     },
     "plugins": {
-        "BungeeTabListPlus": "3.5.*",
+        "BungeeTabListPlus": "3.6.*",
         "LuckPermsBungee": "5.4.*",
         "Reconnect": "1.0.*",
         "RedCraftBungeeJsonApi": "0.1.*",
