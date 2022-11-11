@@ -42,6 +42,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMON_MYSQL_PASSWORD: ${{ secrets.COMMON_MYSQL_PASSWORD }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          SENTRY_DSN_HUB: ${{ secrets.SENTRY_DSN_HUB }}
         run: |
           ./setup.sh
           source env/bin/activate
