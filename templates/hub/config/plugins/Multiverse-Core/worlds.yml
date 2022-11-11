@@ -1,8 +1,8 @@
 worlds:
-  world:
+  hub:
     ==: MVWorld
     hidden: 'false'
-    alias: spawn
+    alias: hub
     color: WHITE
     style: NORMAL
     pvp: 'false'

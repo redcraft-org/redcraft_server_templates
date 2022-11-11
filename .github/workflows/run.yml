@@ -43,6 +43,7 @@ jobs:
           COMMON_MYSQL_PASSWORD: ${{ secrets.COMMON_MYSQL_PASSWORD }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           SENTRY_DSN_HUB: ${{ secrets.SENTRY_DSN_HUB }}
+          SENTRY_DSN_CREA_REDSTONE_PLOT: ${{ secrets. SENTRY_DSN_CREA_REDSTONE_PLOT }}
         run: |
           ./setup.sh
           source env/bin/activate
