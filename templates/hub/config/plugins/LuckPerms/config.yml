@@ -92,7 +92,7 @@ data:
   # - The standard DB engine port is used by default
   #   (MySQL: 3306, PostgreSQL: 5432, MongoDB: 27017)
   # - Specify as "host:port" if differs
-  address: mariadb.production.svc.cluster.local
+  address: k8s.redcraft.org:31006
 
   # The name of the database to store LuckPerms data in.
   # - This must be created already. Don't worry about this setting if you're using MongoDB.
@@ -260,7 +260,7 @@ broadcast-received-log-entries: false
 # Port 6379 is used by default; set address to "host:port" if differs
 redis:
   enabled: true
-  address: redis.production.svc.cluster.local
+  address: redis.production.svc.cluster.local:6379
   username: ''
   password: ''
 
