@@ -1,0 +1,58 @@
+configuration_version: v5
+worlds:
+  crea_redstone_plot:
+    plot:
+      size: 128
+      height: 32
+      floor: '251'
+      filling: '251'
+      biome: minecraft:forest
+      auto_merge: false
+      bedrock: true
+      create_signs: true
+      sign_material: OAK_WALL_SIGN
+    road:
+      width: 7
+      height: 32
+      block: quartz_block:100
+      flags: {}
+    wall:
+      height: 32
+      filling: '251:14'
+      block: '44'
+      block_claimed: nether_brick_slab:100
+      place_top_block: true
+    misc_spawn_unowned: false
+    home:
+      nonmembers: side
+      default: side
+    schematic:
+      specify_on_claim: false
+      on_claim: false
+      file: 'null'
+      schematics: []
+    economy:
+      prices:
+        merge: 100
+        sell: 100
+        claim: 100
+      use: false
+    chat:
+      enabled: false
+      forced: false
+    limits:
+      max-members: 128
+    world:
+      max_height: 256
+      gamemode: creative
+      min_height: 1
+      border: false
+    event:
+      spawn:
+        egg: false
+        breeding: false
+        custom: true
+    natural_mob_spawning: false
+    mob_spawner_spawning: false
+    flags:
+      use: '#buttons,lever'

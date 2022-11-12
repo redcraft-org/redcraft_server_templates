@@ -8,7 +8,7 @@ donation-key:
 use-mysql: true
 table-prefix: coreprotect_hub_
 mysql-host: k8s.redcraft.org
-mysql-port: 3306
+mysql-port: 31006
 mysql-database: minecraft
 mysql-username: minecraft
 mysql-password: 'MYSQL_PASSWORD'

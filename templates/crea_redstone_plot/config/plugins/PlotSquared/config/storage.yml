@@ -1,0 +1,21 @@
+prefix: 'ps_crea_redstone_plot_'
+
+# SQLite section
+sqlite:
+  # Should SQLite be used?
+  use: false
+  # The file to use
+  db: "storage"
+
+# MySQL section
+mysql:
+  # Should MySQL be used?
+  use: true
+  host: "k8s.redcraft.org"
+  port: "31006"
+  user: "minecraft"
+  password: "MYSQL_PASSWORD"
+  database: "minecraft"
+  # Set additional properties: https://goo.gl/wngtN8
+  properties:
+  - "useSSL=false"
