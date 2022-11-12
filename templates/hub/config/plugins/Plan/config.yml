@@ -5,7 +5,7 @@
 # -----------------------------------------------------
 Server:
     IP: redcraft.org
-    ServerName: RedCraft.org
+    ServerName: Hub
 # -----------------------------------------------------
 Plugin:
     Logging:

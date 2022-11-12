@@ -5,7 +5,7 @@
 # -----------------------------------------------------
 Server:
     IP: redcraft.org
-    ServerName: Proxy
+    ServerName: Crea redstone plot
 # -----------------------------------------------------
 Plugin:
     Logging:
@@ -43,9 +43,9 @@ Database:
 Webserver:
     Port: 8804
     Alternative_IP:
-        Enabled: true
+        Enabled: false
         # %port% is replaced automatically with Webserver.Port
-        Address: minecraft.redcraft.org:%port%
+        Address: your.domain.here:%port%
     # InternalIP usually does not need to be changed, only change it if you know what you're doing!
     # 0.0.0.0 allocates Internal (local) IP automatically for the WebServer.
     Internal_IP: 0.0.0.0
@@ -89,7 +89,7 @@ Webserver:
         Cookies_expire_after:
             Time: 2
             Unit: HOURS
-    Disable_Webserver: false
+    Disable_Webserver: true
     External_Webserver_address: https://www.example.address
 # -----------------------------------------------------
 Data_gathering:
