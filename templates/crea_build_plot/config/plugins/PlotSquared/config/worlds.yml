@@ -1,6 +1,6 @@
 configuration_version: v5
 worlds:
-  crea_redstone_plot:
+  crea_build_plot:
     plot:
       size: 64
       height: 32
