@@ -30,3 +30,6 @@ ticks-per:
   ambient-spawns: 1
   autosave: 6000
 aliases: now-in-commands.yml
+worlds:
+  crea_redstone_plot:
+    generator: PlotSquared
