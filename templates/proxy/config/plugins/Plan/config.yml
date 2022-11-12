@@ -32,7 +32,7 @@ Database:
         Port: 31006
         User: minecraft
         Password: 'MYSQL_PASSWORD'
-        Database: plan
+        Database: minecraft
         # Launch options to append after mysql driver address
         Launch_options: "?rewriteBatchedStatements=true&useSSL=false&serverTimezone=UTC"
         Max_connections: 8
