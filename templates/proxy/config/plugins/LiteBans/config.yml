@@ -24,7 +24,7 @@ sync_dupeip_notifications: false
 # If you need per-server bans, you have to change server_name on all instances.
 # The "$serverScope" and "$serverOrigin" variables can be used in messages.
 # Maximum length is 32 characters.
-server_name: 'hub'
+server_name: 'proxy'
 
 # This option decides which server(s) will be affected in commands by default.
 default_server_scope: '*'
