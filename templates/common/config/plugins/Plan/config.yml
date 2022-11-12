@@ -28,7 +28,7 @@ Plugin:
 Database:
     Type: MySQL
     MySQL:
-        Host: k8s.redcraft.org:31006
+        Host: k8s.redcraft.org
         Port: 31006
         User: minecraft
         Password: 'MYSQL_PASSWORD'
