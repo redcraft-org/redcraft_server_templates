@@ -53,5 +53,5 @@ shutdown:
   # You can still use the "ServerReconnectEvent" as a plugin developer to decide on your own whether the user should be reconnected automatically
   # or not.
 
-  text: "Server closed"
+  text: ""
   regex: false

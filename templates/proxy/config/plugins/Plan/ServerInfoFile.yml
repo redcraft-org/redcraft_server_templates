@@ -1,0 +1,6 @@
+# Changing the UUID in this file will make Plan regard your server as a completely new server
+# Tread with caution.
+Server:
+    ID: 1
+    UUID: "3a16dffb-d546-4a78-a4ae-1238ae3af4a0"
+    Web_address: "http://minecraft.redcraft.org:8804"
