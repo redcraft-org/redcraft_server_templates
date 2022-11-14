@@ -1,0 +1,17 @@
+{
+    "name": "museum",
+    "source": "common",
+    "target": "museum.tar",
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
+        "SENTRY_DSN_MUSEUM": "SENTRY_DSN_MUSEUM"
+    },
+    "server_engine": {
+        "name": "Purpur",
+        "version": "1.19.2",
+        "target": "server.jar"
+    },
+    "plugins": {
+        "Multiverse": "Core-4.3.*"
+    }
+}
