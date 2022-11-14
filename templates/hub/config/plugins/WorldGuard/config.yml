@@ -117,20 +117,20 @@ mobs:
     block-vehicle-entry: true
     block-creature-spawn: []
 player-damage:
-    disable-fall-damage: true
-    disable-lava-damage: true
-    disable-fire-damage: true
-    disable-lightning-damage: true
-    disable-drowning-damage: true
-    disable-suffocation-damage: true
-    disable-contact-damage: true
-    teleport-on-suffocation: true
+    disable-fall-damage: false
+    disable-lava-damage: false
+    disable-fire-damage: false
+    disable-lightning-damage: false
+    disable-drowning-damage: false
+    disable-suffocation-damage: false
+    disable-contact-damage: false
+    teleport-on-suffocation: false
     disable-void-damage: false
     teleport-on-void-falling: true
-    reset-fall-on-void-teleport: true
-    disable-explosion-damage: true
-    disable-mob-damage: true
-    disable-death-messages: true
+    reset-fall-on-void-teleport: false
+    disable-explosion-damage: false
+    disable-mob-damage: false
+    disable-death-messages: false
 crops:
     disable-creature-trampling: true
     disable-player-trampling: true
