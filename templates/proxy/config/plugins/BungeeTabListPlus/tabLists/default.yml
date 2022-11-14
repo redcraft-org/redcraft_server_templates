@@ -80,6 +80,7 @@ customPlaceholders:
       hub: "&6Hub"
       crea_redstone_plot: "&4Redstone plot"
       crea_build_plot: "&dBuild plot"
+      museum: "&eMuseum"
     defaultReplacement: "${%0}"
   viewer_colored_ping:
     !conditional

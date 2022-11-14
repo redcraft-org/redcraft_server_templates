@@ -19,6 +19,7 @@ proxied-maintenance-servers:
 - hub
 - crea_redstone_plot
 - crea_build_plot
+- museum
 
 # If maintenance is enabled on a proxied server with players on it, they will be sent to the fallback server instead of being kicked off the network.
 # If the fallback server is not reachable/not set, they will just be kicked off the network.
