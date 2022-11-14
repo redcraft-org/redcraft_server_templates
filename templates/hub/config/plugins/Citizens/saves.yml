@@ -24,7 +24,7 @@ npc:
         uuid: 15f7b6b0-d787-48e2-b54b-0336e17f6316
       location:
         bodyYaw: -24.3206
-        world: spawn
+        world: hub
         x: '-14.521'
         y: '58.45'
         z: '26.3054'
@@ -55,7 +55,7 @@ npc:
         fishing: true
         catch type: NONE
         fishing spot:
-          world: spawn
+          world: hub
           x: '-14.0336'
           y: '58.9'
           z: '27.1775'
@@ -67,7 +67,7 @@ npc:
       sitting:
         sitting: true
         chair location:
-          world: spawn
+          world: hub
           x: '-14.521'
           y: '58.8'
           z: '26.3054'
@@ -123,7 +123,7 @@ npc:
       spawned: true
       location:
         bodyYaw: -51.284283
-        world: spawn
+        world: hub
         x: '-8.4491'
         y: '64.0'
         z: '-4.4066'
@@ -204,7 +204,7 @@ npc:
       spawned: true
       location:
         bodyYaw: -129.57335
-        world: spawn
+        world: hub
         x: '-8.5727'
         y: '64.0'
         z: '5.5586'
