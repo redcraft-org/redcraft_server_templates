@@ -32,6 +32,6 @@
         "WorldGuard": "7.0.*",
         "goBrush": "3.8.*",
         "goPaint": "3.1.*",
-        "spark": "1.9.*"
+        "spark": "1.10.*"
     }
 }
