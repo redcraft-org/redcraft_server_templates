@@ -13,25 +13,24 @@ priority: 0
 
 showHeaderFooter: true
 header:
-  - "&cWelcome &f${viewer name}"
-  - "&eW&celcome &f${viewer name}"
-  - "&eWe&clcome &f${viewer name}"
-  - "&eWel&ccome &f${viewer name}"
-  - "&eWelc&come &f${viewer name}"
-  - "&eWelco&cme &f${viewer name}"
-  - "&eWelcom&ce &f${viewer name}"
-  - "&eWelcome &f${viewer name}"
-  - "&cW&eelcome &f${viewer name}"
-  - "&cWe&elcome &f${viewer name}"
-  - "&cWel&ecome &f${viewer name}"
-  - "&cWelc&eome &f${viewer name}"
-  - "&cWelco&eme &f${viewer name}"
-  - "&cWelcom&ee &f${viewer name}"
-  - "&cWelcome &f${viewer name}"
+  - "&cWelcome &f${viewer display_name}"
+  - "&eW&celcome &f${viewer display_name}"
+  - "&eWe&clcome &f${viewer display_name}"
+  - "&eWel&ccome &f${viewer display_name}"
+  - "&eWelc&come &f${viewer display_name}"
+  - "&eWelco&cme &f${viewer display_name}"
+  - "&eWelcom&ce &f${viewer display_name}"
+  - "&eWelcome &f${viewer display_name}"
+  - "&cW&eelcome &f${viewer display_name}"
+  - "&cWe&elcome &f${viewer display_name}"
+  - "&cWel&ecome &f${viewer display_name}"
+  - "&cWelc&eome &f${viewer display_name}"
+  - "&cWelco&eme &f${viewer display_name}"
+  - "&cWelcom&ee &f${viewer display_name}"
+  - "&cWelcome &f${viewer display_name}"
 headerAnimationUpdateInterval: 0.2
 footer: |-
-  &4Powered by BungeeTabListPlus
-  &fWiki:&7 https://github.com/CodeCrafter47/BungeeTabListPlus/wiki
+  &c&lRed&f&lCraft&7&l.org &r- Alpha
 
 # Configure whether hidden players appear on the tab list
 # see https://github.com/CodeCrafter47/BungeeTabListPlus/wiki/Hidden-Players
@@ -48,7 +47,7 @@ defaultPing: 1000
 
 components:
   - {text: "&cServer: &6${viewer server}", icon: "default/server.png", ping: 0}
-  - {text: "&cRank: &6${viewer vault_primary_group}", icon: "default/rank.png", ping: 0}
+  - {text: "&cPlayers: &6${playerset:all_players size}", icon: "default/players.png", ping: 0}
   - {text: "&cPing: ${viewer_colored_ping}ms", icon: "default/ping.png", ping: 0}
   -
   -
@@ -56,31 +55,28 @@ components:
   - !players_by_server
     playerSet: all_players
     serverHeader:
-      - {text: "&e&n${server}&f&o (${server_player_count}):", icon: "colors/yellow.png", ping: 0}
+      - {text: "&e&n${server_display_name server}&f&o (${server_player_count}):", icon: "colors/yellow.png", ping: 0}
     serverSeparator:
       -
       -
       -
     showServers: ALL
-    playerComponent: "${player vault_prefix}${player name}${afk_tag}"
+    playerComponent: "${player vault_prefix}${player display_name}"
     morePlayersComponent: {text: "&7... and &e${other_count} &7others", icon: "colors/gray.png", ping: 0}
   - !spacer {}
   -
   -
   -
-  - {text: "&cTime: &6${time H:mm:ss}", icon: "default/clock.png", ping: 0}
-  - {text: "&cPlayers: &6${playerset:all_players size}", icon: "default/players.png", ping: 0}
-  - {text: "&cBalance: &6${viewer vault_balance}", icon: "default/balance.png", ping: 0}
 
 # Custom placeholders are a powerful mechanism to add more dynamic content
 # to the tab list.
 # See https://github.com/CodeCrafter47/BungeeTabListPlus/wiki/Custom=Placeholders
 customPlaceholders:
-  afk_tag:
-    !conditional
-    condition: ${player essentials_afk}
-    true: "&7|&oaway"
-    false: ""
+  server_display_name:
+    !alias
+    hub: "&6Hub"
+    crea_redstone_plot: "&4Redstone plot"
+    crea_build_plot: "&dBuild plot"
   viewer_colored_ping:
     !conditional
     condition: "${viewer ping} < 150"
