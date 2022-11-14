@@ -1,0 +1,19 @@
+location: hub:-11.500:66.000:-6.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: Bienvenue sur <#858585>&l≪ </#858585><#c24f4f>&lRed</#c24f4f><#ffffff>&lCraft</#ffffff><#858585>&l.org
+      ≫</#858585>
+    height: 0.3
+  - content: '&l&aLe serveur est maintenant ouvert en Alpha !'
+    height: 0.3
+  - content: Merci de reporter les bugs que vous
+    height: 0.3
+  - content: rencontrez sur le serveur Discord
+    height: 0.3
+  actions: {}
