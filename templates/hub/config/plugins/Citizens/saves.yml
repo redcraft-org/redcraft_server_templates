@@ -99,7 +99,7 @@ npc:
         hideErrorMessages: false
         commands:
           '0':
-            command: tpopos <p> -91 62 -26 180 0
+            command: tpopos <p> -90.5 62 -25.5 -10 155
             hand: RIGHT
             player: true
             op: true
@@ -174,7 +174,7 @@ npc:
         hideErrorMessages: false
         commands:
           '0':
-            command: tpopos <p> -85 62 35 90 0
+            command: tpopos <p> -84.5 62 35.5 0 90
             hand: RIGHT
             player: true
             op: true
