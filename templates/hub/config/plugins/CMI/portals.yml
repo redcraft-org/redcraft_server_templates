@@ -1,0 +1,42 @@
+# Command section can utilize same custom variables as scheduler. Check schedules.yml file for all possible variables.
+
+hub:
+  crea_build_plot:
+    Loc: -96.0:61.0:-35.0:-93.0:67.0:-32.0
+    enabled: true
+    effect: Reddust
+    color: 8224125
+    showParticles: true
+    bungeeServer: crea_build_plot
+    exactBungeeLocation: true
+    bungeeLocation: crea_build_plot;0.5;40.0;0.5;90.0;0.0
+    kickBack: true
+    particlesByPermission: false
+    requiresPerm: false
+    informOnMissingPerm: false
+    particleAmount: 37
+    particleHide: 0
+    activationRange: 16
+    commandsWithoutTp: true
+    commands:
+    - cmi effect [playerName] blindness 2 1 -s
+  crea_redstone_plot:
+    Loc: -94.0:62.0:33.0:-94.0:66.0:37.0
+    enabled: true
+    effect: Reddust
+    color: 16711680
+    showParticles: true
+    bungeeServer: crea_redstone_plot
+    exactBungeeLocation: true
+    bungeeLocation: crea_redstone_plot;68.0;41.0;68.0;-90.0;0.0
+    Tp: hub;-87.46;62.0;32.9;166.79;23.1
+    kickBack: true
+    particlesByPermission: false
+    requiresPerm: false
+    informOnMissingPerm: false
+    particleAmount: 5
+    particleHide: 0
+    activationRange: 16
+    commandsWithoutTp: true
+    commands:
+    - cmi effect [playerName] blindness 2 1 -s
