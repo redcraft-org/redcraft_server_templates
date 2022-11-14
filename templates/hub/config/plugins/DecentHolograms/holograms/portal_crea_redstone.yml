@@ -1,0 +1,12 @@
+location: spawn:-91.500:64.000:35.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&c&lCreative &4&lRedstone'
+    height: 0.3
+  actions: {}

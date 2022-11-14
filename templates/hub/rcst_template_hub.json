@@ -12,6 +12,8 @@
         "target": "server.jar"
     },
     "plugins": {
+        "Citizen": "2.0.*",
+        "Denizen": "1.2.*",
         "VoidGen": "2.2.*"
     }
 }
