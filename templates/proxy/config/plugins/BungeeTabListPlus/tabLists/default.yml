@@ -46,7 +46,7 @@ defaultIcon: colors/dark_gray.png
 defaultPing: 1000
 
 components:
-  - {text: "&cServer: &6${viewer server}", icon: "default/server.png", ping: 0}
+  - {text: "&cServer: &6${server_display_name viewer server}", icon: "default/server.png", ping: 0}
   - {text: "&cPlayers: &6${playerset:all_players size}", icon: "default/players.png", ping: 0}
   - {text: "&cPing: ${viewer_colored_ping}ms", icon: "default/ping.png", ping: 0}
   -
@@ -61,7 +61,7 @@ components:
       -
       -
     showServers: ALL
-    playerComponent: "${player vault_prefix}${player bungeecord_display_name}"
+    playerComponent: "${player bungeecord_display_name}"
     morePlayersComponent: {text: "&7... and &e${other_count} &7others", icon: "colors/gray.png", ping: 0}
   - !spacer {}
   -
