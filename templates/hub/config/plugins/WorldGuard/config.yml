@@ -126,7 +126,7 @@ player-damage:
     disable-contact-damage: false
     teleport-on-suffocation: false
     disable-void-damage: false
-    teleport-on-void-falling: true
+    teleport-on-void-falling: false
     reset-fall-on-void-teleport: false
     disable-explosion-damage: false
     disable-mob-damage: false
