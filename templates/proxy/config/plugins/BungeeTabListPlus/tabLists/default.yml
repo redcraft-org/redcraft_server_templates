@@ -13,21 +13,21 @@ priority: 0
 
 showHeaderFooter: true
 header:
-  - "&cWelcome &f${viewer display_name}"
-  - "&eW&celcome &f${viewer display_name}"
-  - "&eWe&clcome &f${viewer display_name}"
-  - "&eWel&ccome &f${viewer display_name}"
-  - "&eWelc&come &f${viewer display_name}"
-  - "&eWelco&cme &f${viewer display_name}"
-  - "&eWelcom&ce &f${viewer display_name}"
-  - "&eWelcome &f${viewer display_name}"
-  - "&cW&eelcome &f${viewer display_name}"
-  - "&cWe&elcome &f${viewer display_name}"
-  - "&cWel&ecome &f${viewer display_name}"
-  - "&cWelc&eome &f${viewer display_name}"
-  - "&cWelco&eme &f${viewer display_name}"
-  - "&cWelcom&ee &f${viewer display_name}"
-  - "&cWelcome &f${viewer display_name}"
+  - "&cWelcome &f${viewer bungeecord_display_name}"
+  - "&eW&celcome &f${viewer bungeecord_display_name}"
+  - "&eWe&clcome &f${viewer bungeecord_display_name}"
+  - "&eWel&ccome &f${viewer bungeecord_display_name}"
+  - "&eWelc&come &f${viewer bungeecord_display_name}"
+  - "&eWelco&cme &f${viewer bungeecord_display_name}"
+  - "&eWelcom&ce &f${viewer bungeecord_display_name}"
+  - "&eWelcome &f${viewer bungeecord_display_name}"
+  - "&cW&eelcome &f${viewer bungeecord_display_name}"
+  - "&cWe&elcome &f${viewer bungeecord_display_name}"
+  - "&cWel&ecome &f${viewer bungeecord_display_name}"
+  - "&cWelc&eome &f${viewer bungeecord_display_name}"
+  - "&cWelco&eme &f${viewer bungeecord_display_name}"
+  - "&cWelcom&ee &f${viewer bungeecord_display_name}"
+  - "&cWelcome &f${viewer bungeecord_display_name}"
 headerAnimationUpdateInterval: 0.2
 footer: |-
   &c&lRed&f&lCraft&7&l.org &r- Alpha
@@ -61,7 +61,7 @@ components:
       -
       -
     showServers: ALL
-    playerComponent: "${player vault_prefix}${player display_name}"
+    playerComponent: "${player vault_prefix}${player bungeecord_display_name}"
     morePlayersComponent: {text: "&7... and &e${other_count} &7others", icon: "colors/gray.png", ping: 0}
   - !spacer {}
   -
