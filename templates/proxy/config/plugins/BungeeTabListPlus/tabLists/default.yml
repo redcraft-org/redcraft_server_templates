@@ -73,10 +73,14 @@ components:
 # See https://github.com/CodeCrafter47/BungeeTabListPlus/wiki/Custom=Placeholders
 customPlaceholders:
   server_display_name:
-    !alias
-    hub: "&6Hub"
-    crea_redstone_plot: "&4Redstone plot"
-    crea_build_plot: "&dBuild plot"
+    !switch
+    parameters: 1
+    expression: "${%0}"
+    replacements:
+      hub: "&6Hub"
+      crea_redstone_plot: "&4Redstone plot"
+      crea_build_plot: "&dBuild plot"
+    defaultReplacement: "${%0}"
   viewer_colored_ping:
     !conditional
     condition: "${viewer ping} < 150"
