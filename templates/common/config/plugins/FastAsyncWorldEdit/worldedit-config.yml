@@ -33,7 +33,6 @@ limits:
   disallowed-blocks:
     - "minecraft:wheat"
     - "minecraft:fire"
-    - "minecraft:redstone_wire"
 
 use-inventory:
   enable: false
