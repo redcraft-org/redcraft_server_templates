@@ -244,7 +244,7 @@ titles:
   # For a single plot set `/plot flag set titles false` to disable it.
   # For just you run `/plot toggle titles` to disable it.
   # For all plots: Add `titles: false` in the worlds.yml flags block to disable it.
-  display-titles: true
+  display-titles: false
   # Plot titles fading in (duration in ticks)
   titles-fade-in: 10
   # Plot titles being shown (duration in ticks)

@@ -55,4 +55,5 @@ worlds:
     natural_mob_spawning: false
     mob_spawner_spawning: false
     flags:
+      title: 'false'
       use: '#buttons,lever'
