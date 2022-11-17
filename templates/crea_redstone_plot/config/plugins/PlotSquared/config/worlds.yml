@@ -43,9 +43,9 @@ worlds:
     limits:
       max-members: 128
     world:
-      max_height: 256
+      max_height: 320
       gamemode: creative
-      min_height: 1
+      min_height: -63
       border: false
     event:
       spawn:
