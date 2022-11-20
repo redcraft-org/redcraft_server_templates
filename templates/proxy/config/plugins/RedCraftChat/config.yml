@@ -44,7 +44,7 @@ url-shortening-endpoint: 'https://redcraft.org/api/v1/url'
 url-shortening-api-token: ''
 
 # Avatar related settings
-player-avatar-endpoint: 'https://redcraft.org/api/v1/skin/head/%player%?size=128'
+player-avatar-endpoint: 'https://crafatar.com/avatars/%player%?size=128&default=MHF_Steve&overlay'
 player-avatar-format: 'uuid' # Can be "uuid" or "name"
 
 # Storage related settings
