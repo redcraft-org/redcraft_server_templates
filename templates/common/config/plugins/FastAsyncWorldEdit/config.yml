@@ -38,7 +38,7 @@ clipboard:
   # Number of days to keep history on disk before deleting it
   delete-after-days: 1
   # If a player's clipboard should be deleted upon logout
-  delete-on-logout: false
+  delete-on-logout: true
   # Allows NBT stored in a clipboard to be written to disk
   #  - Requires clipboard.use-disk to be enabled
   save-clipboard-nbt-to-disk: true
@@ -257,7 +257,7 @@ paths:
   history: "history"
   # Multiple servers can use the same clipboards
   #  - Use a shared directory or NFS/Samba
-  clipboard: "/mnt/worldedit/clipboard"
+  clipboard: "/mnt/minecraft/worldedit_clipboard"
   # Each player has his or her own sub directory for schematics
   per-player-schematics: true
 
