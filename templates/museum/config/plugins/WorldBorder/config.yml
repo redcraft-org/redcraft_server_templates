@@ -42,28 +42,28 @@ worlds:
   topred_plot:
     x: 0.0
     z: 0.0
-    radiusX: 5000
-    radiusZ: 5000
+    radiusX: 7000
+    radiusZ: 7000
     wrapping: false
-  kh_freebuild:
+  kingdomhills_freebuild:
     x: 0.0
     z: 0.0
     radiusX: 12500
     radiusZ: 12500
     wrapping: false
-  kh_plot:
+  kingdomhills_plot:
     x: 0.0
     z: 0.0
     radiusX: 2500
     radiusZ: 2500
     wrapping: false
-  kh_hardcore:
+  kingdomhills_hardcore:
     x: 0.0
     z: 0.0
     radiusX: 2000
     radiusZ: 2000
     wrapping: false
-  kh_semirp:
+  kingdomhills_semirp:
     x: 0.0
     z: 0.0
     radiusX: 10000
