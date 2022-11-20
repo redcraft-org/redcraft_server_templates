@@ -12,7 +12,6 @@
         "target": "server.jar"
     },
     "plugins": {
-        "PlotSquared": "6.10.*",
-        "F3NPerm": "3.*"
+        "PlotSquared": "6.10.*"
     }
 }
