@@ -27,6 +27,9 @@ supported-locales-provider: 'database'
 supported-locales-api-url: 'https://redcraft.org/api/v1/language/list'
 default-locale: 'en-US'
 
+# This is to add missing players in tab completion
+enable-tab-completion: false
+
 # These are the settings for Deepl live translation (if you use that provider)
 deepl-token: ''
 deepl-endpoint: 'https://api.deepl.com/v2/translate' # If you use a proxy or something
