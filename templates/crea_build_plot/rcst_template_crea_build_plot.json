@@ -13,7 +13,7 @@
     },
     "plugins": {
         "F3NPerm": "3.*",
-        "NightVisionPlus": "2.5",
+        "OmegaVision": "2.5.*",
         "PlotSquared": "6.10.*"
     }
 }
