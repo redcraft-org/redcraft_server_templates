@@ -215,9 +215,9 @@ Optimizations:
     # Defines time in seconds for accepting tpa or tpahere requests
     TpaTime: 60
     # Defines time in seconds for player being teleported after tpa or tpahere is being accepted
-    TpaWarmup: 3
+    TpaWarmup: 1
     # Defines if player can move when tpa or tpahere is being accepted
-    TpaMove: false
+    TpaMove: true
     # Defines time in seconds for blocking player teleport offers after denying their request
     TpaBlock: 120
     # Defines time in seconds for bypassing prevented teleportation to unsafe location
