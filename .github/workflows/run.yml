@@ -45,6 +45,7 @@ jobs:
           SENTRY_DSN_HUB: ${{ secrets.SENTRY_DSN_HUB }}
           SENTRY_DSN_CREA_REDSTONE_PLOT: ${{ secrets.SENTRY_DSN_CREA_REDSTONE_PLOT }}
           SENTRY_DSN_CREA_BUILD_PLOT: ${{ secrets.SENTRY_DSN_CREA_BUILD_PLOT }}
+          SENTRY_DSN_MUSEUM: ${{ secrets.SENTRY_DSN_MUSEUM }}
         run: |
           ./setup.sh
           source env/bin/activate
