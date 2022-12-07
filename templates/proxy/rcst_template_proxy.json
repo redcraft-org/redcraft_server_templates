@@ -21,6 +21,8 @@
         "Reconnect": "1.0.*",
         "RedCraftBungeeJsonApi": "0.1.*",
         "RedCraftChat": "0.0.*",
+        "ViaBackwards": "4.5.*",
+        "ViaRewind": "2.0.*",
         "ViaVersion": "4.5.*",
         "ServerListPlus": "3.5.*",
         "sparkbungeecord": "1.10.*"
