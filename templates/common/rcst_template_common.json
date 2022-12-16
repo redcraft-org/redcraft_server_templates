@@ -7,7 +7,7 @@
     },
     "server_engine": {
         "name": "Purpur",
-        "version": "1.19.2",
+        "version": "1.19.3",
         "target": "server.jar"
     },
     "plugins": {
