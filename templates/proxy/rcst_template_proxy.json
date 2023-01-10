@@ -14,7 +14,7 @@
     "plugins": {
         "BungeeTabListPlus": "3.6.*",
         "CMIB": "1.0.*",
-        "LiteBans": "2.10.*",
+        "LiteBans": "2.11.*",
         "LuckPermsBungee": "5.4.*",
         "Maintenance": "4.0.*",
         "Plan": "5.*",
