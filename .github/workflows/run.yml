@@ -42,6 +42,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMON_MYSQL_PASSWORD: ${{ secrets.COMMON_MYSQL_PASSWORD }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DEEPL_TOKEN: ${{ secrets.DEEPL_TOKEN }}
           SENTRY_DSN_HUB: ${{ secrets.SENTRY_DSN_HUB }}
           SENTRY_DSN_CREA_REDSTONE_PLOT: ${{ secrets.SENTRY_DSN_CREA_REDSTONE_PLOT }}
           SENTRY_DSN_CREA_BUILD_PLOT: ${{ secrets.SENTRY_DSN_CREA_BUILD_PLOT }}

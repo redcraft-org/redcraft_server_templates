@@ -4,7 +4,8 @@
     "target": "proxy.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
-        "DISCORD_TOKEN": "DISCORD_TOKEN"
+        "DISCORD_TOKEN": "DISCORD_TOKEN",
+        "DEEPL_TOKEN": "DEEPL_TOKEN"
     },
     "server_engine": {
         "name": "Waterfall",

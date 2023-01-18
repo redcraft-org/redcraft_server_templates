@@ -18,8 +18,8 @@ discord-activity-value: 'RedCraft.org'
 translation-enabled: true
 translation-discord-supported-languages: ['en', 'fr']
 translation-discord-category-format: '[%lang%] %topic%'
-chat-translation-provider: 'modernmt-free'
-upstream-translation-provider: 'modernmt-free' # This is to translate plugins from upstream servers
+chat-translation-provider: 'deepl'
+upstream-translation-provider: 'deepl' # This is to translate plugins from upstream servers
 
 # This is for supported locales
 supported-locales-provider: 'database'
@@ -31,8 +31,8 @@ default-locale: 'en-US'
 enable-tab-completion: false
 
 # These are the settings for Deepl live translation (if you use that provider)
-deepl-token: ''
-deepl-endpoint: 'https://api.deepl.com/v2/translate' # If you use a proxy or something
+deepl-token: 'DEEPL_TOKEN'
+deepl-endpoint: 'https://api-free.deepl.com/v2/translate' # Free API
 deepl-formality: 'less' # can be "normal", "more" or "less". Default is "less" so messages seem more friendly
 deepl-preserve-formatting: false # whether the translation engine should respect the original formatting, even if it would usually correct some aspects
 
