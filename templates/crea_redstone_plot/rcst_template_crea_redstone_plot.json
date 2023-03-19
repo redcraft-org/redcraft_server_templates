@@ -14,6 +14,6 @@
     "plugins": {
         "F3NPerm": "3.*",
         "OmegaVision": "2.5.*",
-        "PlotSquared": "6.10.*"
+        "PlotSquared": "6.11.*"
     }
 }
