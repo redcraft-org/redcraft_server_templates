@@ -36,6 +36,10 @@ servers:
     motd: "&eMuseum"
     address: localhost:25569
     restricted: false
+  irs_test:
+    motd: "&eIRS Test"
+    address: 51.159.195.88:25565
+    restricted: false
 listeners:
 - query_port: 25565
   motd: "&c&lRed&f&lCraft&7&l.org &r"
