@@ -19,9 +19,13 @@ class S3Source(BasicSource):
     def list(self, **_):
         elements = {}
 
-        for element in self.s3_client.list_objects_v2(Bucket=self.s3_bucket).get('Contents'):
-            element_name = element['Key']
-            elements[element_name] = element['LastModified']
+        paginator = self.s3_client.get_paginator('list_objects_v2')
+        pages = paginator.paginate(Bucket=self.s3_bucket)
+
+        for page in pages:
+            for element in page.get('Contents'):
+                element_name = element['Key']
+                elements[element_name] = element['LastModified']
 
         return elements
 
