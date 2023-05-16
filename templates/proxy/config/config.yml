@@ -38,7 +38,7 @@ servers:
     restricted: false
   irs_test:
     motd: "&eIRS Test"
-    address: 10.13.13.3:25565
+    address: localhost:25570
     restricted: false
 listeners:
 - query_port: 25565
