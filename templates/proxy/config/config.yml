@@ -36,8 +36,8 @@ servers:
     motd: "&eMuseum"
     address: localhost:25569
     restricted: false
-  irs_test:
-    motd: "&eIRS Test"
+  crea_engineer_test:
+    motd: "&5Crea Engineer Test"
     address: localhost:25570
     restricted: false
 listeners:
