@@ -11,3 +11,6 @@ Cuboids:
   launchpad_to_crea_redstone:
     object: cu@hub,-24,61,8,-24,61,8
     flags: ''
+  king_of_the_ladder:
+    object: cu@hub,-16,67,68,-10,81,74
+    flags: ''
