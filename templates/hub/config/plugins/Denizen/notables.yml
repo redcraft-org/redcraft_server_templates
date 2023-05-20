@@ -14,3 +14,7 @@ Cuboids:
   king_of_the_ladder:
     object: cu@hub,-16,67,68,-10,81,74
     flags: ''
+  top_of_kotl:
+    object: cu@hub,-13,75,71,-13,75,71
+    flags: ''
+    
