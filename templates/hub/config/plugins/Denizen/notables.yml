@@ -5,11 +5,41 @@ Cuboids:
   launchpad_to_crea_build:
     object: cu@hub,-24,61,-2,-24,61,-2
     flags: ''
+  launchpad_to_crea_redstone:
+    object: cu@hub,-24,61,8,-24,61,8
+    flags: ''
   launchpad_crea_redstone_to_spawn:
     object: cu@hub,-81,61,30,-81,61,30
     flags: ''
-  launchpad_to_crea_redstone:
-    object: cu@hub,-24,61,8,-24,61,8
+  jump_start:
+    object: cu@hub,-30,59,23,-30,59,23
+    flags: ''
+  jump_checkpoint_1:
+    object: cu@hub,6,59,86,6,59,86
+    flags: ''
+  jump_checkpoint_2:
+    object: cu@hub,29,37,-27,29,37,-27
+    flags: ''
+  jump_checkpoint_3:
+    object: cu@hub,33,42,-31,33,42,-31
+    flags: ''
+  jump_checkpoint_4:
+    object: cu@hub,52,47,18,52,47,18
+    flags: ''
+  jump_checkpoint_5:
+    object: cu@hub,-20,23,55,-20,23,55
+    flags: ''
+  jump_checkpoint_6:
+    object: cu@hub,50,65,33,50,65,33
+    flags: ''
+  jump_checkpoint_7:
+    object: cu@hub,11,89,-24,11,89,-24
+    flags: ''
+  jump_checkpoint_8:
+    object: cu@hub,53,101,13,53,101,13
+    flags: ''
+  jump_end:
+    object: cu@hub,-55,97,5,-55,97,5
     flags: ''
   king_of_the_ladder:
     object: cu@hub,-16,67,68,-10,81,74
@@ -17,4 +47,3 @@ Cuboids:
   top_of_kotl:
     object: cu@hub,-13,75,71,-13,75,71
     flags: ''
-    
