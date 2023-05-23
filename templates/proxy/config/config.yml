@@ -41,7 +41,7 @@ servers:
     address: localhost:25570
     restricted: false
   survival_vanilla:
-    motd: "&9Survival"
+    motd: "&9Survival Vanilla"
     address: localhost:25571
     restricted: false
 listeners:
