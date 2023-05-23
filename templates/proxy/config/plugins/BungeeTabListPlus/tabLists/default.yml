@@ -81,6 +81,8 @@ customPlaceholders:
       crea_redstone_plot: "&4Redstone plot"
       crea_build_plot: "&dBuild plot"
       museum: "&eMuseum"
+      crea_engineer_test: "&5Crea Engineer Test"
+      survival_vanilla: "&9Survival Vanilla"
     defaultReplacement: "${%0}"
   viewer_colored_ping:
     !conditional
