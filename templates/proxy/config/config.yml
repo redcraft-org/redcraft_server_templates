@@ -40,6 +40,10 @@ servers:
     motd: "&5Crea Engineer Test"
     address: localhost:25570
     restricted: false
+  survival_vanilla:
+    motd: "&9Survival"
+    address: localhost:25571
+    restricted: false
 listeners:
 - query_port: 25565
   motd: "&c&lRed&f&lCraft&7&l.org &r"
@@ -50,12 +54,15 @@ listeners:
     hub.redcraft.org: hub
     buildplot.redcraft.org: crea_build_plot
     redplot.redcraft.org: crea_redstone_plot
+    vanilla.redcraft.org: survival_vanilla
   ping_passthrough: false
   priorities:
   - hub
   - crea_build_plot
   - crea_redstone_plot
+  - survival_vanilla
   - museum
+  - crea_engineer_test
   bind_local_address: true
   host: 0.0.0.0:25565
   max_players: 100
