@@ -16,10 +16,10 @@ Cuboids:
     flags: ''
   jump_checkpoint_1:
     object: cu@hub,6,59,86,6,59,86
-    flags: ''
+    flags: 'id:1'
   jump_checkpoint_2:
     object: cu@hub,29,37,-27,29,37,-27
-    flags: ''
+    flags: 'id:2'
   jump_checkpoint_3:
     object: cu@hub,33,42,-31,33,42,-31
     flags: ''
