@@ -1,0 +1,32 @@
+{
+    "name": "common_spigot",
+    "source": null,
+    "target": null,
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+    },
+    "server_engine": {
+        "name": "Fabric",
+        "version": "1.19.4",
+        "target": "server.jar"
+    },
+    "resources": {
+        "mods": {
+            "FabricProxyLegacy": "1.6.*",
+            "Indium": "1.0.*",
+            "InvView": "1.4.*",
+            "Ledger": "1.2.*",
+            "LedgerDatabases": "1.1.*",
+            "LuckPermsFabric": "5.4.*",
+            "alternatecurrent": "1.5.*",
+            "fabricapi": "0.82.*",
+            "carpet": "1.4.*",
+            "fabrickotlin": "1.9.*",
+            "krypton": "0.2.*",
+            "lithium": "0.11.*",
+            "memoryLeakFix": "1.0.*",
+            "sodium": "0.4.*",
+            "sparkfabric": "1.10.*"
+        }
+    }
+}

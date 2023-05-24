@@ -1,0 +1,13 @@
+{
+    "name": "survival_vanilla",
+    "source": "common_fabric",
+    "target": "survival_vanilla.tar",
+    "config_env_matches": {
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+    },
+    "server_engine": {
+        "name": "Fabric",
+        "version": "1.19.4",
+        "target": "server.jar"
+    }
+}

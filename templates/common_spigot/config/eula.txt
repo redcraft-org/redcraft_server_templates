@@ -1,0 +1,2 @@
+# Warning, if you are using this server template, you are indicating your agreement to Minecraft's EULA (https://aka.ms/MinecraftEULA)
+eula=true

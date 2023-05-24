@@ -1,6 +1,6 @@
 {
     "name": "crea_build_plot",
-    "source": "common",
+    "source": "common_spigot",
     "target": "crea_build_plot.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",

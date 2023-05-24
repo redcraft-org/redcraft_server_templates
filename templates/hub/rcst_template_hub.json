@@ -1,6 +1,6 @@
 {
     "name": "hub",
-    "source": "common",
+    "source": "common_spigot",
     "target": "hub.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",

@@ -54,8 +54,12 @@ class TemplateManager():
 
         self.copy_template_config(name, temp_directory.name)
 
-        self.download_plugins(template.get('plugins')
-                              or {}, temp_directory.name)
+        resources = template.get('resources') or {}
+        if not resources:
+            resources['plugins'] = template.get('plugins') or {}
+
+        for resource_type, resource in resources.items():
+            self.download_resources(resource, temp_directory.name, resource_type=resource_type)
 
         self.download_server_engine(template.get(
             'server_engine'), temp_directory.name)
@@ -82,14 +86,14 @@ class TemplateManager():
                 output_directory, server_engine.get('target') or filename)
             self.repository_manager.copy(filename, output_path)
 
-    def download_plugins(self, plugins, directory):
-        for plugin_name, version in tqdm(plugins.items(), desc='Downloading plugins', leave=False):
+    def download_resources(self, resources, directory, resource_type='plugins'):
+        for resource_name, version in tqdm(resources.items(), desc='Downloading {}'.format(resource_type), leave=False):
             matched_version = self.get_latest_matching_plugin_version(
-                plugin_name, version_match=version)
+                resource_name, version_match=version)
             input_file = get_plugin_filename(
-                plugin_name, matched_version)
-            output_file = '{}.jar'.format(plugin_name)
-            plugin_directory = os.path.join(directory, 'plugins')
+                resource_name, matched_version)
+            output_file = '{}.jar'.format(resource_name)
+            plugin_directory = os.path.join(directory, resource_type)
 
             if not os.path.exists(plugin_directory):
                 os.mkdir(plugin_directory)

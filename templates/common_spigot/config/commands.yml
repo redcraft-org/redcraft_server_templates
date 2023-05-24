@@ -1,0 +1,9 @@
+command-block-overrides: []
+ignore-vanilla-permissions: false
+aliases:
+  tps:
+  - spark tps
+  ping:
+  - spark ping
+  gamemode:
+  - gm $1-
