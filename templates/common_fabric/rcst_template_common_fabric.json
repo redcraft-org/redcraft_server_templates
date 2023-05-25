@@ -25,6 +25,7 @@
             "krypton": "0.2.*",
             "lithium": "0.11.*",
             "memoryLeakFix": "1.0.*",
+            "minecraftcommandpermissions": "1.6.*",
             "sodium": "0.4.*",
             "sparkfabric": "1.10.*"
         }
