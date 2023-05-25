@@ -59,7 +59,8 @@ class TemplateManager():
             resources['plugins'] = template.get('plugins') or {}
 
         for resource_type, resource in resources.items():
-            self.download_resources(resource, temp_directory.name, resource_type=resource_type)
+            self.download_resources(
+                resource, temp_directory.name, resource_type=resource_type)
 
         self.download_server_engine(template.get(
             'server_engine'), temp_directory.name)
@@ -215,7 +216,7 @@ def replace_config_env_matches(directory, patterns):
         compiled_patterns.append(
             're.sub("{}", "{}", line)'.format(pattern, replacement))
 
-    whitelisted_extensions = ['yml', 'yaml',
+    whitelisted_extensions = ['yml', 'yaml', 'conf', 'toml',
                               'json', 'properties', 'ini', 'csv']
 
     file_matches = ['*.{}'.format(extension)
