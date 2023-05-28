@@ -13,15 +13,15 @@ jump_checkpoint_disabled_item:
 jump_checkpoint_item:
     type: item
     debug: false
-    material: sugar
-    display name: <&l>Previous checkpoint (not working yet)
+    material: magma_cream
+    display name: <&l>Previous checkpoint
     lore:
     - <&8>Right click to go back to the previous checkpoint
 
 jump_quit_item:
     type: item
     debug: false
-    material: redstone
+    material: spruce_door
     display name: <&c><&l>Quit
     lore:
     - <&8>Right click to quit the jump
@@ -62,7 +62,7 @@ start_jump:
   script:
   - if !<player.is_op>:
     - narrate <&7>Soon™
-    - stop
+    # - stop
   - flag <player> jump:0
   - flag <player> jump_start_time:<util.time_now>
   - playsound <player> sound:ENTITY_ENDER_EYE_DEATH pitch:1
@@ -85,14 +85,17 @@ quit_jump:
 reach_checkpoint:
   type: task
   script:
+  # Verifications
   - define checkpoint_reached <[1]>
   - if <player.flag[jump]> >= <[checkpoint_reached]>:
     - stop
   - if <proc[has_player_cheated].context[<[checkpoint_reached]>]>:
     - narrate "[task] You cheated!"
     - stop
+  # The player has reached the checkpoint
   - narrate "You reached checkpoint <[checkpoint_reached]>"
   - flag <player> jump:++
+  - playsound <player> sound:entity_experience_orb_pickup
   - run set_items
 
 
@@ -119,6 +122,7 @@ set_items:
 back_to_checkpoint:
   type: task
   script:
+  - playsound <player> sound:item_armor_equip_turtle
   - if <player.flag[jump]> == 1:
     - teleport <player> l@6.5,59,86.5,0,-90,hub
   - if <player.flag[jump]> == 2:
@@ -140,5 +144,9 @@ timer:
   type: task
   script:
   - while <player.has_flag[jump]>:
-    - actionbar <player.flag[jump_start_time].from_now.formatted>
+    # - actionbar <time@2020/01/01_00:00:00:000_Z.add[<player.flag[jump_start_time].from_now>].format[mm:ss:SSS]>
+    # - actionbar <player.flag[jump_start_time].format[hh:mm:ss:SSS]>
+    - actionbar <time@2020/01/01_01:00:00:000_Z.format[hh:mm:ss]>
+    
+    # - actionbar <player.flag[jump_start_time]>
     - wait 0.05s
