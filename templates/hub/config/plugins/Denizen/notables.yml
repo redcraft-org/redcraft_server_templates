@@ -47,6 +47,12 @@ Cuboids:
     object: cu@hub,6,59,86,6,59,86
     flags: |
       id:1
+  launchpad_to_survival:
+    object: cu@hub,-24,61,3,-24,61,3
+    flags: ''
+  launchpad_survival_to_spawn:
+    object: cu@hub,-85,61,3,-85,61,3
+    flags: ''
   king_of_the_ladder:
     object: cu@hub,-16,67,68,-10,81,74
     flags: ''
