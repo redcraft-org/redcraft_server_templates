@@ -61,7 +61,8 @@ build-permission-nodes:
     deny-message: '&eSorry, but you are not permitted to do that here.'
 event-handling:
     block-entity-spawns-with-untraceable-cause: false
-    interaction-whitelist: []
+    interaction-whitelist:
+    - magma_cream
     emit-block-use-at-feet: []
     ignore-hopper-item-move-events: false
     break-hoppers-on-denied-move: true
