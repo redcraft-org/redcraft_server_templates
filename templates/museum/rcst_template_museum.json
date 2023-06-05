@@ -12,6 +12,8 @@
         "target": "server.jar"
     },
     "plugins": {
-        "Multiverse": "Core-4.3.*"
+        "Multiverse": "Core-4.3.*",
+        "Denizen": "1.2.*",
+        "Citizens": "2.0.*"
     }
 }
