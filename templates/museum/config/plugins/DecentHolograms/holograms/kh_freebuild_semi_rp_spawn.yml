@@ -1,0 +1,14 @@
+location: museum:-4.500:68.000:-4.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&3&lKingdom&b&lHills'
+    height: 0.3
+  - content: '&7&lFreebuild & Semi RP'
+    height: 0.3
+  actions: {}

@@ -1,0 +1,14 @@
+location: museum:22.500:64.000:-37.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&4&lTop&c&lRed'
+    height: 0.3
+  - content: '&7&lRedstone Plot'
+    height: 0.3
+  actions: {}
