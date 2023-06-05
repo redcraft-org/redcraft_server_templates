@@ -1,0 +1,34 @@
+Cuboids:
+  portal_kh_semi_rp:
+    object: cu@museum,-24,61,-45,-20,65,-44
+    flags: ''
+  launchpad_to_kh_hardcore_crea_plot:
+    object: cu@museum,-5,65,5,-5,65,5
+    flags: ''
+  portal_kh_hardcore:
+    object: cu@museum,-45,61,20,-44,65,24
+    flags: ''
+  portal_topred_redstone_plot:
+    object: cu@museum,20,61,-45,24,65,-44
+    flags: ''
+  portal_topred_new_irs:
+    object: cu@museum,44,61,-24,45,65,-20
+    flags: ''
+  launchpad_to_kh_freebuild_semi_rp:
+    object: cu@museum,-5,65,-5,-5,65,-5
+    flags: ''
+  portal_topred_old_irs:
+    object: cu@museum,44,61,20,45,65,24
+    flags: ''
+  portal_kh_crea_plot:
+    object: cu@museum,-24,61,44,-20,65,45
+    flags: ''
+  portal_kh_freebuild:
+    object: cu@museum,-45,61,-24,-44,65,-20
+    flags: ''
+  launchpad_to_topred_old_irs:
+    object: cu@museum,5,65,5,5,65,5
+    flags: ''
+  launchpad_to_topred_redstone_plot_new_irs:
+    object: cu@museum,5,65,-5,5,65,-5
+    flags: ''
