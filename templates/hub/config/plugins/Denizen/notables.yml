@@ -56,3 +56,6 @@ Cuboids:
   king_of_the_ladder:
     object: cu@hub,-16,67,68,-10,81,74
     flags: ''
+  portal_to_museum:
+    object: cu@hub,45,62,0,45,64,2
+    flags: ''
