@@ -1,4 +1,7 @@
 Cuboids:
+  spawn_region:
+    object: cu@hub,-132,-1,-95,68,160,135
+    flags: ''
   launchpad_crea_build_to_spawn:
     object: cu@hub,-90,62,-15,-90,62,-15
     flags: ''
