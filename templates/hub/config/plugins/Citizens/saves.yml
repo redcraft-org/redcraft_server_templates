@@ -37,13 +37,13 @@ npc:
           '0': 0.0
           '1': 360.0
       location:
-        bodyYaw: -165.27261
+        bodyYaw: 129.79556
         world: hub
         x: '-8.5'
         y: '63.0'
         z: '5.5'
-        yaw: '-165.2726'
-        pitch: '0.0'
+        yaw: '116.5929'
+        pitch: '12.5484'
       skintrait:
         fetchDefaultSkin: true
         signature: Z5uOnFzlD535iJ0867tLgUE8/Kiqi6AuBPYBFck0Ma0RQHZxzyWereYpISN5t5rNGkITJ0AfP0gMnbmeoTZzB86Q+vZVbgNYHDyCb65obFYgzHbmbh+Dk++R+oGFux7MzuY8U/dLTBtORQJncNyU0QH1IT7gkx1FWdNYpMmTh1B2VQBHDPXeP/TkD4IB9RA34ing8vcv40WMTSVU4SFnTLtaKZTSUODvrJpIVlWWxdY6v3KWOWGEcPeNbUxyfQgyv2UtbU5ryd4mlk1cKBKZ/qdoWjwYaVbn14+BWQAgoOlTHF+aeWnAql4LVjwP8H1cGgz94BxwT8Bu9WwP+9A1SC0e+ZdnaAA0Sfp8WP9kQ9sexm2OrMGKUQnk6vRnyHLTittE4DWHuf0ActJct/YUCsOer2f3GIHeuei/BfZUEZItrRUL1RJGiCVcBvfOV4FaVMafjzTPuxXwUfA+Ih+/mdFtTEWXFBcxty8HH44RoPJKfUoHAFw/g/20R3RXuEvuYD0aaAtaXUvb17j4nZW1hGtGQlFhmlv6ihrByHtUCc0exkOmWmyW5X3u3cql27WZugBaclmAQCPYkmibZKXW1/ZxuaDKyvz0lKC+MNLKNGvgn0L6d/Qq2BuyweyBMgWgCFjXkiOdvqLyEJulNfmaAo8VQFnMZ3hQpBabNqK1R3M=
@@ -52,7 +52,23 @@ npc:
         updateSkins: false
       owner:
         uuid: 9430befb-3238-455c-be89-1ff0cd5907f2
-    traitnames: spawned,type,hologramtrait,lookclose,nickname,location,skintrait,inventory,owner,scoreboardtrait,rotationtrait,mounttrait
+      commandtrait:
+        commands:
+          '0':
+            command: tuto-lang
+            hand: RIGHT
+            player: true
+            op: false
+            cooldown: 0
+            globalcooldown: 0
+            n: -1
+            delay: 0
+        cost: -1.0
+        executionMode: LINEAR
+        experienceCost: -1
+        hideErrorMessages: false
+        persistSequence: false
+    traitnames: type,nickname,location,skintrait,inventory,scoreboardtrait,mounttrait,spawned,hologramtrait,commandtrait,lookclose,owner,rotationtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -92,13 +108,13 @@ npc:
           '0': 0.0
           '1': 360.0
       location:
-        bodyYaw: -47.81746
+        bodyYaw: 28.150276
         world: hub
         x: '-8.5'
         y: '63.0'
         z: '-4.5'
-        yaw: '-47.8175'
-        pitch: '-5.9402'
+        yaw: '28.1503'
+        pitch: '-8.9515'
       skintrait:
         fetchDefaultSkin: true
         signature: igUBOL95gojRZHWXif1z48fLCUrHieEPX1kby3/3XU6XJ685cHKFjLm6zonMQG22fy0EV76/y6cki48nI93Zs+LyWMUPQSaKYnh7CRF2YsvHH7KkBrofAVuhesxWgOLzpJKqjWQSHj/5YloYbmcjTf9OZUyGuvIwVxCs1Pyjme8VXH6JCPX5VHS5glwXpdQzYMcKZNnCBbaL2fdCvbKV7ib/8UyjwX1CFxbc2PzPw16QuksTnqLWMbhZaiBv4ZVPEgZGIrd1REo5igbWkFrGVlM5S8KOg7bKU4+kB9TSJremHRiIxUAD8NlfpZSi9+I4eYUG+uGixKnQU1cPfvs2iZJjJ5mqOvuF4Ega5zJ5ozph9KbTM2NFIzZZdg0TiCZGvqLsLoadA8M3XLDmSiQHIsnyZ7aVKlLRkrZteoCj9o64je7aWdfkb9U/7eawEMnMK1eKL434zbDjxk4WiPd9bSH8YT1mNLCPQnJUI6O6mB8H1B7mUsOcbC+6AAhLyUBQ7YEyOAB+eo72RfiRal4lZ1KxX4yF87XnubfL9+D7gIAjHCERCiHQurVHX0jSpNk8Acmc8RZiC+aFXnHPgK59IOuNn3qGMKrJcQASpBioV8ZCOdAV9SpAfhHmtnIw9cglcFxmKNHGAHLd7mKjvjlDkHHd4aFi4kUR08cMzqxTzVE=
@@ -107,7 +123,23 @@ npc:
         updateSkins: false
       owner:
         uuid: 9430befb-3238-455c-be89-1ff0cd5907f2
-    traitnames: spawned,type,hologramtrait,lookclose,location,skintrait,inventory,owner,scoreboardtrait,rotationtrait,mounttrait
+      commandtrait:
+        commands:
+          '0':
+            command: tuto-discord-link
+            hand: RIGHT
+            player: true
+            op: false
+            cooldown: 0
+            globalcooldown: 0
+            n: -1
+            delay: 0
+        cost: -1.0
+        executionMode: LINEAR
+        experienceCost: -1
+        hideErrorMessages: false
+        persistSequence: false
+    traitnames: spawned,type,hologramtrait,commandtrait,lookclose,location,skintrait,inventory,owner,scoreboardtrait,rotationtrait,mounttrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -146,13 +178,13 @@ npc:
           '0': 0.0
           '1': 360.0
       location:
-        bodyYaw: -75.33309
+        bodyYaw: -86.11047
         world: hub
         x: '-16.5'
         y: '60.9375'
         z: '3.5'
-        yaw: '-75.3331'
-        pitch: '-24.257'
+        yaw: '-86.1105'
+        pitch: '-21.1057'
       skintrait:
         fetchDefaultSkin: true
         signature: JP1GFKLp9mMSZNeYM63esKd2w1urKMyCFfIPgMXMFWUAxkd46knCntz2YX+vTrhFid5IIaTCraBAg5I4oyzW5sLIO+UmiiUYJwcPqy8E04fHWFRMBf91Uey02OU9YNk9zAMyELe9ZqKFn6qvlI/M4/SBCHMctqlk7NvENus+0AXdolXFC0sVbcOz9f1a7fts0KVjJaKRsPZLDFQRLKeiQfT1TM1cE7v89m7HUSBUcqqi+lWx57In0HSdOexcr6NhIKSkNNZ22xI9H8Ym4HWGABZUTi0/BkE9/bTtHPRzt1cgMvyAmYmXA0yJjJMtFu8o4fVqF2AYjSWstdZ3XsZSoQBdGsXGHZKCHRkkM9aBCl3+Ko49RmfstbHP0Mhhu006+5Au7zTQC4fxvW/BPB8mEfzSWch7XKIWNU0niBBsOGhHIe5SdQl8QQlBgZUJEqq5QHnyBdrR3P/i+GSy2S8DgYgyvqPGgk63/piCzZ5n3hZA9yQKA7JTMrotDiRgnDqmVwKmBjjhLIpq6YEbqKIZtmQ2VwOaorPKXN6o5sB+A/6trozDFg7u0elK54baLEpNSzLF4ZcKNQzDNwc+P4i6VwZkNvrTwuHxFttAZZFsno2KI6hsPlSDwbCAghwaMbLWjxQgvK78vPFQq1tWBDac8//7WZBgDqe55yg7Mh7Fidw=
@@ -161,7 +193,23 @@ npc:
         updateSkins: false
       owner:
         uuid: 9430befb-3238-455c-be89-1ff0cd5907f2
-    traitnames: spawned,type,hologramtrait,lookclose,location,skintrait,inventory,owner,scoreboardtrait,rotationtrait,mounttrait
+      commandtrait:
+        commands:
+          '0':
+            command: tuto-server
+            hand: RIGHT
+            player: true
+            op: false
+            cooldown: 0
+            globalcooldown: 0
+            n: -1
+            delay: 0
+        cost: -1.0
+        executionMode: LINEAR
+        experienceCost: -1
+        hideErrorMessages: false
+        persistSequence: false
+    traitnames: spawned,type,hologramtrait,commandtrait,lookclose,location,skintrait,inventory,owner,scoreboardtrait,rotationtrait,mounttrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
