@@ -56,12 +56,14 @@ start_jump:
     - stop
   - if !<player.has_flag[jump]>:
     - playsound <player> sound:ENTITY_ENDER_EYE_DEATH pitch:1
-  - flag <player> jump:0
+    - flag <player> nb_fails:0
+    - flag <player> jump:0
   - flag <player> jump_start_time:<util.time_now>
   - run set_items
   - adjust <player> item_slot:5
   - run timer
   - run check_fail_jump
+  - run actionbar_text
 
 
 check_fail_jump:
@@ -70,6 +72,7 @@ check_fail_jump:
   - while <player.has_flag[jump]>:
     
     - if !<player.location.areas.contains_match[jump_zone_*]>:
+      - flag <player> nb_fails:++
       # - run back_to_checkpoint
       - title "subtitle:<&c>you failed" fade_in:0s fade_out:0s stay:0.15s
     - else:
@@ -82,7 +85,16 @@ timer:
   script:
   - while <player.has_flag[jump]>:
     - define duration_since_start <util.time_now.duration_since[<player.flag[jump_start_time]>]>
-    - actionbar <&6><&l><util.time_now.start_of_year.add[<[duration_since_start]>].format[mm:ss:SS]>
+    - flag <player> timer_formatted:<util.time_now.start_of_year.add[<[duration_since_start]>].format[mm:ss:SS]>
+    - wait 0.05s
+
+
+actionbar_text:
+  type: task
+  script:
+  - while <player.has_flag[jump]>:
+    - define actual_level <player.flag[jump].add[1]>
+    - actionbar "<&6>Time: <&e><&l><player.flag[timer_formatted]> <&r>| <&2>Level: <&a><&l> <[actual_level]>/8 <&r>| <&4>Fails: <&c><&l><player.flag[nb_fails]>"
     - wait 0.05s
 
 
