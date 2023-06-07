@@ -2,19 +2,11 @@
 ##         ITEMS         ##
 ###########################
 
-jump_checkpoint_disabled_item:
-    type: item
-    debug: false
-    material: gunpowder
-    display name: <&7><&o>Previous checkpoint (not working yet)
-    lore:
-    - <&8>Currently disabled
-
 jump_checkpoint_item:
     type: item
     debug: false
     material: magma_cream
-    display name: <&l>Previous checkpoint (not working yet)
+    display name: <&l>Previous checkpoint
     lore:
     - <&8>Right click to go back to the previous checkpoint
 
@@ -55,7 +47,6 @@ jump:
 
       # End
 
-      # Fail
 
 start_jump:
   type: task
@@ -63,12 +54,37 @@ start_jump:
   - if !<player.is_op>:
     - narrate <&7>Soon™
     - stop
+  - if !<player.has_flag[jump]>:
+    - playsound <player> sound:ENTITY_ENDER_EYE_DEATH pitch:1
   - flag <player> jump:0
   - flag <player> jump_start_time:<util.time_now>
-  - playsound <player> sound:ENTITY_ENDER_EYE_DEATH pitch:1
   - run set_items
   - adjust <player> item_slot:5
   - run timer
+  - run check_fail_jump
+
+
+check_fail_jump:
+  type: task
+  script:
+  - while <player.has_flag[jump]>:
+    
+    - if !<player.location.areas.contains_match[jump_zone_*]>:
+      # - run back_to_checkpoint
+      - title "subtitle:<&c>you failed" fade_in:0s fade_out:0s stay:0.15s
+    - else:
+      - title "subtitle:<player.location.areas>" fade_out:0s fade_in:0s stay:0.15s
+    - wait 0.1s
+
+
+timer:
+  type: task
+  script:
+  - while <player.has_flag[jump]>:
+    - define duration_since_start <util.time_now.duration_since[<player.flag[jump_start_time]>]>
+    - actionbar <&6><&l><util.time_now.start_of_year.add[<[duration_since_start]>].format[mm:ss:SS]>
+    - wait 0.05s
+
 
 quit_jump:
   type: task
@@ -76,11 +92,12 @@ quit_jump:
   - ratelimit <player> 1s
   - flag <player> jump:!
   - flag <player> jump_start_time:!
-  - teleport <player> l@-24.5,59,23.5,0,90,hub
+  - teleport <player> l@-22.5,59,23.5,0,90,hub
   - inventory set origin:air slot:5
   - inventory set origin:air slot:6
   - playsound <player> ENTITY_VILLAGER_HURT
   - actionbar ""
+
 
 reach_checkpoint:
   type: task
@@ -109,20 +126,20 @@ has_player_cheated:
     - determine true
   - determine false
 
+
 set_items:
   type: task
   script:
   - inventory set origin:jump_quit_item slot:6
-  - if <player.flag[jump]> > 0:
-    - inventory set origin:jump_checkpoint_item slot:5
-  - else:
-    - inventory set origin:jump_checkpoint_disabled_item slot:5
+  - inventory set origin:jump_checkpoint_item slot:5
   
 
 back_to_checkpoint:
   type: task
   script:
   - playsound <player> sound:item_armor_equip_turtle
+  - if <player.flag[jump]> == 0:
+    - teleport <player> l@-28.5,59,23.5,0,90,hub
   - if <player.flag[jump]> == 1:
     - teleport <player> l@6.5,59,86.5,0,-90,hub
   - if <player.flag[jump]> == 2:
@@ -139,14 +156,3 @@ back_to_checkpoint:
     - teleport <player> l@11.5,89,-23.5,0,180,hub
   - if <player.flag[jump]> == 8:
     - teleport <player> l@53.5,101,13.5,0,0,hub
-
-timer:
-  type: task
-  script:
-  - while <player.has_flag[jump]>:
-    # - actionbar <time@2020/01/01_00:00:00:000_Z.add[<player.flag[jump_start_time].from_now>].format[mm:ss:SSS]>
-    # - actionbar <player.flag[jump_start_time].format[hh:mm:ss:SSS]>
-    - actionbar <time@2020/01/01_01:00:00:000_Z.format[hh:mm:ss]>
-    
-    # - actionbar <player.flag[jump_start_time]>
-    - wait 0.05s
