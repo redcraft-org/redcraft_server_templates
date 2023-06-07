@@ -94,7 +94,7 @@ actionbar_text:
   script:
   - while <player.has_flag[jump]>:
     - define actual_level <player.flag[jump].add[1]>
-    - actionbar "<&6>Time: <&e><&l><player.flag[timer_formatted]> <&r>| <&2>Level: <&a><&l> <[actual_level]>/8 <&r>| <&4>Fails: <&c><&l><player.flag[nb_fails]>"
+    - actionbar "<&6>Time: <&e><&l><player.flag[timer_formatted]> <&r>| <&2>Level: <&a><&l> <[actual_level]>/9 <&r>| <&4>Fails: <&c><&l><player.flag[nb_fails]>"
     - wait 0.05s
 
 
