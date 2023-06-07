@@ -9,7 +9,7 @@
     },
     "server_engine": {
         "name": "Waterfall",
-        "version": "1.19",
+        "version": "1.20",
         "target": "server.jar"
     },
     "plugins": {
