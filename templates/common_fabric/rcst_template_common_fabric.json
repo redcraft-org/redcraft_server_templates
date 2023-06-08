@@ -24,7 +24,7 @@
             "ViaRewind": "2.0.*",
             "ViaVersion": "4.6.*",
             "alternatecurrent": "1.5.*",
-            "fabricapi-mc1.20": "0.83.*",
+            "fabricapi-mc": "*",
             "carpet": "1.4.*",
             "fabrickotlin": "1.9.*",
             "memoryLeakFix": "1.0.*",
