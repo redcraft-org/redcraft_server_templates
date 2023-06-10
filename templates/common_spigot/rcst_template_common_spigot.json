@@ -13,8 +13,8 @@
     "plugins": {
         "BookExploitFix": "1.3",
         "BungeeTabListPlusBridge": "3.6.*",
-        "CMI": "9.5.*",
-        "CMILib": "1.2.*",
+        "CMI": "9.6.*",
+        "CMILib": "1.3.*",
         "CoreProtect": "21.*",
         "DecentHolograms": "2.8.*",
         "FastAsyncWorldEdit": "2.6.*",
