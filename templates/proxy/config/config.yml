@@ -43,7 +43,7 @@ servers:
   survival_vanilla:
     motd: "&9Survival Vanilla"
     address: localhost:25571
-    restricted: false
+    restricted: true
 listeners:
 - query_port: 25565
   motd: "&c&lRed&f&lCraft&7&l.org &r"
