@@ -73,10 +73,10 @@ check_fail_jump:
     
     - if !<player.location.areas.contains_match[jump_zone_*]>:
       - flag <player> nb_fails:++
-      # - run back_to_checkpoint
-      - title "subtitle:<&c>you failed" fade_in:0s fade_out:0s stay:0.15s
-    - else:
-      - title "subtitle:<player.location.areas>" fade_out:0s fade_in:0s stay:0.15s
+      - run back_to_checkpoint
+      #- title "subtitle:<&c>you failed" fade_in:0s fade_out:0s stay:0.15s
+    #- else:
+      #- title "subtitle:<player.location.areas>" fade_out:0s fade_in:0s stay:0.15s
     - wait 0.1s
 
 
