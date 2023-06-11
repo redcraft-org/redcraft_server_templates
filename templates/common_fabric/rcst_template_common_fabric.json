@@ -28,7 +28,7 @@
             "carpet": "1.4.*",
             "fabrickotlin": "1.9.*",
             "memoryLeakFix": "1.0.*",
-            "minecraftcommandpermissions": "1.6.*",
+            "vanilla-permissions": "0.2.*",
             "sodium": "0.4.*",
             "sparkfabric": "1.10.*"
         }
