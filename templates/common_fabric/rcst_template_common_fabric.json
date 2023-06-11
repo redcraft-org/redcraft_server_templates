@@ -19,7 +19,7 @@
             "LedgerDatabases": "1.1.*",
             "LuckPermsFabric": "5.4.*",
             "PlanFabric": "5.*",
-            "ViaBackwards": "4.6.*",
+            "ViaBackwards": "4.7.*",
             "ViaFabric": "0.4.*",
             "ViaRewind": "2.0.*",
             "alternatecurrent": "1.5.*",
