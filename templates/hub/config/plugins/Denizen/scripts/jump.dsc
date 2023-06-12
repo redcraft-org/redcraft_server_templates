@@ -31,6 +31,8 @@ jump:
 
       # items
       after player right clicks block with:jump_quit_item:
+      - ratelimit <player> 1s
+      - run stop_jump
       - run quit_jump
       after player right clicks block with:jump_checkpoint_item:
       - ratelimit <player> 1s
@@ -46,14 +48,19 @@ jump:
       - run reach_checkpoint def:<context.area.flag[id]>
 
       # End
+      after player enters jump_end:
+      - if <player.flag[jump]> != 8:
+        - stop
+      - run finish_jump
+      - run stop_jump
 
 
 start_jump:
   type: task
   script:
-  - if !<player.is_op>:
-    - narrate <&7>Soon™
-    - stop
+  #- if !<player.is_op>:
+    #- narrate <&7>Soon™
+    #- stop
   - if !<player.has_flag[jump]>:
     - playsound <player> sound:ENTITY_ENDER_EYE_DEATH pitch:1
     - flag <player> nb_fails:0
@@ -98,17 +105,28 @@ actionbar_text:
     - wait 0.05s
 
 
+stop_jump:
+  type: task
+  script:
+  - flag <player> jump:!
+  - flag <player> jump_start_time:!
+  - inventory set origin:air slot:5
+  - inventory set origin:air slot:6
+  - actionbar ""
+
+
 quit_jump:
   type: task
   script:
-  - ratelimit <player> 1s
-  - flag <player> jump:!
-  - flag <player> jump_start_time:!
   - teleport <player> l@-22.5,59,23.5,0,90,hub
-  - inventory set origin:air slot:5
-  - inventory set origin:air slot:6
   - playsound <player> ENTITY_VILLAGER_HURT
-  - actionbar ""
+
+
+finish_jump:
+  type: task
+  script:
+  - firework <player.location> ball_large power:0 primary:red|gray fade:white
+  - narrate "You finished the jump in <&e><&l><util.time_now.duration_since[<player.flag[jump_start_time]>].formatted> <&r>and with <&c><&l><player.flag[nb_fails]> fails"
 
 
 reach_checkpoint:
