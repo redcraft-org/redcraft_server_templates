@@ -51,7 +51,7 @@ hub:
     Tp: hub;-87.46;62.0;32.9;166.79;23.1
     kickBack: true
     particlesByPermission: false
-    requiresPerm: false
+    requiresPerm: true
     informOnMissingPerm: false
     particleAmount: 5
     particleHide: 0
