@@ -17,7 +17,7 @@ spoof-reported-version: true
 # Can be "ViaVersion" to get the latest supported version by ViaVersion
 # or a specific version like "1.16.2"
 # If you don't have ViaVersion, it will fallback to Bungee's version
-reported-version: "1.19.4"
+reported-version: "1.20.x"
 
 # This is your HTTP API port to query the JSON API
 # If you want to use a port bellow 1024, you'll need to use root access
