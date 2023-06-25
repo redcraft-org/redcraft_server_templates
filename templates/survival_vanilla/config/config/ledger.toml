@@ -49,4 +49,4 @@ database = "MYSQL"
 url = "k8s.redcraft.org:31006/minecraft_survival_vanilla"
 username = "minecraft"
 password = "MYSQL_PASSWORD"
-properties = []
+properties = ["autoReconnect=true"]
