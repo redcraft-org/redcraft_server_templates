@@ -1,10 +1,10 @@
 [database]
 # The maximum amount of time to wait for the queue to drain when the server stops
-queueTimeoutMin = 5
+queueTimeoutMin = 2
 # The amount of time between checking if the queue is empty when the server stops
 queueCheckDelaySec = 10
 # Automatically purge entries older than the number of days specified. Set to -1 to disable
-autoPurgeDays = 90
+autoPurgeDays = 14
 
 [search]
 # Number of actions to show per page
