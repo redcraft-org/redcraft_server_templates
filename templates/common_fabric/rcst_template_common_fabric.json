@@ -29,7 +29,8 @@
             "fabrickotlin": "1.9.*",
             "VanillaPermissions": "0.2.*",
             "sodium": "0.4.*",
-            "sparkfabric": "1.10.*"
+            "sparkfabric": "1.10.*",
+            "ChunkDebug": "1.0.*"
         }
     }
 }
