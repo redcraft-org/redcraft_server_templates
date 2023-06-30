@@ -1,0 +1,7 @@
+{
+    "start_command": "java -jar server.jar -ruw",
+    "stop_command": "^C",
+    "directories_to_backup": [
+        "web"
+    ]
+}
