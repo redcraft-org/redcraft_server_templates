@@ -1,10 +1,7 @@
 {
     "name": "bluemap",
     "source": null,
-    "target": null,
-    "config_env_matches": {
-        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
-    },
+    "target": "bluemap.tar",
     "server_engine": {
         "name": "BlueMap",
         "version": "cli",
