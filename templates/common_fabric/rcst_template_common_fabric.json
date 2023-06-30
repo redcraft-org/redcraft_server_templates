@@ -7,7 +7,7 @@
     },
     "server_engine": {
         "name": "Fabric",
-        "version": "1.20",
+        "version": "1.20.1",
         "target": "server.jar"
     },
     "resources": {
@@ -23,13 +23,14 @@
             "ViaFabric": "0.4.*",
             "ViaRewind": "2.0.*",
             "alternatecurrent": "1.5.*",
-            "fabricapi": "0.83.*",
+            "fabricapi": "0.84.*",
             "carpet": "1.4.*",
             "lithium": "0.11.*",
             "fabrickotlin": "1.9.*",
             "VanillaPermissions": "0.2.*",
             "sodium": "0.4.*",
-            "sparkfabric": "1.10.*"
+            "sparkfabric": "1.10.*",
+            "ChunkDebug": "1.0.*"
         }
     }
 }
