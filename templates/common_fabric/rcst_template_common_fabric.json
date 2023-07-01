@@ -30,7 +30,8 @@
             "VanillaPermissions": "0.2.*",
             "sodium": "0.4.*",
             "sparkfabric": "1.10.*",
-            "ChunkDebug": "1.0.*"
+            "ChunkDebug": "1.0.*",
+            "VeryManyPlayers": "0.2.*"
         }
     }
 }
