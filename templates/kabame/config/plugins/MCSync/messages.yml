@@ -1,0 +1,14 @@
+#################################################
+#    __  __   ___  ___ __   __ _  _   ___
+#   |  \/  | / __|/ __|\ \ / /| \| | / __|
+#   | |\/| || (__ \__ \ \   / | .  || (__
+#   |_|  |_| \___||___/  |_|  |_|\_| \___|
+#
+#################################################
+# Welcome to the MCSync Configuration file!
+# If this is your first time, we recommend setting your server key where it says "KEYHERE" then restart your server.
+# You may also change the disconnect messages if you would like! That's pretty awesome, isn't it!?!
+
+message-allow: "§cVous devez être sub à la chaine de KabameTheHusky pour rejoindre ce serveur"
+message-fail: "§7Merci de synchroniser votre compte Twitch sur §emcsync.live/login"
+message-error: "§cAn error has occurred while trying to access the whitelist API. Please contact the administrator."

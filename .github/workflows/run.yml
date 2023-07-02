@@ -47,6 +47,7 @@ jobs:
           SENTRY_DSN_CREA_REDSTONE_PLOT: ${{ secrets.SENTRY_DSN_CREA_REDSTONE_PLOT }}
           SENTRY_DSN_CREA_BUILD_PLOT: ${{ secrets.SENTRY_DSN_CREA_BUILD_PLOT }}
           SENTRY_DSN_MUSEUM: ${{ secrets.SENTRY_DSN_MUSEUM }}
+          MCSYNC_KABAME_KEY: ${{ secrets.MCSYNC_KABAME_KEY }}
         run: |
           ./setup.sh
           source env/bin/activate

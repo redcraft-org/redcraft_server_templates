@@ -4,7 +4,8 @@
     "target": "kabame.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
-        "SENTRY_DSN_MUSEUM": "SENTRY_DSN_MUSEUM"
+        "SENTRY_DSN_MUSEUM": "SENTRY_DSN_MUSEUM",
+        "MCSYNC_KABAME_KEY": "MCSYNC_KABAME_KEY"
     },
     "server_engine": {
         "name": "Purpur",
