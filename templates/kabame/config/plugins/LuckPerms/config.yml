@@ -31,7 +31,7 @@
 # - When set to "global" this setting is effectively ignored.
 # - In all other cases, the value here is added to all players in a "server" context.
 # - See: https://luckperms.net/wiki/Context
-server: museum
+server: kabame
 
 # If the servers own UUID cache/lookup facility should be used when there is no record for a player
 # already in LuckPerms.
@@ -96,7 +96,7 @@ data:
 
   # The name of the database to store LuckPerms data in.
   # - This must be created already. Don't worry about this setting if you're using MongoDB.
-  database: minecraft
+  database: minecraft_kabame
 
   # Credentials for the database.
   username: minecraft

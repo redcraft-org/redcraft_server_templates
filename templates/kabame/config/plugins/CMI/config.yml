@@ -1297,7 +1297,7 @@ Spawn:
   # Defines players spawn point after death if set to true, if not, then it will be used only for /cmi spawn command
   # RespawnLocation will indicate if you want to use this location as possible respawn point for player after death
   Main:
-    World: museum
+    World: kabame
     X: 0.5
     Y: 65.0
     Z: 0.5

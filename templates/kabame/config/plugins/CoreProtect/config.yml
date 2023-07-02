@@ -9,7 +9,7 @@ use-mysql: true
 table-prefix: coreprotect_kabame_
 mysql-host: k8s.redcraft.org
 mysql-port: 31006
-mysql-database: minecraft
+mysql-database: minecraft_kabame
 mysql-username: minecraft
 mysql-password: 'MYSQL_PASSWORD'
 

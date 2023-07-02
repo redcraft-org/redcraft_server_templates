@@ -5,7 +5,7 @@
 # -----------------------------------------------------
 Server:
     IP: redcraft.org
-    ServerName: Museum
+    ServerName: Kabame
 # -----------------------------------------------------
 Plugin:
     Logging:
