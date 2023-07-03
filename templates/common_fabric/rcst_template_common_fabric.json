@@ -32,7 +32,7 @@
             "sparkfabric": "1.10.*",
             "ChunkDebug": "1.0.*",
             "VeryManyPlayers": "0.2.*",
-            "Carpet-TIS": "1.49.*"
+            "CarpetTIS": "1.49.*"
         }
     }
 }
