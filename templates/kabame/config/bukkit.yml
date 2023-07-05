@@ -1,5 +1,5 @@
 settings:
-  allow-end: false
+  allow-end: true
   warn-on-overload: true
   permissions-file: permissions.yml
   update-folder: update
