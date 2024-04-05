@@ -14,7 +14,7 @@
     "plugins": {
         "F3NPerm": "3.*",
         "OmegaVision": "2.5.*",
-        "PlotSquared": "7.2.*",
+        "PlotSquared": "7.3.*",
         "RedstoneUtility": "0.0.*"
     }
 }
