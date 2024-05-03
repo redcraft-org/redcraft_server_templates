@@ -2,7 +2,7 @@ pytest==6.1.2
 pylint==2.6.0
 autopep8==1.5.4
 python-dotenv==0.15.0
-tqdm==4.54.1
+tqdm==4.66.3
 boto3==1.16.30
 massedit==0.69.1
 GitPython==3.1.41
