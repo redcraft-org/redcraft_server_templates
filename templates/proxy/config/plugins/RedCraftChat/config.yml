@@ -63,12 +63,12 @@ scheduled-announcements-provider: 'database'
 scheduled-announcements-interval: 900 # interval between messages in seconds
 
 # Required (to store mails, supported locales and players if set to database)
-database-uri: 'jdbc:mysql://k8s.redcraft.org:31006/minecraft?useSSL=false&autoReconnect=true'
+database-uri: 'jdbc:mysql://10.0.2.42:31006/minecraft?useSSL=false&autoReconnect=true'
 database-username: 'minecraft'
 database-password: 'MYSQL_PASSWORD'
 
 # Used for caching
 cache-provider: 'redis' # redis or memory
 # If you use redis
-redis-uri: 'redis://redis.production.svc.cluster.local:6379/0'
+redis-uri: 'redis://10.0.2.42:31379/0'
 redis-key-prefix: 'RCC'

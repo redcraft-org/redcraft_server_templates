@@ -38,7 +38,7 @@ sql:
   # and most of these settings won't apply.
 
   # Database server address.
-  address: k8s.redcraft.org:31006
+  address: 10.0.2.42:31006
 
   # Database name, username and password.
   database: 'minecraft'

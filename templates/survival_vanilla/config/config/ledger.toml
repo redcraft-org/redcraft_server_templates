@@ -46,7 +46,7 @@ networking = true
 
 [database_extensions]
 database = "MYSQL"
-url = "k8s.redcraft.org:31006/minecraft_survival_vanilla"
+url = "10.0.2.42:31006/minecraft_survival_vanilla"
 username = "minecraft"
 password = "MYSQL_PASSWORD"
 properties = ["autoReconnect=true"]

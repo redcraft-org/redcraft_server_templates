@@ -11,7 +11,7 @@ sqlite:
 mysql:
   # Should MySQL be used?
   use: true
-  host: "k8s.redcraft.org"
+  host: "10.0.2.42"
   port: "31006"
   user: "minecraft"
   password: "MYSQL_PASSWORD"

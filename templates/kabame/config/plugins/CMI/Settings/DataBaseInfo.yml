@@ -6,7 +6,7 @@ mysql:
   # Requires Mysql.
   username: minecraft
   password: 'MYSQL_PASSWORD'
-  hostname: k8s.redcraft.org:31006
+  hostname: 10.0.2.42:31006
   database: minecraft_kabame
   # Valid characters are a-z 0-9 and _
   tablePrefix: CMI_kabame_
