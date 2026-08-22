@@ -3,7 +3,7 @@ import json
 import tempfile
 import unittest
 
-from templates.manager import TemplateManager, get_template_resources
+from templates.manager import TemplateManager, get_filter_regex, get_template_resources
 
 
 class FakeTemplateManager(TemplateManager):
@@ -118,6 +118,43 @@ class UpdateFlowTests(unittest.TestCase):
         self.assertEqual(
             '3.1.*', manager.templates['legacy']['plugins']['LegacyPlugin'])
         self.assertIn('legacy', manager.saved_templates)
+
+
+class FilterRegexTests(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.test_cases = [
+            # Dots are literal, 7.3.* must not spill over to 7.30.x
+            {'filter': '7.3.*', 'version': '7.3.4', 'matches': True},
+            {'filter': '7.3.*', 'version': '7.30.1', 'matches': False},
+            # Fabric versions carry a +mcversion suffix
+            {'filter': '0.96.*', 'version': '0.96.11+1.20.4', 'matches': True},
+            # A + inside the pin is literal, it must not turn .+ into a possessive .++
+            {'filter': '0.157.*+26.2', 'version': '0.157.0+26.2', 'matches': True},
+            {'filter': '0.157.*+26.2', 'version': '0.157.0+26.3', 'matches': False},
+            # Versions with a dash keep matching
+            {'filter': '3.8.*', 'version': '3.8.0-76', 'matches': True},
+            {'filter': 'Core-4.3.*', 'version': 'Core-4.3.2-SNAPSHOT-b870', 'matches': True},
+            {'filter': 'Core-4.3.*', 'version': 'Core-5.8.1-pre.1', 'matches': False},
+            # Compound wildcards keep matching
+            {'filter': '1.4.*-1.20.4*', 'version': '1.4.14-1.20.4+', 'matches': True},
+            {'filter': '1.4.*-1.20.4*', 'version': '1.4.10-1.20', 'matches': False},
+            # Exact pins are anchored on both sides
+            {'filter': '1.3', 'version': '1.3', 'matches': True},
+            {'filter': '1.3', 'version': '1.3.1', 'matches': False},
+            {'filter': '1.3', 'version': '21.3', 'matches': False},
+            # The catch all wildcard matches any version
+            {'filter': '*', 'version': '26.2', 'matches': True}
+        ]
+
+    def test_filter_regex_matching(self):
+        for test_case in self.test_cases:
+            match = get_filter_regex(test_case['filter']).match(
+                test_case['version'])
+            self.assertEqual(
+                test_case['matches'], bool(match),
+                'filter {filter} against {version}'.format(**test_case))
 
 
 class TemplateInfoRoundTripTests(unittest.TestCase):

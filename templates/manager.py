@@ -240,4 +240,7 @@ def get_plugin_filename(plugin, version):
 
 
 def get_filter_regex(filter_string):
-    return re.compile(filter_string.replace('*', '.+'))
+    # Escape regex characters like . and + so only the * wildcards stay special,
+    # and anchor the pattern so a pin cannot match past its last part
+    escaped_filter = re.escape(filter_string).replace('\\*', '.+')
+    return re.compile('^{}$'.format(escaped_filter))
