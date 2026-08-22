@@ -36,6 +36,25 @@ class UpdaterTests(unittest.TestCase):
                 'old': '1.9.2.*',
                 'new': '2.0',
                 'expected': '2.*'
+            },
+            {
+                # Year based Minecraft versions have one part less than the old 1.x.y scheme,
+                # the pin backs off a level so it still matches the new version
+                'old': '1.20.*',
+                'new': '26.2',
+                'expected': '26.*'
+            },
+            {
+                'old': '1.20.*',
+                'new': '26.2.1',
+                'expected': '26.2.*'
+            },
+            {
+                # Fabric style versions carry a +mcversion suffix in their last part,
+                # the wildcard swallows it and stays free of + characters
+                'old': '0.96.*',
+                'new': '0.157.0+26.2',
+                'expected': '0.157.*'
             }
         ]
 

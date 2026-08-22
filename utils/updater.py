@@ -9,16 +9,18 @@ def generate_new_wildcard_version(old_wildcarded_version, new_absolute_version):
     new_wildcarded_version_parts = []
 
     for idx, part in enumerate(old_wildcarded_version_parts):
-        try:
-            if part == '*':
-                new_wildcarded_version_parts.append('*')
-            else:
-                new_wildcarded_version_parts.append(
-                    new_absolute_version_parts[idx])
-        except IndexError:
+        if idx >= len(new_absolute_version_parts):
             # The new version format is shorter than the old one, we discard the minor versions
+            # This also covers a trailing wildcard that the new version has no part left for,
+            # like an old 1.20.* pin with a new 26.2 version which becomes 26.*
             new_wildcarded_version_parts[-1] = '*'
             break
+
+        if part == '*':
+            new_wildcarded_version_parts.append('*')
+        else:
+            new_wildcarded_version_parts.append(
+                new_absolute_version_parts[idx])
 
     new_wildcarded_version = '.'.join(new_wildcarded_version_parts)
 
