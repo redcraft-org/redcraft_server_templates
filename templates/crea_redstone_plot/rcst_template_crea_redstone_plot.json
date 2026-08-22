@@ -15,6 +15,6 @@
         "F3NPerm": "3.*",
         "OmegaVision": "2.5.*",
         "PlotSquared": "7.3.*",
-        "RedstoneUtility": "0.0.*"
+        "RedCraftRedstoneUtility": "0.0.*"
     }
 }
