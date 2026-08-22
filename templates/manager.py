@@ -218,7 +218,7 @@ def replace_config_env_matches(directory, patterns):
             're.sub("{}", "{}", line)'.format(pattern, replacement))
 
     whitelisted_extensions = ['yml', 'yaml', 'conf', 'toml',
-                              'json', 'properties', 'ini', 'csv']
+                              'json', 'properties', 'ini', 'csv', 'secret']
 
     file_matches = ['*.{}'.format(extension)
                     for extension in whitelisted_extensions]

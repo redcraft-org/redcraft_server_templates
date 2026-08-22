@@ -5,26 +5,27 @@
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
         "DISCORD_TOKEN": "DISCORD_TOKEN",
-        "DEEPL_TOKEN": "DEEPL_TOKEN"
+        "DEEPL_TOKEN": "DEEPL_TOKEN",
+        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET"
     },
     "server_engine": {
-        "name": "Waterfall",
-        "version": "1.20",
+        "name": "Velocity",
+        "version": "4.0.0",
         "target": "server.jar"
     },
     "plugins": {
         "BungeeTabListPlus": "3.6.*",
-        "CMIB": "1.0.*",
+        "CMIV": "1.0.*",
         "Floodgate": "2.2.*",
-        "Geyser": "2.2.*",
+        "Geyser": "2.11.*",
         "LiteBans": "2.15.*",
-        "LuckPermsBungee": "5.4.*",
+        "LuckPermsVelocity": "5.5.*",
         "Maintenance": "4.2.*",
+        "MiniMOTD": "2.2.*",
         "Plan": "5.*",
         "Reconnect": "1.0.*",
         "RedCraftBungeeJsonApi": "0.1.*",
         "RedCraftChat": "0.0.*",
-        "ServerListPlus": "3.5.*",
-        "sparkbungeecord": "1.10.*"
+        "sparkvelocity": "1.10.*"
     }
 }
