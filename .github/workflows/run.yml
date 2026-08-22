@@ -10,11 +10,11 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -24,9 +24,10 @@ jobs:
           git config user.email contact@redcraft.org
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.8'
+          python-version: '3.12'
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
