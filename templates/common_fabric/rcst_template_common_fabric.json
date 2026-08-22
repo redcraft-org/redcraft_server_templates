@@ -15,8 +15,6 @@
             "FabricProxyLegacy": "1.8.*",
             "Indium": "1.0.*",
             "InvView": "1.4.*-1.20.4*",
-            "Ledger": "1.2.*",
-            "LedgerDatabases": "1.1.*",
             "LuckPermsFabric": "5.4.*",
             "PlanFabric": "5.*",
             "ViaBackwards": "4.9.*",
