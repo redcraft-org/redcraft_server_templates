@@ -1,0 +1,19 @@
+# FabricProxy-Lite replaces FabricProxyLegacy now that the proxy runs Velocity modern
+# forwarding. See https://github.com/OKTW-Network/FabricProxy-Lite
+#
+# The secret below is a placeholder filled in at template build time, see
+# config_env_matches in rcst_template_survival_vanilla.json.
+# It has to match forwarding.secret on the Velocity proxy.
+
+# Allows connection through the proxy without disabling online-mode in server.properties
+hackOnlineMode = true
+
+# Required for mods that need the player UUID early, LuckPerms among them
+hackEarlySend = true
+
+# Stops players being kicked for an invalid chat signature after switching servers
+hackMessageChain = true
+
+disconnectMessage = "This server can only be joined through the RedCraft proxy."
+
+secret = "VELOCITY_FORWARDING_SECRET"

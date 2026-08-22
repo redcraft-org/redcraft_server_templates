@@ -4,11 +4,12 @@
     "target": "museum.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
-        "SENTRY_DSN_MUSEUM": "SENTRY_DSN_MUSEUM"
+        "SENTRY_DSN_MUSEUM": "SENTRY_DSN_MUSEUM",
+        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET"
     },
     "server_engine": {
         "name": "Purpur",
-        "version": "1.20.4",
+        "version": "26.2",
         "target": "server.jar"
     },
     "plugins": {

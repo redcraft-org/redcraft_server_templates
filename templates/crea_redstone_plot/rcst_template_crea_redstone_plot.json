@@ -4,15 +4,16 @@
     "target": "crea_redstone_plot.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
-        "SENTRY_DSN_CREA_REDSTONE_PLOT": "SENTRY_DSN_CREA_REDSTONE_PLOT"
+        "SENTRY_DSN_CREA_REDSTONE_PLOT": "SENTRY_DSN_CREA_REDSTONE_PLOT",
+        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET"
     },
     "server_engine": {
         "name": "Purpur",
-        "version": "1.20.4",
+        "version": "26.2",
         "target": "server.jar"
     },
     "plugins": {
-        "F3NPerm": "3.*",
+        "F3F4Perms": "1.3.*",
         "PlotSquared": "7.3.*",
         "RedCraftRedstoneUtility": "0.0.*"
     }

@@ -3,11 +3,12 @@
     "source": "common_fabric",
     "target": "survival_vanilla.tar",
     "config_env_matches": {
-        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD"
+        "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
+        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET"
     },
     "server_engine": {
         "name": "Fabric",
-        "version": "1.20.4",
+        "version": "26.2",
         "target": "server.jar"
     }
 }
