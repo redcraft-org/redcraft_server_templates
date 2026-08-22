@@ -54,3 +54,9 @@ jobs:
           source env/bin/activate
           python generate_templates.py
           python check_updates.py
+
+      - name: Keepalive workflow
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X PUT repos/${{ github.repository }}/actions/workflows/run.yml/enable
