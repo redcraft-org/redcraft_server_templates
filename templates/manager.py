@@ -54,11 +54,7 @@ class TemplateManager():
 
         self.copy_template_config(name, temp_directory.name)
 
-        resources = template.get('resources') or {}
-        if not resources:
-            resources['plugins'] = template.get('plugins') or {}
-
-        for resource_type, resource in resources.items():
+        for resource_type, resource in get_template_resources(template).items():
             self.download_resources(
                 resource, temp_directory.name, resource_type=resource_type)
 
@@ -107,8 +103,10 @@ class TemplateManager():
         for template_name in self.list_templates(include_no_target=True):
             template = self.get_template_info(template_name)
 
-            outdated_template_plugins = self.find_outdated_plugins(
-                template.get('plugins') or {})
+            outdated_template_plugins = {}
+            for resource in get_template_resources(template).values():
+                outdated_template_plugins.update(
+                    self.find_outdated_plugins(resource))
 
             if outdated_template_plugins:
                 outdated_plugins[template_name] = outdated_template_plugins
@@ -122,14 +120,17 @@ class TemplateManager():
             template = self.get_template_info(template_name)
 
             for plugin, plugin_version in plugins.items():
-                old_version = template['plugins'][plugin]
                 new_version = plugin_version['latest_version']
-                new_wildcarded_version = generate_new_wildcard_version(
-                    old_version, new_version)
-                template['plugins'][plugin] = new_wildcarded_version
-                if print_updates:
-                    print('[{}] {} has been updated from {} to {}'.format(
-                        template_name, plugin, old_version, new_wildcarded_version))
+                for resource in get_template_resources(template).values():
+                    if plugin not in resource:
+                        continue
+                    old_version = resource[plugin]
+                    new_wildcarded_version = generate_new_wildcard_version(
+                        old_version, new_version)
+                    resource[plugin] = new_wildcarded_version
+                    if print_updates:
+                        print('[{}] {} has been updated from {} to {}'.format(
+                            template_name, plugin, old_version, new_wildcarded_version))
 
             self.save_template_info(template_name, template)
 
@@ -224,6 +225,14 @@ def replace_config_env_matches(directory, patterns):
 
     massedit.edit_files(file_matches, expressions=compiled_patterns,
                         start_dirs=directory, dry_run=False, max_depth=10)
+
+
+def get_template_resources(template):
+    resources = template.get('resources') or {}
+    if not resources:
+        resources = {'plugins': template.get('plugins') or {}}
+
+    return resources
 
 
 def get_plugin_filename(plugin, version):
