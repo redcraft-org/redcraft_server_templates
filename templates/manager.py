@@ -3,7 +3,7 @@ import re
 import json
 import tarfile
 import tempfile
-from distutils.dir_util import copy_tree
+import shutil
 
 from tqdm import tqdm
 import massedit
@@ -185,7 +185,7 @@ class TemplateManager():
         template_config_directory = os.path.join(
             self.template_dir, template_name, 'config')
         if os.path.exists(template_config_directory):
-            copy_tree(template_config_directory, temporary_directory)
+            shutil.copytree(template_config_directory, temporary_directory, dirs_exist_ok=True)
 
     def __get_available_plugins(self):
         available_plugins = self.repository_manager.list()
