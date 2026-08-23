@@ -1,0 +1,40 @@
+groups:
+- name: default
+  headers:
+  - '<yellow>W</yellow><red>elcome</red> <white>%username%</white>'
+  - '<yellow>We</yellow><red>lcome</red> <white>%username%</white>'
+  - '<yellow>Wel</yellow><red>come</red> <white>%username%</white>'
+  - '<yellow>Welc</yellow><red>ome</red> <white>%username%</white>'
+  - '<yellow>Welco</yellow><red>me</red> <white>%username%</white>'
+  - '<yellow>Welcom</yellow><red>e</red> <white>%username%</white>'
+  - '<yellow>Welcome</yellow><red></red> <white>%username%</white>'
+  - '<red>W</red><yellow>elcome</yellow> <white>%username%</white>'
+  - '<red>We</red><yellow>lcome</yellow> <white>%username%</white>'
+  - '<red>Wel</red><yellow>come</yellow> <white>%username%</white>'
+  - '<red>Welc</red><yellow>ome</yellow> <white>%username%</white>'
+  - '<red>Welco</red><yellow>me</yellow> <white>%username%</white>'
+  - '<red>Welcom</red><yellow>e</yellow> <white>%username%</white>'
+  - '<red>Welcome</red><yellow></yellow> <white>%username%</white>'
+  footers:
+  - '<red><bold>Red</bold></red><white><bold>Craft</bold></white><gray><bold>.org</bold></gray> <gray>- Alpha</gray>'
+  format: '<gray>[%server%]</gray> %prefix%%username%%suffix%'
+  nametag:
+    prefix: '%prefix%'
+    suffix: '%suffix%'
+  servers:
+  - hub
+  - museum
+  - survival_vanilla
+  - crea_build_plot
+  - crea_redstone_plot
+  - crea_engineer_test
+  sorting_placeholders:
+  - '%role_weight%'
+  - '%username_lower%'
+  placeholder_replacements: {}
+  collisions: false
+  header_footer_update_rate: 200
+  format_update_rate: 1000
+  nametag_update_rate: 1000
+  placeholder_update_rate: 1000
+  only_list_players_in_same_server: false
