@@ -23,11 +23,11 @@ groups:
     suffix: '%suffix%'
   servers:
   - hub
-  - museum
-  - survival_vanilla
   - crea_build_plot
   - crea_redstone_plot
+  - museum
   - crea_engineer_test
+  - survival_vanilla
   sorting_placeholders:
   - '%server%'
   - '%role_weight%'
@@ -35,17 +35,17 @@ groups:
   placeholder_replacements:
     '%server%':
     - placeholder: hub
-      replacement: '&aHub'
-    - placeholder: museum
-      replacement: '&6Museum'
-    - placeholder: survival_vanilla
-      replacement: '&2Survival Vanilla'
+      replacement: '&6Hub'
     - placeholder: crea_build_plot
-      replacement: '&bCrea Build'
+      replacement: '&dBuild plot'
     - placeholder: crea_redstone_plot
-      replacement: '&cCrea Redstone'
+      replacement: '&4Redstone plot'
+    - placeholder: museum
+      replacement: '&eMuseum'
     - placeholder: crea_engineer_test
-      replacement: '&7Crea Engineer Test'
+      replacement: '&5Crea Engineer Test'
+    - placeholder: survival_vanilla
+      replacement: '&9Survival Vanilla'
   collisions: false
   header_footer_update_rate: 200
   format_update_rate: 1000

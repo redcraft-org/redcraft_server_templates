@@ -32,12 +32,12 @@ default-locale: 'en-US'
 # in the Discord bridge. Falls back to the motd a server answers a ping with,
 # and then to the name the proxy registers it under.
 server-display-names:
-  hub: '&aHub'
-  museum: '&6Museum'
-  survival_vanilla: '&2Survival Vanilla'
-  crea_build_plot: '&bCrea Build'
-  crea_redstone_plot: '&cCrea Redstone'
-  crea_engineer_test: '&7Crea Engineer Test'
+  hub: '&6Hub'
+  crea_build_plot: '&dBuild plot'
+  crea_redstone_plot: '&4Redstone plot'
+  museum: '&eMuseum'
+  crea_engineer_test: '&5Crea Engineer Test'
+  survival_vanilla: '&9Survival Vanilla'
 
 enable-tab-completion: false
 # Chat is cancelled and re-emitted by the proxy, which a signed message forbids,
