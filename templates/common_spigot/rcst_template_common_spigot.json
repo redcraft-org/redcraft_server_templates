@@ -13,26 +13,27 @@
     "plugins": {
         "AntiRedstoneClock": "2.9.*",
         "BungeeTabListPlusBridge": "3.6.*",
+        "Chunky": "1.5.*",
         "CMI": "9.8.*",
         "CMILib": "1.5.*",
-        "Chunky": "1.5.*",
-        "CoreProtect": "24.*",
         "DecentHolograms": "2.10.*",
         "FastAsyncWorldEdit": "2.15.*",
+        "goBrush": "3.8.*",
+        "goPaint": "3.1.*",
         "Head Database": "4.*",
         "ImageFrame": "2026.1.*",
         "LuckPerms": "5.5.*",
+        "NBTAPI": "2.*",
         "Plan": "5.*",
         "PlugManX": "3.1.*",
+        "Prism": "4.*",
         "RedCraftReboot": "0.0.*",
         "SelectionVisualizer": "3.3.*",
+        "spark": "1.10.*",
         "ViaBackwards": "5.11.*",
         "ViaRewind": "4.1.*",
         "ViaVersion": "5.11.*",
         "VoidGen": "2.2.*",
-        "WorldGuard": "7.0.*",
-        "goBrush": "3.8.*",
-        "goPaint": "3.1.*",
-        "spark": "1.10.*"
+        "WorldGuard": "7.0.*"
     }
 }
