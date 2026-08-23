@@ -22,8 +22,6 @@
         "Maintenance": "5.1.*",
         "MiniMOTD": "2.2.*",
         "Plan": "5.*",
-        "RedCraftBungeeJsonApi": "0.1.*",
-        "RedCraftChat": "0.0.*",
         "sparkvelocity": "1.10.*"
     }
 }
