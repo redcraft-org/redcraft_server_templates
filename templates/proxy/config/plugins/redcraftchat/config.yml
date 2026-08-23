@@ -18,8 +18,8 @@ discord-activity-value: 'RedCraft.org'
 translation-enabled: true
 translation-discord-supported-languages: ['en', 'fr']
 translation-discord-category-format: '[%lang%] %topic%'
-chat-translation-provider: 'deepl'
-upstream-translation-provider: 'deepl' # This is to translate plugins from upstream servers
+chat-translation-provider: 'claude'
+upstream-translation-provider: 'claude' # This is to translate plugins from upstream servers
 
 # This is for supported locales
 supported-locales-provider: 'database'
@@ -29,6 +29,11 @@ default-locale: 'en-US'
 
 # This is to add missing players in tab completion
 enable-tab-completion: false
+# Chat is cancelled and re-emitted by the proxy, which a signed message forbids,
+# so the signature is stripped from incoming chat and commands before Velocity
+# reads them. Turning this off breaks chat on 1.19 and newer clients.
+strip-chat-signatures: true
+strip-login-profile-key: false
 
 # These are the settings for Deepl live translation (if you use that provider)
 deepl-token: 'DEEPL_TOKEN'
@@ -38,6 +43,11 @@ deepl-preserve-formatting: false # whether the translation engine should respect
 
 # These are the settings for the ModernMT live translation (if you use that provider)
 # PS: If you use modernmt-free, these settings will be ignored
+# These are the settings for Claude live translation (if you use that provider)
+claude-token: 'CLAUDE_TOKEN'
+claude-model: 'claude-haiku-4-5-20251001'
+claude-endpoint: 'https://api.anthropic.com/v1/messages'
+claude-api-version: '2023-06-01'
 modernmt-token: ''
 
 # Shorten URLs

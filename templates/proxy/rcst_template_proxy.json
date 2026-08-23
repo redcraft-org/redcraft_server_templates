@@ -6,7 +6,8 @@
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
         "DISCORD_TOKEN": "DISCORD_TOKEN",
         "DEEPL_TOKEN": "DEEPL_TOKEN",
-        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET"
+        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET",
+        "CLAUDE_TOKEN": "CLAUDE_TOKEN"
     },
     "server_engine": {
         "name": "Velocity",
@@ -22,6 +23,7 @@
         "Maintenance": "5.1.*",
         "MiniMOTD": "2.2.*",
         "Plan": "5.*",
+        "RedCraftChat": "0.1.*",
         "sparkvelocity": "1.10.*"
     }
 }
