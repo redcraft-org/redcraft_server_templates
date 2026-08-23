@@ -1,0 +1,50 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃       Velocitab Config       ┃
+# ┃  by William278 & AlexDev03   ┃
+# ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+# ┣╸ Information: https://william278.net/project/velocitab
+# ┗╸ Documentation: https://william278.net/docs/velocitab
+
+# Check for updates on startup
+check_for_updates: true
+# Whether to remove nametag from players' heads if the nametag associated with their server group is empty.
+remove_nametags: false
+# Whether to disable header and footer if they are empty and let backend servers handle them.
+disable_header_footer_if_empty: true
+# Which text formatter to use (MINIMESSAGE, MINEDOWN or LEGACY)
+formatter: LEGACY
+# All servers which are not in other groups will be put in the fallback group.
+# "false" will exclude them from Velocitab.
+fallback_enabled: true
+# The formats to use for the fallback group.
+fallback_group: default
+# Whether to show all players from all groups in the TAB list.
+show_all_players_from_all_groups: false
+# Whether to enable the PAPIProxyBridge hook for PAPI support
+enable_papi_hook: true
+# How long in seconds to cache PAPI placeholders for, in milliseconds. (0 to disable)
+papi_cache_time: 30000
+# If you are using MINIMESSAGE formatting, enable this to support MiniPlaceholders in formatting.
+enable_mini_placeholders_hook: true
+# Whether to send scoreboard teams packets. Required for player list sorting and nametag formatting.
+# Turn this off if you're using scoreboard teams on backend servers.
+send_scoreboard_packets: true
+# If built-in placeholders return a blank string, fallback to Placeholder API equivalents.
+# For example, if %prefix% returns a blank string, use %luckperms_prefix%. Requires PAPIProxyBridge.
+fallback_to_papi_if_placeholder_blank: false
+# Whether to sort players in the TAB list.
+sort_players: true
+# Remove gamemode spectator effect for other players in the TAB list.
+remove_spectator_effect: true
+# Whether to enable the Plugin Message API (allows backend plugins to perform certain operations)
+enable_plugin_message_api: true
+# Whether to force sending tab list packets to all players, even if a packet for that action has already been sent. This could fix issues with some mods.
+force_sending_tab_list_packets: false
+# Whether to enable relational placeholders. With an high amount of players, this could cause lag.
+enable_relational_placeholders: false
+# A list of links that will be sent to display on player pause menus (Minecraft 1.21+ clients only).
+# • Labels can be fully custom or built-in (one of 'bug_report', 'community_guidelines', 'support', 'status',
+#   'feedback', 'community', 'website', 'forums', 'news', or 'announcements').
+# • If you supply a url with a 'bug_report' label, it will be shown if the player is disconnected.
+# • Specify a set of server groups each URL should be sent on. Use '*' to show a URL to all groups.
+server_links: []
