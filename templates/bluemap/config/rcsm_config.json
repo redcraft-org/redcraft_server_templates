@@ -1,5 +1,5 @@
 {
-    "start_command": "/usr/lib/jvm/temurin-25-jdk-amd64/bin/java -Xmx5G -jar server.jar -ruw",
+    "start_command": "java -Xmx5G -jar server.jar -ruw",
     "stop_command": "^C",
     "directories_to_backup": [
         "web"
