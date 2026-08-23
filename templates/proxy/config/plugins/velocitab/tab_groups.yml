@@ -17,7 +17,7 @@ groups:
   - '&cWelcome&e &f%username%'
   footers:
   - '&c&lRed&f&lCraft&7&l.org &r- Alpha'
-  format: '&7[%server%] &r%prefix%%username%%suffix%'
+  format: '&7[&r%server%&7]&r %prefix%%username%%suffix%'
   nametag:
     prefix: '%prefix%'
     suffix: '%suffix%'
@@ -32,7 +32,20 @@ groups:
   - '%server%'
   - '%role_weight%'
   - '%username_lower%'
-  placeholder_replacements: {}
+  placeholder_replacements:
+    '%server%':
+    - placeholder: hub
+      replacement: '&aHub'
+    - placeholder: museum
+      replacement: '&6Museum'
+    - placeholder: survival_vanilla
+      replacement: '&2Survival Vanilla'
+    - placeholder: crea_build_plot
+      replacement: '&bCrea Build'
+    - placeholder: crea_redstone_plot
+      replacement: '&cCrea Redstone'
+    - placeholder: crea_engineer_test
+      replacement: '&7Crea Engineer Test'
   collisions: false
   header_footer_update_rate: 200
   format_update_rate: 1000
