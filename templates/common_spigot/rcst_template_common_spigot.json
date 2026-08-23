@@ -12,7 +12,6 @@
     },
     "plugins": {
         "AntiRedstoneClock": "2.9.*",
-        "BungeeTabListPlusBridge": "3.6.*",
         "Chunky": "1.5.*",
         "CMI": "9.8.*",
         "CMILib": "1.5.*",

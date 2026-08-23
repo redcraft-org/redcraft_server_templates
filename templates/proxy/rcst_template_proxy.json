@@ -15,7 +15,6 @@
         "target": "server.jar"
     },
     "plugins": {
-        "BungeeTabListPlus": "3.6.*",
         "Floodgate": "2.2.*",
         "Geyser": "2.11.*",
         "LiteBans": "2.19.*",
