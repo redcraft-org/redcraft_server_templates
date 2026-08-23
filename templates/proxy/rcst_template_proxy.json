@@ -15,7 +15,6 @@
     },
     "plugins": {
         "BungeeTabListPlus": "3.6.*",
-        "CMIV": "1.0.*",
         "Floodgate": "2.2.*",
         "Geyser": "2.11.*",
         "LiteBans": "2.19.*",
