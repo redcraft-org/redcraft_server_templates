@@ -1,5 +1,5 @@
 {
-    "start_command": "java -Xms2G -Xmx2G -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar server.jar",
+    "start_command": "/usr/lib/jvm/temurin-25-jdk-amd64/bin/java -Xms2G -Xmx2G -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar server.jar",
     "stop_command": "shutdown",
     "directories_to_backup": [
         "logs"
