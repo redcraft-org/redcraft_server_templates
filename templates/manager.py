@@ -78,7 +78,18 @@ class TemplateManager():
 
     def download_server_engine(self, server_engine, output_directory):
         if server_engine:
-            filename = '{name}-{version}.jar'.format(**server_engine)
+            # Engines are indexed like plugins, so the version accepts the same
+            # wildcards and a template can follow a branch instead of naming a
+            # build it has to be edited to move off
+            name = server_engine['name']
+            matched_version = self.get_latest_matching_plugin_version(
+                name, version_match=server_engine['version'])
+
+            if not matched_version:
+                raise ValueError('No {} engine matching {} in the repository'.format(
+                    name, server_engine['version']))
+
+            filename = '{}-{}.jar'.format(name, matched_version)
             output_path = os.path.join(
                 output_directory, server_engine.get('target') or filename)
             self.repository_manager.copy(filename, output_path)

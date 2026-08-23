@@ -11,7 +11,7 @@
     },
     "server_engine": {
         "name": "Velocity",
-        "version": "4.0.0",
+        "version": "4.*",
         "target": "server.jar"
     },
     "plugins": {
@@ -23,6 +23,7 @@
         "MiniMOTD": "2.2.*",
         "Plan": "5.*",
         "RedCraftChat": "0.1.*",
-        "sparkvelocity": "1.10.*"
+        "sparkvelocity": "1.10.*",
+        "Velocitab": "1.7.*"
     }
 }
