@@ -31,6 +31,15 @@ default-locale: 'en-US'
 # Readable names for the backend servers, used in join and leave messages and
 # in the Discord bridge. Falls back to the motd a server answers a ping with,
 # and then to the name the proxy registers it under.
+# A small HTTP server reporting who is online and which client versions the
+# proxy accepts, at /players.json and /versions.json. The player list carries
+# the languages each player speaks.
+# :warning: There is no authentication, it is bound for the reverse proxy in
+# front of it to reach, not for the internet.
+json-api-enabled: true
+json-api-bind: '0.0.0.0'
+json-api-port: 8080
+
 server-display-names:
   hub: '&6Hub'
   crea_build_plot: '&dBuild plot'
