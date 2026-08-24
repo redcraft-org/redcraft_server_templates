@@ -52,7 +52,7 @@ hub:
     kickBack: true
     particlesByPermission: false
     requiresPerm: true
-    informOnMissingPerm: false
+    informOnMissingPerm: true
     particleAmount: 5
     particleHide: 0
     activationRange: 16

@@ -1,0 +1,16 @@
+location: hub:-105.500:64.000:6.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&9&lSurvival &1&lVanilla'
+    height: 0.3
+  - content: '&7You need to be a &bMember&7 to join'
+    height: 0.3
+  - content: '&6Guests &8cannot enter this server'
+    height: 0.3
+  actions: {}
