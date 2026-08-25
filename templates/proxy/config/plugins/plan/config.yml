@@ -155,6 +155,9 @@ Time:
             Unit: HOURS
 # -----------------------------------------------------
 Display_options:
+    # The site is dark, and the theme paints Plan's night palette to match,
+    # so landing on the light one is a jolt in and a second jolt back out.
+    Night_mode: true
     # More information about Themes:
     # https://github.com/plan-player-analytics/Plan/wiki/Themes
     Theme: redcraft
