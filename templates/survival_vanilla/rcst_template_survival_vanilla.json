@@ -10,10 +10,5 @@
         "name": "Fabric",
         "version": "26.2",
         "target": "server.jar"
-    },
-    "resources": {
-        "mods": {
-            "ChunkyFabric": "1.5.*"
-        }
     }
 }
