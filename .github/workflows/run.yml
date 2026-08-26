@@ -50,6 +50,7 @@ jobs:
           SENTRY_DSN_CREA_BUILD_PLOT: ${{ secrets.SENTRY_DSN_CREA_BUILD_PLOT }}
           SENTRY_DSN_MUSEUM: ${{ secrets.SENTRY_DSN_MUSEUM }}
           VELOCITY_FORWARDING_SECRET: ${{ secrets.VELOCITY_FORWARDING_SECRET }}
+          SCHEMATIO_PLUGIN_API_TOKEN: ${{ secrets.SCHEMATIO_PLUGIN_API_TOKEN }}
         run: |
           ./setup.sh
           source env/bin/activate

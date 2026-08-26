@@ -1,0 +1,68 @@
+# SchematioConnector Configuration
+# ================================
+
+# API endpoint for schemat.io
+# Production: https://schemat.io/api/v1
+# Development: http://localhost/api/v1
+api-endpoint: "https://schemat.io/api/v1"
+
+# Community JWT token from your schemat.io community settings
+# Get this from: Community Settings -> Plugin Tokens -> Generate Token
+# Token format: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.xxxxx.xxxxx
+community-token: "SCHEMATIO_PLUGIN_API_TOKEN"
+
+# Legacy API key (deprecated - use community-token instead)
+# api-key: ""
+
+# Development Settings
+# ====================
+# Trust all SSL certificates (for local development with self-signed certs).
+# WARNING: Never enable this in production!
+trust-all-certificates: false
+
+# Rate Limiting
+# =============
+# Limits the number of API requests a player can make within a time window.
+# This prevents abuse and protects the API from excessive requests.
+
+# Maximum number of requests per player within the time window.
+# Set to 0 to disable rate limiting (not recommended).
+rate-limit-requests: 10
+
+# Time window in seconds for rate limiting.
+# After this time, the request count resets.
+rate-limit-window-seconds: 60
+
+# Caching
+# =======
+# Caches schematic listings to reduce API calls and enable offline browsing.
+# Cached data is used when the API is unavailable.
+
+# Enable or disable caching (true/false).
+cache-enabled: true
+
+# How long cached data remains valid, in seconds.
+# After this time, fresh data will be fetched from the API.
+# Minimum: 30 seconds, Maximum: 3600 seconds (1 hour)
+# Default: 300 seconds (5 minutes)
+cache-ttl-seconds: 300
+
+# UI Settings
+# ===========
+# Default UI mode for commands (chat or dialog)
+# Players can override this with their personal preference using /schematio settings
+# They can also use --chat or --dialog flags on individual commands.
+# Valid values: chat, dialog
+# Default: chat
+default-ui-mode: chat
+
+# Command Availability
+# ====================
+# Disable specific subcommands by listing them here.
+# Disabled commands will not be registered, won't appear in help or tab completion.
+# This is useful for servers that want to restrict functionality.
+# Available commands: upload, download, list, search, quickshare, quickshareget, settings
+# Admin commands (reload, settoken, setpassword, info) cannot be disabled.
+disabled-commands:
+  - list
+  - search
