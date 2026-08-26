@@ -3,7 +3,9 @@ import json
 import tempfile
 import unittest
 
-from templates.manager import TemplateManager, get_filter_regex, get_template_resources
+from templates.manager import (TemplateManager, get_filter_regex,
+                               get_template_resources,
+                               replace_config_env_matches)
 
 
 class FakeTemplateManager(TemplateManager):
@@ -179,3 +181,35 @@ class TemplateInfoRoundTripTests(unittest.TestCase):
             self.assertEqual(template, json.loads(content))
             self.assertIn('    "name": "fake"', content)
             self.assertLess(content.index('"name"'), content.index('"resources"'))
+
+
+class ReplaceConfigEnvMatchesTest(unittest.TestCase):
+    """
+    A schemat.io token was pasted into the CI settings with a space either
+    side of it. The config shipped that verbatim, the plugin reported the
+    token as configured, and every api call was refused.
+    """
+
+    def substitute(self, value):
+        os.environ['TEST_INJECTED_SECRET'] = value
+
+        directory = tempfile.mkdtemp()
+        config = os.path.join(directory, 'config.yml')
+        with open(config, 'w') as handle:
+            handle.write('token: "TEST_INJECTED_SECRET"\n')
+
+        replace_config_env_matches(
+            directory, {'TEST_INJECTED_SECRET': 'TEST_INJECTED_SECRET'})
+
+        with open(config) as handle:
+            return handle.read().strip()
+
+    def test_secret_is_injected(self):
+        self.assertEqual('token: "abc123"', self.substitute('abc123'))
+
+    def test_surrounding_whitespace_is_dropped(self):
+        self.assertEqual('token: "abc123"', self.substitute('  abc123  '))
+
+    def test_trailing_newline_is_dropped(self):
+        self.assertEqual('token: "abc123"', self.substitute('abc123\n'))
+

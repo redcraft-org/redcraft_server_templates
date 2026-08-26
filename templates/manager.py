@@ -224,7 +224,10 @@ class TemplateManager():
 def replace_config_env_matches(directory, patterns):
     compiled_patterns = []
     for pattern, replacement_env in patterns.items():
-        replacement = os.environ.get(replacement_env, '').replace('"', '\"')
+        # Stripped: a secret pasted into the CI settings with a stray space or
+        # newline around it would otherwise be injected verbatim, and a token
+        # with leading whitespace is silently rejected by whatever consumes it.
+        replacement = os.environ.get(replacement_env, '').strip().replace('"', '\"')
         compiled_patterns.append(
             're.sub("{}", "{}", line)'.format(pattern, replacement))
 
