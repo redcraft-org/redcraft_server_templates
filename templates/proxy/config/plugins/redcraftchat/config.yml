@@ -42,11 +42,17 @@ json-api-port: 8080
 
 server-display-names:
   hub: '&6Hub'
-  crea_build_plot: '&dBuild plot'
-  crea_redstone_plot: '&4Redstone plot'
+  crea_build_plot: '&dCrea Build Plot'
+  crea_redstone_plot: '&4Crea Redstone Plot'
   museum: '&eMuseum'
   crea_engineer_test: '&5Crea Engineer Test'
   survival_vanilla: '&9Survival Vanilla'
+
+# Server names are proper nouns, and the ids above are what players type after
+# /server, so the translator is told to copy every one of them exactly rather
+# than left to guess which words are names. List here the ones that are ordinary
+# words after all and read better translated.
+translatable-server-names: ['Museum']
 
 enable-tab-completion: false
 # Chat is cancelled and re-emitted by the proxy, which a signed message forbids,
