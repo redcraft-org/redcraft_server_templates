@@ -1,0 +1,16 @@
+location: crea_build_plot:-13.500:42.300:0.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&6&l/p auto'
+    height: 0.3
+  - content: '&fto get your'
+    height: 0.3
+  - content: '&fown plot'
+    height: 0.3
+  actions: {}
