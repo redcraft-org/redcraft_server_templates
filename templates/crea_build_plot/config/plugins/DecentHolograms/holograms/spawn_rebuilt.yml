@@ -1,0 +1,18 @@
+location: crea_build_plot:-31.500:40.450:-6.500
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&fThis spawn will'
+    height: 0.3
+  - content: '&fbe rebuilt'
+    height: 0.3
+  - content: '&flater'
+    height: 0.3
+  - content: '&7...event?'
+    height: 0.3
+  actions: {}
