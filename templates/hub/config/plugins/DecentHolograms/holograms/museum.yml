@@ -7,6 +7,6 @@ facing: 0.0
 down-origin: false
 pages:
 - lines:
-  - content: '&6&lmuseum'
+  - content: '&6&lMuseum'
     height: 0.3
   actions: {}
