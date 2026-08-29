@@ -40,6 +40,10 @@ command-aliases:
   hub: 'servers hub'
   lobby: 'servers hub'
   s: 'servers'
+  redstone: 'servers crea_redstone_plot'
+  build: 'servers crea_build_plot'
+  museum: 'servers museum'
+  vanilla: 'servers survival_vanilla'
 
 # Readable names for the backend servers, used in join and leave messages and
 # in the Discord bridge. Falls back to the motd a server answers a ping with,
@@ -121,3 +125,19 @@ cache-provider: 'redis' # redis or memory
 # If you use redis
 redis-uri: 'redis://10.0.2.42:31379/0'
 redis-key-prefix: 'RCC'
+
+# The language selector. Native dialog for a 1.21.6+ client, the in-world
+# DisplayKit panel above that, and the clickable chat menu below both. Absent
+# here the plugin defaults it off, which silently returns every player to the
+# chat menu.
+displaykit-selector-enabled: true
+
+# Translate the interface strings ahead of time rather than on first use
+pretranslate-ui-enabled: true
+
+# Translate floating text
+translate-holograms: true
+
+# How long a system message waits to be grouped with the ones after it
+upstream-chat-grouping-delay: 110
+hologram-grouping-delay: 250
