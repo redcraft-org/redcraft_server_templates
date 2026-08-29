@@ -59,3 +59,21 @@ hub:
     commandsWithoutTp: true
     commands:
     - cmi effect [playerName] blindness 2 1 -s
+  museum:
+    Loc: 45.0:62.0:0.0:45.0:64.0:2.0
+    enabled: true
+    effect: Reddust
+    color: 5636095
+    showParticles: true
+    bungeeServer: museum
+    exactBungeeLocation: false
+    kickBack: true
+    particlesByPermission: false
+    requiresPerm: false
+    informOnMissingPerm: false
+    particleAmount: 5
+    particleHide: 0
+    activationRange: 16
+    commandsWithoutTp: true
+    commands:
+    - cmi effect [playerName] blindness 2 1 -s
