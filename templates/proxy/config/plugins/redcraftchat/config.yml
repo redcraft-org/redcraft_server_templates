@@ -71,6 +71,12 @@ server-display-names:
 # words after all and read better translated.
 translatable-server-names: ['Museum']
 
+# Other proper nouns the translator must copy rather than translate: worlds,
+# maps, anything a build is called. Be sparing, a word listed here is verbatim
+# in every sentence, so an ordinary one like Plot costs its translation
+# everywhere and not only on the sign it was added for.
+protected-names: ['KingdomHills', 'TopRed', 'Freebuild', 'Semi-RP', 'IRS', 'musehub', 'RedCraft']
+
 enable-tab-completion: false
 # Chat is cancelled and re-emitted by the proxy, which a signed message forbids,
 # so the signature is stripped from incoming chat and commands before Velocity
