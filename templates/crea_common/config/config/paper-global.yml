@@ -1,0 +1,24 @@
+# The creative servers' copy of the proxy settings, plus the one key that keeps
+# the nether shut. Paper fills in every other key with its defaults on first
+# start. The _version key is left out on purpose so Paper assumes the version it
+# ships with instead of replaying old config transformations.
+#
+# The secret below is a placeholder filled in at template build time, see
+# config_env_matches in the rcst_template_*.json of every server built from this
+# one. It has to match forwarding.secret on the Velocity proxy.
+proxies:
+  bungee-cord:
+    online-mode: true
+  proxy-protocol: false
+  velocity:
+    enabled: true
+    online-mode: true
+    secret: 'VELOCITY_FORWARDING_SECRET'
+
+# allow-nether in server.properties does nothing here. Paper migrates that key
+# into this file once, with V31_AllowNetherPropertiesToConfig, and reads it from
+# here forever after. That migration is keyed off _version, which this file
+# leaves out on purpose, so it never runs and the key takes Paper's default of
+# true no matter what server.properties says.
+misc:
+  enable-nether: false

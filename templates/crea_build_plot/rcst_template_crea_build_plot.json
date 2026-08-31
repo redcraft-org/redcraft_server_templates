@@ -1,6 +1,6 @@
 {
     "name": "crea_build_plot",
-    "source": "common_spigot",
+    "source": "crea_common",
     "target": "crea_build_plot.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
@@ -13,10 +13,5 @@
         "version": "26.2",
         "target": "server.jar"
     },
-    "plugins": {
-        "F3F4Perms": "1.3.*",
-        "PacketEvents": "2.13.*",
-        "PlotSquared": "7.6.*",
-        "SchematioConnector": "1.3.*"
-    }
+    "plugins": {}
 }
