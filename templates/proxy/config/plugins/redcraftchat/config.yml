@@ -144,6 +144,11 @@ pretranslate-ui-enabled: true
 # Translate floating text
 translate-holograms: true
 
+# Action bars, both wire forms: the dedicated packet most plugins send and the
+# chat-with-overlay form CMI uses. Rewritten in place from a cache, so a HUD
+# repainting every tick costs one translation ever.
+translate-action-bars: true
+
 # How long a system message waits to be grouped with the ones after it
 upstream-chat-grouping-delay: 110
 hologram-grouping-delay: 250
