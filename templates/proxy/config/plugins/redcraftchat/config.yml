@@ -149,6 +149,12 @@ translate-holograms: true
 # repainting every tick costs one translation ever.
 translate-action-bars: true
 
+
+# Messages with clickable or hoverable parts: sentence and button labels are
+# translated together, events kept on the proxy and reattached afterwards.
+# Off while it soaks; flip to true to enable, any restore failure falls back
+# to the untouched original either way.
+upstream-translate-interactive: false
 # How long a system message waits to be grouped with the ones after it
 upstream-chat-grouping-delay: 110
 hologram-grouping-delay: 250
