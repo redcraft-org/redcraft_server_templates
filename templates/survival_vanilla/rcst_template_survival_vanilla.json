@@ -4,7 +4,8 @@
     "target": "survival_vanilla.tar",
     "config_env_matches": {
         "MYSQL_PASSWORD": "COMMON_MYSQL_PASSWORD",
-        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET"
+        "VELOCITY_FORWARDING_SECRET": "VELOCITY_FORWARDING_SECRET",
+        "SCHEMATIO_PLUGIN_API_TOKEN": "SCHEMATIO_PLUGIN_API_TOKEN"
     },
     "server_engine": {
         "name": "Fabric",

@@ -24,6 +24,7 @@
             "lithium": "0.25.*",
             "LuckPermsFabric": "5.5.*",
             "PlanFabric": "5.*",
+            "SchematioConnectorFabric": "1.3.*",
             "sparkfabric": "1.10.*",
             "VanillaPermissions": "0.3.*",
             "VeryManyPlayers": "0.2.*",
