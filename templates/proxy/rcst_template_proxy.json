@@ -16,7 +16,7 @@
     },
     "plugins": {
         "Floodgate": "2.2.*",
-        "Geyser": "2.11.*",
+        "Geyser": "2.12.*",
         "LiteBans": "2.19.*",
         "LuckPermsVelocity": "5.5.*",
         "Maintenance": "5.1.*",

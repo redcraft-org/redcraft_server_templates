@@ -24,6 +24,17 @@ bedrock:
   # Some hosting services change your Java port everytime you start the server and require the same port to be used for Bedrock.
   # This option makes the Bedrock port the same as the Java port every time you start the server.
   clone-remote-port: false
+  # Bedrock 26.60 and up only connect over NetherNet. Signaling runs on the
+  # Bedrock port over TCP and gameplay over UDP, so the router forwards
+  # 19132 for both. The address is spelled out because RCMC sits behind
+  # NAT and STUN guessing the mapped port is not worth the risk.
+  transport: nethernet
+  webrtc-port: 0
+  signaling:
+    mode: builtin
+    advertise-addresses:
+      - bedrock.redcraft.org
+    stun-discovery: true
 
 # Network settings for the Java server connection
 java:
