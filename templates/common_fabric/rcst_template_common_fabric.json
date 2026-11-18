@@ -7,30 +7,29 @@
     },
     "server_engine": {
         "name": "Fabric",
-        "version": "26.2",
+        "version": "26.3",
         "target": "server.jar"
     },
     "resources": {
         "mods": {
             "alternatecurrent": "1.9.*",
             "carpet": "26.*",
-            "CarpetExtra": "26.*",
-            "ChunkDebug": "2.8.*",
-            "fabricapi": "0.158.*",
-            "fabrickotlin": "1.13.*",
+            "ChunkDebug": "2.9.*",
+            "fabricapi": "0.166.*",
+            "fabrickotlin": "1.14.*",
             "FabricProxyLite": "2.12.*",
-            "InvView": "1.4.*-26.2*",
+            "InvView": "1.4.*-26.3*",
             "Ledger": "1.3.*",
-            "lithium": "0.25.*",
+            "lithium": "0.26.*",
             "LuckPermsFabric": "5.5.*",
             "PlanFabric": "5.*",
-            "SchematioConnectorFabric": "1.3.*",
+            "SchematioConnectorFabric": "1.7.*",
             "sparkfabric": "1.10.*",
             "VanillaPermissions": "0.3.*",
             "VeryManyPlayers": "0.2.*",
-            "ViaBackwards": "5.11.*",
+            "ViaBackwards": "5.12.*",
             "ViaFabric": "0.4.*",
-            "ViaRewind": "4.1.*"
+            "ViaRewind": "4.2.*"
         }
     }
 }
